@@ -8,17 +8,26 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\UserController;
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->match('/', 'Controller\UserController::registerAction')->bind('register');
+$app->match('/', 'Controller\UserController::registerAction')->bind('home');
 
+$app->get('/report', function() use ($app) {
+    $user=null;
+    $token = $app['security.token_storage']->getToken();
+    if (null!==$token){
+        $user = $token->getUser();
+    }   
+    return $app['twig']->render('report.html.twig', array('user'=>$user));
+})
+->bind('report');
 
-$app->get('/report', )
-$app->get('/report/sales', )
-$app->get('/report/stock', )
-$app->get('/report/category', )
-$app->get('/report/orders', )
-$app->get('/report/prod_in_cat', )  
-$app->get('/report/marketing', )
-        
+$app->get('/signin', "Controller\UserController::signInAction")->bind('signin');
+$app->get('/report/sales', "Controller\ReportController::salesAction")->bind('sales');
+$app->get('/report/stock', "Controller\ReportController::stockAction")->bind('stock');
+$app->get('/report/category', "Controller\ReportController::categoryAction")->bind('category');
+$app->get('/report/orders', "Controller\ReportController::ordersAction")->bind('orders');
+$app->get('/report/prod_in_cat', "Controller\ReportController::prodAction")->bind('prod');
+$app->get('/report/marketing', "Controller\ReportController::marketingAction")->bind('marketing');
+$app->get('/team', "Controller\UserController::teamAction")->bind('team');
 
         
 $app->get('/', function () use ($app) {
