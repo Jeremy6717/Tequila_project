@@ -13,10 +13,10 @@ $app->register(
     [
         'db.options' => [
             'driver'   => 'pdo_mysql',
-            'dbname'   => 'michelm_sql0',
-            'host'     => 'wf3.progweb.fr/mysqlpma',
-            'user'     => 'michelm',
-            'password' => 'webforce3'
+            'dbname'   => '',
+            'host'     => '',
+            'user'     => '',
+            'password' => ''
         ]
     ]
 );
@@ -36,3 +36,34 @@ $app->register(
         ]
     ]
 );
+
+$app->register(
+    new SecurityServiceProvider(),
+    [
+        'security.firewalls'=> [
+            'admin'=>[                   // Name of firewall
+                'pattern'=>'^/',    // firewall scope
+
+                'logout' => [
+                    'logout_path'=> '/logout',
+                    'invalidate_session' => true,
+                    'target_url' => '/home'
+                ],
+                'form' => [
+                    'signin_path' => '/signin',
+                    'login_path' => '/login',
+                ]
+            ]
+        ],
+
+
+        'security.default_encoder'=> function(){      // it's a service = imutable and share in all application
+            return new PlaintextPasswordEncoder();
+        },
+    ]
+
+);
+
+
+$app->register(new \Silex\Provider\SessionServiceProvider());
+

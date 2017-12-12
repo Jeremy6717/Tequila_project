@@ -6,7 +6,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\UserController;
+
 //Request::setTrustedProxies(array('127.0.0.1'));
+$app->post('/signup', sprintf('%s::userSignUp', UserController::class))->bind('signup_user');
+
 
 $app->match('/', 'Controller\UserController::registerAction')->bind('register');
 
