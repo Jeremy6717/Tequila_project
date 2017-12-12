@@ -5,9 +5,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
+use Controller\UserController;
 //Request::setTrustedProxies(array('127.0.0.1'));
 
+$app->match('/', 'Controller\UserController::registerAction')->bind('register');
+
+
+$app->get('/report', )
+$app->get('/report/sales', )
+$app->get('/report/stock', )
+$app->get('/report/category', )
+$app->get('/report/orders', )
+$app->get('/report/prod_in_cat', )  
+$app->get('/report/marketing', )
+        
+
+        
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig', array());
 })
