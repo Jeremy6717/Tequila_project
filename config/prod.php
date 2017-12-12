@@ -13,10 +13,10 @@ $app->register(
     [
         'db.options' => [
             'driver'   => 'pdo_mysql',
-            'dbname'   => 'michelm_sql0',
-            'host'     => 'wf3.progweb.fr/mysqlpma',
-            'user'     => 'michelm',
-            'password' => 'webforce3'
+            'dbname'   => '',
+            'host'     => '',
+            'user'     => '',
+            'password' => ''
         ]
     ]
 );
