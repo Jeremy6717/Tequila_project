@@ -85,8 +85,8 @@ ul{
     }
 
     #mainTitle{
-        font-size: 5rem;
-        margin-left: 3rem;
+        font-size: 4rem;
+        margin-left: 2.5rem;
     }
 
     .menu-text{
@@ -94,7 +94,7 @@ ul{
         font-family: pacifico;
         font-size: 2.5rem;
         color: white;
-        margin: 3rem;
+        margin: 2rem;
     }
 
     .top-bar, .top-bar ul{
@@ -147,16 +147,27 @@ footer{
 #linksLn:hover{
     color:#f2c811;
     font-size: 3rem;
+   
 }
+
+#linksfb,
+#linksG,
+#linksLn{
+    margin: 1rem;
+   
+}
+ 
 
 
 footer h5{
     font-family: Pacifico;
     font-size: 2rem;
+    margin-top: 2rem;
 }
 
 #legal{
     font-size: 1rem;
+    margin-top: 2rem;
 }
 
 .copyright{

@@ -11,7 +11,6 @@ use Controller\UserController;
 $app->post('/signup', sprintf('%s::userSignUp', UserController::class))->bind('signup_user');
 
 
-
 //Routing for report page
 $app->get('/report', function() use ($app) {
     $user=null;
