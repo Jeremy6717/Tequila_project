@@ -4,16 +4,7 @@
 
 
 {% block content %}
-<<<<<<< HEAD:templates/signIn.html.twig
 
-    <form action="{{path('admin_login_check')}}" method="post">
-        {{error}}
-        
-        <input type="text" name="_username" value="{{last_username}}"/>
-        <input type="password" name="_password" value=""/>
-        <input type="submit"/>
-        
-=======
     <form method="post" action="" id="user_signUP">
         <div>
             <label>Lastname</label>
@@ -50,7 +41,7 @@
 
         <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR"></div>
         <button type="submit">Send</button>
->>>>>>> Jérémy:templates/signUp.html.twig
+
     </form>
 
 {% endblock %}
@@ -62,4 +53,4 @@
 {% block footer %}
     {% include 'footer.html.twig' %}
 {% endblock %}  
->>>>>>> Catherine
+
