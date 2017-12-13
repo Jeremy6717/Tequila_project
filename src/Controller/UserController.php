@@ -108,3 +108,4 @@ class UserController
 
         return $app->json($user->toArray());
     }
+}
