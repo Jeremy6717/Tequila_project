@@ -1,2 +1,8 @@
 vendor/
 nbproject/
+.idea/.name
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/Tequila_project.iml
+.idea/modules.xml
+.idea/misc.xml
