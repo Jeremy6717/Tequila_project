@@ -1,5 +1,10 @@
 {% extends "layout.html.twig" %}
 
+{% block header %}
+    {% include 'headerReport.html.twig' %}
+{% endblock %}
+        
+
 {% block content %}
     <div class="grid-container">
         <h1>The team</h1>
@@ -12,8 +17,8 @@
             </div>
             <div class="large-3 medium-3 small-8 cell">
                 <article id="picture">
-                    <div class="pictureMemberTeam"><img src="img/jeremy.jpg" alt="Jérémy Deumer"></div>
-                    <p>Jérémy <a href="https://www.linkedin.com/in/jeremy-deumer-20672098/"><i class="fab fa-linkedin"></i></a></p>
+                    <div class="pictureMemberTeam"><img src="img/jeremy.jpg" alt="Jï¿½rï¿½my Deumer"></div>
+                    <p>Jï¿½rï¿½my <a href="https://www.linkedin.com/in/jeremy-deumer-20672098/"><i class="fab fa-linkedin"></i></a></p>
                 </article>
             </div>
             <div class="large-3 medium-3 small-8 cell">
@@ -66,3 +71,10 @@
 
 
 {% endblock %}
+
+
+    
+{% block footer %}
+    {% include 'footer.html.twig' %}      
+{% endblock %}  
+

@@ -5,7 +5,6 @@ use Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
 use Symfony\Component\Security\Core\Encoder\PlaintextPasswordEncoder;
 
-
 $app['twig.path'] = array(__DIR__.'/../templates');
 $app['twig.options'] = array('cache' => __DIR__.'/../var/cache/twig');
 
@@ -37,8 +36,6 @@ $app->register(
         ]
     ]
 );
-
-
 
 $app->register(
     new SecurityServiceProvider(),
@@ -72,3 +69,4 @@ $app->register(
 
 
 $app->register(new \Silex\Provider\SessionServiceProvider());
+
