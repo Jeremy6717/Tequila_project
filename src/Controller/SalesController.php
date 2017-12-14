@@ -4,12 +4,13 @@ namespace Controller;
 
 use \Symfony\Component\HttpFoundation\Request;
 use \Silex\Application;
-use \Model\Category;
-use \Model\Country;
-use \Model\Customer;
-use \Model\Orderline;
-use \Model\Orders;
-use \Model\Product;
+use \Models\Category;
+use \Models\Country;
+use \Models\Customer;
+use \Models\Orderline;
+use \Models\Orders;
+use \Models\Product;
+use \Models\UserModel;
 
 class SalesController {
     
@@ -28,9 +29,24 @@ class SalesController {
         return $app['orm.em'];
     }
     
-     public function salesAction(Request $request, Application $app){
-       $entityManager = $this->getEntityManager($app);
-       $repository = $entityManager->getRepository(\Models\Orderline::class);
-       //\Models\Orders::class
-   }
-}
+       
+   public function salesAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(UserModel::class);
+        $users = $repository->findAll();
+        
+        // return "ABC";
+        
+        return $app['twig']->render(
+            'User/UserTemplate.html.twig',
+            [
+                'users' => $users
+            ]
+        );
+        
+    } // fin de la méthode helloAction(Request $request, Application $app) de la Classe UserController
+   
+   
+   
+   
+} // end of class SalesController

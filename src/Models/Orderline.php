@@ -9,14 +9,12 @@ namespace Models;
 class Orderline {
     /**
      * @id()
-     * @GeneratedValue()
      * @Column(name="ol_ord_id", type="integer", nullable=false)
      */
     protected $orderid;
     
     /**
      * @id()
-     * @GeneratedValue()
      * @Column(name="ol_prod_id", type="integer", nullable=false)
      */
     protected $prodid;
