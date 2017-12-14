@@ -107,6 +107,18 @@ ul{
 }
 
 
+/****** MOBILE FOOTER ******************/
+
+article{
+    display: block;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+
 
 
 /*Header Report version mobile*/
@@ -155,8 +167,7 @@ footer{
     font-family: Arimo;
     color: white;
     width: 100%;
-    height: 400px;
-
+    height: 100%;
 }
 
 .social{
@@ -168,7 +179,8 @@ footer{
 
 #linksfb,
 #linksG,
-#linksLn{
+#linksLn,
+#linkGithub{
       color: white;
       margin: 1rem;
 
@@ -176,7 +188,8 @@ footer{
 
 #linksfb:hover,
 #linksG:hover,
-#linksLn:hover{
+#linksLn:hover,
+#linkGithub:hover{
     color:#f2c811;
     font-size: 3rem;
 
@@ -200,4 +213,10 @@ footer h5{
     color:#f2c811;
     font-family: Pacifico;
     margin-top: 50px;
+    padding-bottom: 2.5rem;
+}
+
+.sf-toolbar-clearer {
+    clear: both;
+    height: 0rem;
 }
