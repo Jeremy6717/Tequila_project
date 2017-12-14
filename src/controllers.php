@@ -44,7 +44,7 @@ $app->get('/signin', function(Request $request)use ($app){
 })->bind('signin');
 
 //routing for signup page
-$app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
+$app->match('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
@@ -68,13 +68,13 @@ $app->get('/debugcountries', "Controller\DebugController::debugcountriesAction")
 //routing for debug categories
 $app->get('/debugcategories', "Controller\DebugController::debugcategoriesAction")->bind('debugcategories');
 
-<<<<<<< HEAD
+
 //routing for debug customers
-$app->get('/debugcustomers', "Controller\DebugController::debugcustomersAction")->bind('debugproducts');
-=======
+$app->get('/debugcustomers', "Controller\DebugController::debugcustomersAction")->bind('debugcustomers');
+
 //routing for debug Products
 $app->get('/debugproducts', "Controller\DebugController::debugproductsAction")->bind('debugproducts');
->>>>>>> 1980d0b29bd710f0ca9e7a747891151900bcf7ce
+
 
 //Routing for homepage
 $app->get('/', function () use ($app) {
