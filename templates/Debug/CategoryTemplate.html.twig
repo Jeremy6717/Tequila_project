@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <table border="1">
+        <thead>
+            <tr>
+                <td>CATEGORY ID</td>
+                <td>CATEGORY NAME</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.getId() }}</td>
+                    <td>{{ category.getName() }}</td>
+
+                </tr>
+            {% else %}
+                <strong>LA TABLE category EST VIDE</strong>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

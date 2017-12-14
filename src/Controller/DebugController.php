@@ -62,5 +62,21 @@ class DebugController {
         
     } // fin de la méthode debugcountriesAction(Request $request, Application $app) de la Classe DebugController
    
+    public function debugcategoriesAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Country::class);
+        $categories = $repository->findAll();
+        
+        // return "ABC";
+        
+        return $app['twig']->render(
+            'Debug/CategoryTemplate.html.twig',
+            [
+                'categories' => $categories
+            ]
+        );
+        
+    } // fin de la méthode debugcategoriesAction(Request $request, Application $app) de la Classe DebugController
+   
    
 } // end of class SalesController
