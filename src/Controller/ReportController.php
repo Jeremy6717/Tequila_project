@@ -1,18 +1,42 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Controller;
+
+use \Symfony\Component\HttpFoundation\Request;
+use \Silex\Application;
+use \Model\Category;
+use \Model\Country;
+use \Model\Customer;
+use \Model\Orderline;
+use \Model\Orders;
+use \Model\Product;
 
 /**
  * Description of ReportController
  *
  * @author Etudiant
  */
+
 class ReportController {
-    //put your code here
+  
+   
+   public function stockAction(Request $request, Application $app){
+       
+   }
+   
+  
+   
+   public function ordersAction(Request $request, Application $app){
+       
+   }
+   
+   public function prodAction(Request $request, Application $app){
+       
+   }
+   
+   public function marketingAction (Request $request, Application $app){
+       
+   }
+   
+   
 }
