@@ -26,7 +26,19 @@ body{
     font-family: Arimo;
 }
 
-/*Header Home - version mobile*/
+h1, h2, h3{
+    font-family: pacifico;
+}
+
+h1{
+    font-size: 3.2rem;
+}
+
+h2{
+    2.9rem;
+}
+
+/*HEADER HOME MOBILE VERSION*/
 
 header{
     background-image: url(../img/header.jpeg);
@@ -77,7 +89,7 @@ ul{
     color: #f2c811;
 }
 
-/*Header Version tablette et plus*/
+/*HEADER DESKTOP VERSION*/
 
 @media (min-width:639px){
     header{
@@ -107,32 +119,23 @@ ul{
 }
 
 
-/****** MOBILE FOOTER ******************/
-
-article{
-    display: block;
-    width: 10rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
 
 
 
 
 
-/*Header Report version mobile*/
+
+/*HEADER REPORT MOBILE */
 
 #identification a{
     color: #f2c811;
 }
 
-/*Header SignIn*/
 
 
 
 
-/*Home*/
+/* HOME MOBILE */
 
 .intro h3{
     font-size: 2rem;
@@ -160,7 +163,68 @@ article{
 
 }
 
-/*footer*/
+
+
+
+
+/* TEAM DESKTOP  */
+
+#teamMemberPicture img{
+    filter: grayscale(100%);
+}
+
+#teamMemberPicture img:hover{
+    filter: none;
+}
+
+#teamMemberPicture p{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+
+#map{
+    height: 400px;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+
+
+/* TEAM MOBILE  */
+@media (max-width:639px){
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+   font-size: 2.5rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+#teamContent{
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+#teamMemberPicture{
+   width: 100%;
+    margin-left: 18%;
+}
+
+
+}
+
+
+
+
+/* FOOTER DESKTOP */
 
 footer{
     background: #333333;
@@ -218,5 +282,16 @@ footer h5{
 
 .sf-toolbar-clearer {
     clear: both;
-    height: 0rem;
+    height: 0rem !important;
+}
+
+
+/****** FOOTER MOBILE******************/
+
+article{
+    display: block;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
