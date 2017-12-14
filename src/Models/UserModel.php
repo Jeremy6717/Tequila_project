@@ -14,7 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @Entity()
  * @Table(name="user")
  */
-class User implements UserInterface{
+class UserModel implements UserInterface{
     /**
      * @id()
      * @GeneratedValue()
