@@ -43,15 +43,16 @@ $app->register(
         'security.firewalls'=> [
             'admin'=>[                   // Name of firewall
                 'pattern'=>'^/',    // firewall scope
+                'anonymous' => true,
 
                 'logout' => [
                     'logout_path'=> '/logout',
                     'invalidate_session' => true,
-                    'target_url' => '/home'
+                    'target_url' => '/'
                 ],
                 'form' => [
-                    'signin_path' => '/signin',
-                    'login_path' => '/login',
+                    'login_path' => '/signin',
+                    'check_path' =>'/login_check'
                 ]
             ]
         ],
