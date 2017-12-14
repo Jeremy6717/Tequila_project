@@ -9,7 +9,7 @@ use \Doctrine\Common\Collections\ArrayCollection;
  */
 class Category {
    /**
-     * @id()
+     * @Id()
      * @GeneratedValue()
      * @Column(name="cat_id", type="integer", nullable=false)
      */
@@ -22,10 +22,14 @@ class Category {
     
     /**
      * One Category has many Products.
-     * @OneToMany(targetEntity="Product", mappedBy="category")
+     * @OneToMany(targetEntity="Product", mappedBy="catid")
      */
     private $products;
-  
+    
+    public function __construct() {
+        $this->products = [];
+    }
+     
     public function getId() {
         return $this->id;
     }
@@ -33,15 +37,13 @@ class Category {
     public function getName() {
         return $this->name;
     }
-    
-    public function __construct() {
-        $this->name = new ArrayCollection();
-    }
+       
 
     function setName($name) {
         $this->name = $name;
         return $this;
     }
-
+    
+    
 
 }
