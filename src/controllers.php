@@ -10,8 +10,6 @@ use Controller\UserController;
 //Request::setTrustedProxies(array('127.0.0.1'));
 
 
-$app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
-
 
 
 //Routing for report page
@@ -46,8 +44,7 @@ $app->get('/signin', function(Request $request)use ($app){
 })->bind('signin');
 
 //routing for signup page
-$app->get('/signup', "Controller\UserController::signupAction")->bind('signup');
-
+$app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
