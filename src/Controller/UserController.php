@@ -19,35 +19,35 @@ class UserController
 
         /*
          * if (!isset($_POST['user_lastname'])) {
-         *  message = 'user_lastname must be defined';
+         *  message = 'lastname must be defined';
          *  return $app->json(['status' => 'error', 'message' => $message], 400);
          * }
          */
         if (!$request->request->has('user_lastname')) {
-            $message = 'user_lastname must be defined';
+            $message = 'lastname must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         /*
          * if (!isset($_POST['user_firstname'])) {
-         *  message = 'user_firstname must be defined';
+         *  message = 'firstname must be defined';
          *  return $app->json(['status' => 'error', 'message' => $message], 400);
          * }
          */
         if (!$request->request->has('user_firstname')) {
-            $message = 'user_firstname must be defined';
+            $message = 'firstname must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
 
         /*
          * if (!isset($_POST['user_username'])) {
-         *  message = 'user_username must be defined';
+         *  message = 'username must be defined';
          *  return $app->json(['status' => 'error', 'message' => $message], 400);
          * }
          */
         if (!$request->request->has('user_username')) {
-            $message = 'user_username must be defined';
+            $message = 'username must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
@@ -58,7 +58,7 @@ class UserController
         * }
         */
         if (!$request->request->has('user_password')) {
-            $message = 'user_password must be defined';
+            $message = 'password must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 

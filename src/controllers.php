@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\UserController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
-$app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
+
 
 
 
@@ -27,10 +27,6 @@ $app->get('/report', function() use ($app) {
 //Routing for team page
 $app->get('/team', function() use ($app) {
     $user=null;
-    $token = $app['security.token_storage']->getToken();
-    if (null!==$token){
-        $user = $token->getUser();
-    }
     return $app['twig']->render('team.html.twig', array('user'=>$user));
 })
     ->bind('team');
@@ -48,8 +44,7 @@ $app->get('/signin', function(Request $request)use ($app){
 })->bind('signin');
 
 //routing for signup page
-$app->get('/signup', "Controller\UserController::signupAction")->bind('signup');
-
+$app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
@@ -62,8 +57,7 @@ $app->get('/report/orders', "Controller\ReportController::ordersAction")->bind('
 $app->get('/report/prod_in_cat', "Controller\ReportController::prodAction")->bind('prod');
 //routing for marketing page
 $app->get('/report/marketing', "Controller\ReportController::marketingAction")->bind('marketing');
-//routing for team page
-$app->get('/team', "Controller\UserController::teamAction")->bind('team');
+
 
 //routing for debug users
 $app->get('/debugusers', "Controller\DebugController::debugusersAction")->bind('debugusers');
@@ -74,8 +68,13 @@ $app->get('/debugcountries', "Controller\DebugController::debugcountriesAction")
 //routing for debug categories
 $app->get('/debugcategories', "Controller\DebugController::debugcategoriesAction")->bind('debugcategories');
 
+<<<<<<< HEAD
 //routing for debug customers
 $app->get('/debugcustomers', "Controller\DebugController::debugcustomersAction")->bind('debugproducts');
+=======
+//routing for debug Products
+$app->get('/debugproducts', "Controller\DebugController::debugproductsAction")->bind('debugproducts');
+>>>>>>> 1980d0b29bd710f0ca9e7a747891151900bcf7ce
 
 //Routing for homepage
 $app->get('/', function () use ($app) {

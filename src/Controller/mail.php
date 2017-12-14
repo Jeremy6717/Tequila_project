@@ -12,7 +12,7 @@ class mail
 {
     public function mail(){
     # First, instantiate the SDK with your API credentials
-    $mg = Mailgun::create('key-3b03f8e801d51eb032cc72b57beec382');
+    $mg = Mailgun::create('key-');
 
     # Now, compose and send your message.
     # $mg->messages()->send($domain, $params);

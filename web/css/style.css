@@ -3,12 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Prata');
 
-
-
 /*General*/
 
 /*
-titre :
+titre : black
 paragraphe : ( noir ou gris ) #333333
 bouton : (jaune) #f2c811
 background : (jaune) #f2c811
@@ -26,7 +24,19 @@ body{
     font-family: Arimo;
 }
 
-/*Header Home - version mobile*/
+h1, h2, h3{
+    font-family: pacifico;
+}
+
+h1{
+    font-size: 3.2rem;
+}
+
+h2{
+    2.9rem;
+}
+
+/*HEADER HOME MOBILE VERSION*/
 
 header{
     background-image: url(../img/header.jpeg);
@@ -50,7 +60,7 @@ header{
     margin-left: 2rem;
     margin-top: 1.8rem;
     text-align: right;
-    
+
 }
 
 ul{
@@ -78,14 +88,14 @@ ul{
     color: #f2c811;
 }
 
-/*Header Version tablette et plus*/
+/*HEADER DESKTOP VERSION*/
 
 @media (min-width:639px){
     header{
         background-position: center;
         width: 100%;
         height: 500px;
-      
+
     }
 
     #mainTitle{
@@ -100,7 +110,7 @@ ul{
         font-size: 2.8rem;
         color: white;
         margin-left: 5rem;
-        
+
     }
 
     .top-bar, .top-bar ul{
@@ -114,18 +124,17 @@ ul{
 
 
 
-/*Header Report version mobile*/
+/*HEADER REPORT MOBILE */
 
 #identification a{
     color: #f2c811;
 }
 
-/*Header SignIn*/
 
 
 
 
-/*Home*/
+/* HOME MOBILE */
 
 .intro h3{
     font-size: 2rem;
@@ -135,12 +144,12 @@ ul{
 
 .intro p{
     margin: 30px;
-    
+
 }
 
 .btn{
     text-align: center;
-    
+
 }
 .button {
     color: white;
@@ -150,7 +159,7 @@ ul{
 }
 .button:hover{
     background-color: #333333;
-    
+
 }
 
 .button.large{
@@ -158,25 +167,128 @@ ul{
 }
 
 @media (min-width:639px){
-    
+
     .button.large{
         font-size: 2rem;
 }
 .intro p{
     margin: 70px 350px;
-    
-}
-.intro h3{
-    font-size: 2rem;
-    margin: 70px 350px;
-    font-family: pacifico;
-}
 
-
+}
+    .intro h3{
+        font-size: 2rem;
+        margin: 70px 350px;
+        font-family: pacifico;
 }
 
 
-/*footer*/
+}
+
+/*Header Report - mobile*/
+
+#identification a{
+    color: #f2c811;
+}
+
+
+<<<<<<< HEAD
+/* TEAM DESKTOP  */
+
+#teamMemberPicture img{
+    filter: grayscale(100%);
+}
+
+#teamMemberPicture img:hover{
+    filter: none;
+}
+
+#teamMemberPicture p{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+
+#map{
+    height: 400px;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+
+
+/* TEAM MOBILE  */
+@media (max-width:639px){
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+   font-size: 2.5rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+#teamContent{
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+#teamMemberPicture{
+   width: 100%;
+    margin-left: 18%;
+}
+
+=======
+
+
+
+/*Sign In - mobile*/
+
+label{
+    font-size: 1rem;
+    margin: 1.2rem;
+
+}
+.input-group-button{
+    position: relative;
+    left : 27rem;
+    margin: 1.8rem;
+    border: #f2c811;
+}
+
+input[type=text]:focus,
+input[type=password]:focus{
+    border: 2px solid #f2c811;
+    box-shadow: none;
+}
+
+#submit{
+    padding: 1rem 2rem;
+}
+
+
+@media (min-width:639px){
+
+    label{
+        font-size: 1.5rem;
+        margin: 2.2rem;
+
+}
+    .input-group-button{
+
+        left: 84%;
+>>>>>>> master
+
+}
+
+
+
+/* FOOTER DESKTOP */
 
 footer{
     background: #333333;
@@ -184,7 +296,6 @@ footer{
     color: white;
     width: 100%;
     height: 360px;
-
 }
 
 .social{
@@ -200,14 +311,14 @@ footer{
 #linksLn:hover{
     color:#f2c811;
     font-size: 3rem;
-   
+
 }
 
 #linksfb,
 #linksG,
 #linksLn{
     margin: 1rem;
-   
+
 }
 
 footer h5{
@@ -233,4 +344,21 @@ footer p{
     color:#f2c811;
     font-family: Pacifico;
     margin-top: 50px;
+    padding-bottom: 2.5rem;
+}
+
+.sf-toolbar-clearer {
+    clear: both;
+    height: 0rem !important;
+}
+
+
+/****** FOOTER MOBILE******************/
+
+article{
+    display: block;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

@@ -7,46 +7,39 @@
 
 {% block content %}
     <div class="grid-container">
-        <h1>The team</h1>
-        <div class="grid-x grid-padding-x">
-            <div class="large-3 medium-3 small-8 cell">
-                <article id="picture">
-                    <img src="" alt="Tamara Esclante">
-                    <p>Tamara <a href="https://www.linkedin.com/in/tamara-escalante-b677b31/"><i class="fab fa-linkedin"></i></a></p>
-                </article>
-            </div>
-            <div class="large-3 medium-3 small-8 cell">
-                <article id="picture">
-                    <div class="pictureMemberTeam"><img src="img/jeremy.jpg" alt="J�r�my Deumer"></div>
-                    <p>J�r�my <a href="https://www.linkedin.com/in/jeremy-deumer-20672098/"><i class="fab fa-linkedin"></i></a></p>
-                </article>
-            </div>
-            <div class="large-3 medium-3 small-8 cell">
-                <article id="picture">
-                    <div class="pictureMemberTeam"><img src="" alt="Catherine Tritz"></div>
-                    <p>Catherine <a href="https://www.linkedin.com/in/catherine-tritz-35465232/"><i class="fab fa-linkedin"></i></a></p>
-                </article>
-            </div>
-            <div class="large-3 medium-3 small-8 cell">
-                <article id="picture">
-                    <div class="pictureMemberTeam"><img src="" alt="Michel Magnier"></div>
-                    <p>Michel <a href="https://www.linkedin.com/in/michelmagnier/"><i class="fab fa-linkedin"></i></a></p>
-                </article>
+        <div id="teamContent">
+            <h1>The team</h1>
+            <div id="teamMemberPicture">
+                <div class="grid-x grid-padding-x">
+                    <div class="large-3 medium-3 small-8 cell">
+                        <article id="picture">
+                            <img src="../img/tamarra.jpg" alt="Tamara Esclante">
+                            <p>Tamara <a href="https://www.linkedin.com/in/tamara-escalante-b677b31/"><i class="fab fa-linkedin"></i></a></p>
+                        </article>
+                    </div>
+                    <div class="large-3 medium-3 small-8 cell">
+                        <article id="picture">
+                            <div class="pictureMemberTeam"><img src="../img/jeremy.jpg" alt="Jeremy Deumer"></div>
+                            <p>Jeremy <a href="https://www.linkedin.com/in/jeremy-deumer-20672098/"><i class="fab fa-linkedin"></i></a></p>
+                        </article>
+                    </div>
+                    <div class="large-3 medium-3 small-8 cell">
+                        <article id="picture">
+                            <div class="pictureMemberTeam"><img src="../img/catherine.jpg" alt="Catherine Tritz"></div>
+                            <p>Catherine <a href="https://www.linkedin.com/in/catherine-tritz-35465232/"><i class="fab fa-linkedin"></i></a></p>
+                        </article>
+                    </div>
+                    <div class="large-3 medium-3 small-8 cell">
+                        <article id="picture">
+                            <div class="pictureMemberTeam"><img src="../img/michel.jpg" alt="Michel Magnier"></div>
+                            <p>Michel <a href="https://www.linkedin.com/in/michelmagnier/"><i class="fab fa-linkedin"></i></a></p>
+                        </article>
+                    </div>
+                </div>
             </div>
         </div>
         <div>
             <h2>Find us</h2>
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <style>
-                    #map {
-                        height: 400px;
-                        width: 100%;
-                    }
-                </style>
-            </head>
-            <body>
             <div id="map"></div>
             <script>
                 function initMap() {
@@ -64,8 +57,6 @@
             <script async defer
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdI3YslSOblOzl8QAnvef75Vgz9M4dh-E&callback=initMap">
             </script>
-            </body>
-            </html>
         </div>
     </div>
 

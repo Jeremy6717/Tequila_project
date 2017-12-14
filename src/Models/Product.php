@@ -40,18 +40,17 @@ class Product {
     private $vat;
     
     /**
-     * @Column(name="prod_cat_id", type="integer", nullable=false)
-     */
-    private $catid;
-    
-    /**
-     * Many Products have One Category
+     * Many Product have One Category.
      * @ManyToOne(targetEntity="Models\Category", inversedBy="products")
+<<<<<<< HEAD
      * @JoinColumn(name="prod_cat_id", referencedColumnName="cat_id")}
      *      )
+=======
+     * @JoinColumn(name="prod_cat_id", referencedColumnName="cat_id")  
+>>>>>>> 1980d0b29bd710f0ca9e7a747891151900bcf7ce
      */
-    private $category;
-    
+    private $catid;    
+      
     public function getId() {
         return $this->id;
     }
@@ -79,7 +78,7 @@ class Product {
     public function getCatid() {
         return $this->catid;
     }
-
+    
     function setName($name) {
         $this->name = $name;
         return $this;
