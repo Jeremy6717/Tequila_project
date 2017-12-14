@@ -44,6 +44,12 @@ class Product {
      */
     private $catid;
     
+    /**
+     * Many Products have One Category
+     * @ManyToOne(targetEntity="Category", inversedBy="products"
+     */
+    private $category;
+    
     public function getId() {
         return $this->id;
     }
