@@ -14,7 +14,7 @@ use Models\UserModel;
 class UserController
 {
 
-    public function userSignUp(Request $request, Application $app)
+    public function userSignup(Request $request, Application $app)
     {
 
         /*
