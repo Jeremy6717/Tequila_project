@@ -26,7 +26,8 @@
         "dflydev/doctrine-orm-service-provider": "^2.0",
         "phpmailer/phpmailer": "^6.0",
         "swiftmailer/swiftmailer": "^6.0",
-        "mailgun/mailgun-php": "^2.4"
+        "mailgun/mailgun-php": "^2.4",
+        "zurb/foundation": "^6.4"
     },
     "autoload": {
         "psr-0": { "": "src/" }

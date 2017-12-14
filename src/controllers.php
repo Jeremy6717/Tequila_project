@@ -9,7 +9,6 @@ use Controller\UserController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 $app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
-$app->post('/team', sprintf('%s::userSignUp', UserController::class))->bind('team');
 
 
 
@@ -52,11 +51,11 @@ $app->get('/signin', function(Request $request)use ($app){
 
 
 //routing for sales page
-$app->get('/report/sales', "Controller\ReportController::salesAction")->bind('sales');
+$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
 $app->get('/report/stock', "Controller\ReportController::stockAction")->bind('stock');
 //routing for category page
-$app->get('/report/category', "Controller\ReportController::categoryAction")->bind('category');
+$app->get('/report/category', "Controller\CategoryController::categoryAction")->bind('category');
 //routing for orders page
 $app->get('/report/orders', "Controller\ReportController::ordersAction")->bind('orders');
 //routing for prod page

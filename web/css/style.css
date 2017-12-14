@@ -49,6 +49,8 @@ header{
     font-size: 2rem;
     margin-left: 2rem;
     margin-top: 1.8rem;
+    text-align: right;
+
 }
 
 ul{
@@ -85,8 +87,9 @@ ul{
     }
 
     #mainTitle{
-        font-size: 5rem;
-        margin-left: 3rem;
+        font-size: 4rem;
+        margin-left: 8rem;
+        text-align: left;
     }
 
     .menu-text{
@@ -94,15 +97,12 @@ ul{
         font-family: pacifico;
         font-size: 2.5rem;
         color: white;
-        margin: 3rem;
+        margin: 2rem;
     }
 
     .top-bar, .top-bar ul{
         background-color: #333333;
     }
-
-
-
 
 }
 
@@ -120,8 +120,33 @@ ul{
 
 
 
+/*Home*/
 
+.intro h3{
+    font-size: 2rem;
+    margin: 30px;
+    font-family: pacifico;
+}
 
+.intro p{
+    margin: 30px;
+
+}
+
+.btn{
+    text-align: center;
+
+}
+.button {
+    color: white;
+    background-color: #f2c811;
+    margin: 3rem;
+    border-radius: 3px;
+}
+.button:hover{
+    background-color: #333333;
+
+}
 
 /*footer*/
 
@@ -141,22 +166,32 @@ footer{
 }
 
 
+#linksfb,
+#linksG,
+#linksLn{
+      color: white;
+      margin: 1rem;
+
+}
 
 #linksfb:hover,
 #linksG:hover,
 #linksLn:hover{
     color:#f2c811;
     font-size: 3rem;
+
 }
 
 
 footer h5{
     font-family: Pacifico;
     font-size: 2rem;
+    margin-top: 2rem;
 }
 
 #legal{
     font-size: 1rem;
+    margin-top: 2rem;
 }
 
 .copyright{
@@ -164,5 +199,5 @@ footer h5{
     font-size: 1rem;
     color:#f2c811;
     font-family: Pacifico;
-    margin-top: 130px;
+    margin-top: 50px;
 }
