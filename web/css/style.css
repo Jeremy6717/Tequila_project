@@ -122,8 +122,6 @@ ul{
 }
 
 
-
-
 /*HEADER REPORT MOBILE */
 
 #identification a{
@@ -135,6 +133,7 @@ ul{
 
 
 /* HOME MOBILE */
+
 
 .intro h3{
     font-size: 2rem;
@@ -171,6 +170,7 @@ ul{
     .button.large{
         font-size: 2rem;
 }
+
 .intro p{
     margin: 70px 350px;
 
@@ -191,7 +191,7 @@ ul{
 }
 
 
-<<<<<<< HEAD
+
 /* TEAM DESKTOP  */
 
 #teamMemberPicture img{
@@ -220,77 +220,72 @@ ul{
 /* TEAM MOBILE  */
 @media (max-width:639px){
 
-h1{
-    font-size: 3rem;
-}
+    h1{
+        font-size: 3rem;
+    }
 
-h2{
-   font-size: 2.5rem;
-    text-align: center;
-    padding-top: 4rem;
-    padding-bottom: 1rem;
-}
+    h2{
+       font-size: 2.5rem;
+        text-align: center;
+        padding-top: 4rem;
+        padding-bottom: 1rem;
+    }
 
-#teamContent{
-    width: 20rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    #teamContent{
+        width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
 
-}
-#teamMemberPicture{
-   width: 100%;
-    margin-left: 18%;
-}
-
-=======
-
+    }
+    #teamMemberPicture{
+       width: 100%;
+        margin-left: 18%;
+    }
 
 
 /*Sign In - mobile*/
 
-label{
-    font-size: 1rem;
-    margin: 1.2rem;
-
-}
-.input-group-button{
-    position: relative;
-    left : 27rem;
-    margin: 1.8rem;
-    border: #f2c811;
-}
-
-input[type=text]:focus,
-input[type=password]:focus{
-    border: 2px solid #f2c811;
-    box-shadow: none;
-}
-
-#submit{
-    padding: 1rem 2rem;
-}
-
-
-@media (min-width:639px){
-
     label{
+        font-size: 1rem;
+        margin: 1.2rem;
+
+    }
+    .input-group-button{
+        position: relative;
+        left : 27rem;
+        margin: 1.8rem;
+        border: #f2c811;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus{
+        border: 2px solid #f2c811;
+        box-shadow: none;
+    }
+
+    #submit{
+        padding: 1rem 2rem;
+    }
+}
+
+@media (min-width:639px) {
+
+    label {
         font-size: 1.5rem;
         margin: 2.2rem;
 
-}
-    .input-group-button{
+    }
+
+    .input-group-button {
 
         left: 84%;
->>>>>>> master
 
+    }
 }
 
-
-
-/* FOOTER DESKTOP */
-
-footer{
+    /* FOOTER DESKTOP */
+footer {
     background: #333333;
     font-family: Arimo;
     color: white;
@@ -298,50 +293,49 @@ footer{
     height: 360px;
 }
 
-.social{
+.social {
     text-align: center;
     font-size: 2rem;
     margin-top: 35px;
 }
 
-
+#linksfb,
+#linksG,
+#linksLn,
+#linkGithub {
+    margin: 1rem;
+    color: white;
+}
 
 #linksfb:hover,
 #linksG:hover,
-#linksLn:hover{
-    color:#f2c811;
+#linksLn:hover,
+#linkGithub:hover {
+    color: #f2c811;
     font-size: 3rem;
-
 }
 
-#linksfb,
-#linksG,
-#linksLn{
-    margin: 1rem;
-
-}
-
-footer h5{
+footer h5 {
     font-family: Pacifico;
     font-size: 2rem;
     margin-top: 2rem;
     margin-left: 20px;
 }
 
-footer p{
+footer p {
     margin-left: 20px;
 }
 
-#legal{
+#legal {
     font-size: 1rem;
     margin-top: 2rem;
-    margin-left: 7px;
+    margin-left: auto;
 }
 
-.copyright{
+.copyright {
     text-align: center;
     font-size: 1rem;
-    color:#f2c811;
+    color: #f2c811;
     font-family: Pacifico;
     margin-top: 50px;
     padding-bottom: 2.5rem;
@@ -351,6 +345,8 @@ footer p{
     clear: both;
     height: 0rem !important;
 }
+
+
 
 
 /****** FOOTER MOBILE******************/
