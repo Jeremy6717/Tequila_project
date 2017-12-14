@@ -1,4 +1,4 @@
-@import 'foundation';
+﻿@import 'foundation';
 
 @import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Prata');
@@ -50,7 +50,7 @@ header{
     margin-left: 2rem;
     margin-top: 1.8rem;
     text-align: right;
-    
+
 }
 
 ul{
@@ -130,12 +130,12 @@ ul{
 
 .intro p{
     margin: 30px;
-    
+
 }
 
 .btn{
     text-align: center;
-    
+
 }
 .button {
     color: white;
@@ -145,7 +145,7 @@ ul{
 }
 .button:hover{
     background-color: #333333;
-    
+
 }
 
 /*footer*/
@@ -166,21 +166,22 @@ footer{
 }
 
 
+#linksfb,
+#linksG,
+#linksLn{
+      color: white;
+      margin: 1rem;
+
+}
 
 #linksfb:hover,
 #linksG:hover,
 #linksLn:hover{
     color:#f2c811;
     font-size: 3rem;
-   
+
 }
 
-#linksfb,
-#linksG,
-#linksLn{
-    margin: 1rem;
-   
-}
 
 footer h5{
     font-family: Pacifico;
