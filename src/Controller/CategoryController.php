@@ -1,13 +1,14 @@
 <?php
 
 use \Symfony\Component\HttpFoundation\Request;
+use Doctrine\DBAL\Query\QueryBuilder;
 use \Silex\Application;
-use \Model\Category;
-use \Model\Country;
-use \Model\Customer;
-use \Model\Orderline;
-use \Model\Orders;
-use \Model\Product;
+use \Models\Category;
+use \Models\Country;
+use \Models\Customer;
+use \Models\Orderline;
+use \Models\Orders;
+use \Models\Product;
 
 namespace Controller;
 
@@ -18,6 +19,10 @@ namespace Controller;
  */
 class CategoryController {
      public function categoryAction(Request $request, Application $app){
-       
+       return 'hi';
    }
+   
+   public function selectCategories()
+   
+   
 }
