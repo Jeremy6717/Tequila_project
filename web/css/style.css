@@ -88,7 +88,7 @@ ul{
 
     #mainTitle{
         font-size: 4rem;
-        margin-left: 8rem;
+        margin-left: 22rem;
         text-align: left;
     }
 
@@ -148,6 +148,29 @@ ul{
     
 }
 
+.button.large{
+        font-size: 1.5rem;
+}
+
+@media (min-width:639px){
+    
+    .button.large{
+        font-size: 2rem;
+}
+.intro p{
+    margin: 70px 350px;
+    
+}
+.intro h3{
+    font-size: 2rem;
+    margin: 70px 350px;
+    font-family: pacifico;
+}
+
+
+}
+
+
 /*footer*/
 
 footer{
@@ -196,7 +219,7 @@ footer p{
 #legal{
     font-size: 1rem;
     margin-top: 2rem;
-    margin-left: 10px;
+    margin-left: 7px;
 }
 
 .copyright{
