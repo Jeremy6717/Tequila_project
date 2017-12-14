@@ -25,6 +25,18 @@ $app->get('/report', function() use ($app) {
 ->bind('report');
 
 
+//Routing for team page
+$app->get('/team', function() use ($app) {
+    $user=null;
+    $token = $app['security.token_storage']->getToken();
+    if (null!==$token){
+        $user = $token->getUser();
+    }
+    return $app['twig']->render('team.html.twig', array('user'=>$user));
+})
+    ->bind('team');
+
+
 //routing for signin
 $app->get('/signin', function(Request $request)use ($app){
     return $app['twig']->render('signIn.html.twig',
@@ -35,6 +47,9 @@ $app->get('/signin', function(Request $request)use ($app){
         ]
     );
 })->bind('signin');
+
+
+
 
 //routing for sales page
 $app->get('/report/sales', "Controller\ReportController::salesAction")->bind('sales');
