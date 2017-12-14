@@ -3,9 +3,36 @@
 {% block header %}
     {% include 'headerHome.html.twig' %}
 {% endblock %}
-        
 
-    
+{% block content %}
+<div class="intro">
+    <h3>Report made easy</h3>
+    <p>Create reports with interactive data visualizations.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu nunc consequat, tincidunt tellus ac, gravida odio. Morbi hendrerit risus ut tempus viverra. Praesent tempor eleifend metus quis vulputate. Integer vel commodo justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet iaculis justo, in tincidunt sem commodo eu. Integer convallis turpis at metus fermentum ultricies. </p>
+</div>
+
+<!--Button for connection-->
+
+<div class="btn">
+
+<a class="button large" href="{{ path ("signin") }}">Sign In</a>
+
+<a class="button large" href="{{ path ("signup") }}">Sign Up</a>
+
+</div>
+
+
+
+
+
+<div class="intro">
+    <h3>Simple to use. More power than you can imagine.</h3>
+    <p> Search and explore vast amounts of data . With app,you’re not constrained by preconceived notions of how data should be related, but can finally understand how it truly is related.Create reports with interactive data visualizations. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu nunc consequat, tincidunt tellus ac, gravida odio. Morbi hendrerit risus ut tempus viverra. Praesent tempor eleifend metus quis vulputate. Integer vel commodo justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet iaculis justo, in tincidunt sem commodo eu. Integer convallis turpis at metus fermentum ultricies.  
+    </p>
+</div>
+
+{% endblock %}
+
 {% block footer %}
     {% include 'footer.html.twig' %}      
 {% endblock %}  
