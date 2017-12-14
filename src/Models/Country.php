@@ -19,6 +19,17 @@ class Country {
      */
     private $name;
     
+    /**
+     * One Country has Many Customers.
+     * @OneToMany(targetEntity="Customer", mappedBy="country")
+     */
+    private $customers;
+    
+    public function __construct() {
+        $this->customers = new ArrayCollection();
+    }
+    
+    
     public function getId() {
         return $this->id;
     }

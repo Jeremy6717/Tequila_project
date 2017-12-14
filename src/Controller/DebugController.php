@@ -64,7 +64,7 @@ class DebugController {
    
     public function debugcategoriesAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
-        $repository = $entityManager->getRepository(Country::class);
+        $repository = $entityManager->getRepository(Category::class);
         $categories = $repository->findAll();
         
         // return "ABC";
@@ -78,5 +78,20 @@ class DebugController {
         
     } // fin de la méthode debugcategoriesAction(Request $request, Application $app) de la Classe DebugController
    
+    public function debugcustomersAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Customer::class);
+        $customers = $repository->findAll();
+        
+        // return "ABC";
+        
+        return $app['twig']->render(
+            'Debug/CustomerTemplate.html.twig',
+            [
+                'customers' => $customers
+            ]
+        );
+        
+    } // fin de la méthode debugcustomersAction(Request $request, Application $app) de la Classe DebugController
    
 } // end of class SalesController

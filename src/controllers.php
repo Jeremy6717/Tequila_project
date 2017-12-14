@@ -74,6 +74,9 @@ $app->get('/debugcountries', "Controller\DebugController::debugcountriesAction")
 //routing for debug categories
 $app->get('/debugcategories', "Controller\DebugController::debugcategoriesAction")->bind('debugcategories');
 
+//routing for debug customers
+$app->get('/debugcustomers', "Controller\DebugController::debugcustomersAction")->bind('debugproducts');
+
 //Routing for homepage
 $app->get('/', function () use ($app) {
     return $app['twig']->render('home.html.twig', array());
