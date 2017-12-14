@@ -65,6 +65,12 @@ $app->get('/report/marketing', "Controller\ReportController::marketingAction")->
 //routing for team page
 $app->get('/team', "Controller\UserController::teamAction")->bind('team');
 
+//routing for debug users
+$app->get('/debugusers', "Controller\DebugController::debugusersAction")->bind('debugusers');
+
+//routing for debug countries
+$app->get('/debugcountries', "Controller\DebugController::debugcountriesAction")->bind('debugcountries');
+
 //Routing for homepage
 $app->get('/', function () use ($app) {
     return $app['twig']->render('home.html.twig', array());

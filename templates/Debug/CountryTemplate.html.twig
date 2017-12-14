@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <table border="1">
+        <thead>
+            <tr>
+                <td>COUNTRY ID</td>
+                <td>COUNTRY LABEL</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for country in countries %}
+                <tr>
+                    <td>{{ country.getId() }}</td>
+                    <td>{{ country.getName() }}</td>
+
+                </tr>
+            {% else %}
+                <strong>LA TABLE USER EST VIDE</strong>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
