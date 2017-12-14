@@ -8,7 +8,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\UserController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
-$app->post('/signup', sprintf('%s::userSignUp', UserController::class))->bind('signup_user');
+$app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
+
 
 
 //Routing for report page
@@ -21,6 +22,18 @@ $app->get('/report', function() use ($app) {
     return $app['twig']->render('report.html.twig', array('user'=>$user));
 })
 ->bind('report');
+
+
+//Routing for team page
+$app->get('/team', function() use ($app) {
+    $user=null;
+    $token = $app['security.token_storage']->getToken();
+    if (null!==$token){
+        $user = $token->getUser();
+    }
+    return $app['twig']->render('team.html.twig', array('user'=>$user));
+})
+    ->bind('team');
 
 
 //routing for signin
