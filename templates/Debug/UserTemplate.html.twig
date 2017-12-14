@@ -1,0 +1,31 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>PRENOM</td>
+                <td>NOM DE FAMILLE</td>
+                <td>USER NAME</td>
+                <td>ROLES</td>
+                <td>MOT DE PASSE</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.getId() }}</td>
+                    <td>{{ user.getFirstname() }}</td>
+                    <td>{{ user.getLastname() }}</td>
+                    <td>{{ user.getUserName() }}</td>
+                    <td>{{ user.getRoles()|join('*') }}</td>
+                    <td>{{ user.getPassword() }}</td>
+                </tr>
+            {% else %}
+                <strong>LA TABLE USER EST VIDE</strong>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

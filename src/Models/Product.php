@@ -44,6 +44,15 @@ class Product {
      */
     private $catid;
     
+    /**
+     * Many Products have One Category
+     * @ManyToOne(targetEntity="Models\Category", inversedBy="products")
+     * @JoinTable(name="category",
+     *      joinColumn={(@JoinColumn(name="prod_cat_id", referencedColumnName="cat_id")}
+     *      )
+     */
+    private $category;
+    
     public function getId() {
         return $this->id;
     }

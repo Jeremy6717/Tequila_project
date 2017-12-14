@@ -45,8 +45,8 @@ $app->get('/signin', function(Request $request)use ($app){
     );
 })->bind('signin');
 
-
-
+//routing for signup page
+$app->get('/signup', "Controller\UserController::signupAction")->bind('signup');
 
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
@@ -61,6 +61,15 @@ $app->get('/report/prod_in_cat', "Controller\ReportController::prodAction")->bin
 //routing for marketing page
 $app->get('/report/marketing', "Controller\ReportController::marketingAction")->bind('marketing');
 
+
+//routing for debug users
+$app->get('/debugusers', "Controller\DebugController::debugusersAction")->bind('debugusers');
+
+//routing for debug countries
+$app->get('/debugcountries', "Controller\DebugController::debugcountriesAction")->bind('debugcountries');
+
+//routing for debug categories
+$app->get('/debugcategories', "Controller\DebugController::debugcategoriesAction")->bind('debugcategories');
 
 //Routing for homepage
 $app->get('/', function () use ($app) {
