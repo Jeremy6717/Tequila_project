@@ -1,12 +1,40 @@
 <?php
 
 namespace Models;
-
 /**
- * Role it is to define the possible roles that will be set in Security
- *
- * @author Tam
+ * @Entity()
+ * @Table(name="role")
  */
 class Role {
-    //put your code here
+    /**
+     * @id()
+     * @GeneratedValue()
+     * @Column(name="rol_id", type="integer", nullable=false)
+     */
+    protected $id;
+    
+    /**
+     * @Column(name="rol_label", type="string", length=255, nullable=false)
+     */
+    private $label;
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getLabel() {
+        return $this->label;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+        return $this;
+    }
+
+    function setLabel($label) {
+        $this->label = $label;
+        return $this;
+    }
+
+  
 }
