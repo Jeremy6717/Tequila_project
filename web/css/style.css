@@ -89,6 +89,7 @@ ul{
     #mainTitle{
         font-size: 4rem;
         margin-left: 8rem;
+        text-align: left;
     }
 
     .menu-text{
@@ -121,7 +122,16 @@ ul{
 
 /*Home*/
 
+.intro h3{
+    font-size: 2rem;
+    margin: 30px;
+    font-family: pacifico;
+}
 
+.intro p{
+    margin: 30px;
+    
+}
 
 .btn{
     text-align: center;
@@ -176,11 +186,17 @@ footer h5{
     font-family: Pacifico;
     font-size: 2rem;
     margin-top: 2rem;
+    margin-left: 20px;
+}
+
+footer p{
+    margin-left: 20px;
 }
 
 #legal{
     font-size: 1rem;
     margin-top: 2rem;
+    margin-left: 10px;
 }
 
 .copyright{
