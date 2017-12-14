@@ -210,7 +210,6 @@ footer p{
 #legal{
     font-size: 1rem;
     margin-top: 2rem;
-    margin-left: 10px;
 }
 
 .copyright{
@@ -222,7 +221,7 @@ footer p{
     padding-bottom: 2.5rem;
 }
 
-.sf-toolbar-clearer {
+.sf-toolbar-clearer{
     clear: both;
-    height: 0rem;
+    height: 0px !important;
 }
