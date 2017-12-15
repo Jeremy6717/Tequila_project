@@ -35,14 +35,14 @@ class SalesController {
         $repository = $entityManager->getRepository(UserModel::class);
         $users = $repository->findAll();
         
-        // return "ABC";
-        
+        return "this is sales controler";
+        /*
         return $app['twig']->render(
             'User/UserTemplate.html.twig',
             [
                 'users' => $users
             ]
-        );
+        );*/
         
     } // fin de la méthode helloAction(Request $request, Application $app) de la Classe UserController
    

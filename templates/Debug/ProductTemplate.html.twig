@@ -17,7 +17,7 @@
         </thead>
         <tbody>
             {% for product in products %}
-                
+                {% if product.getCatid().getId() == 2 %}
                 <tr>
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getName() }}</td>
@@ -28,6 +28,8 @@
                     <td>{{ product.getCatid().getName() }}</td>                    
 
                 </tr>
+                
+                {% endif %}
             {% else %}
                 <strong>LA TABLE product EST VIDE</strong>
             {% endfor %}

@@ -91,4 +91,32 @@ class DebugController {
         );
         
     } // fin de la méthode debugproductsAction(Request $request, Application $app) de la Classe DebugController
+    
+     public function debugstockAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Product::class);
+        $products = $repository->findAll();
+        
+        return $app['twig']->render(
+            'Debug/StockTemplate.html.twig',
+            [
+                'products' => $products
+            ]
+        );
+        
+    } 
+    
+     public function debugMarketingAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Customer::class);
+        $customers = $repository->findAll();
+        
+        return $app['twig']->render(
+            'Debug/MarketingTemplate.html.twig',
+            [
+                'customers' => $customers
+            ]
+        );
+        
+    } 
 } // end of class 
