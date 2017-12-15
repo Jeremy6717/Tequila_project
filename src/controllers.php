@@ -44,7 +44,7 @@ $app->get('/signin', function(Request $request)use ($app){
 })->bind('signin');
 
 //routing for signup page
-$app->post('/signup', sprintf('%s::userSignup', UserController::class))->bind('signup_user');
+$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
