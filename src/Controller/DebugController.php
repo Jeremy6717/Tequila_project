@@ -95,7 +95,7 @@ class DebugController {
 
     } // fin de la méthode debugcustomersAction(Request $request, Application $app) de la Classe DebugController
 
-} // end of class SalesController
+
 
    public function debugproductsAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
