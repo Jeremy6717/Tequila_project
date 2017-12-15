@@ -38,10 +38,10 @@ class SalesController {
         // return "ABC";
 
         return $app['twig']->render(
-            'templates/sales.html.twig');
-//            [
+            'sales.html.twig');
+//           [
 //                'countries' => $countries
-//            ]
+//           ]
         
 
     }
