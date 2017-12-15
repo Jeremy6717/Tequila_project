@@ -1,0 +1,36 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <table border="1">
+        <thead>
+            <tr>
+                <td>CUSTOMER ID</td>
+                <td>CUSTOMER FIRST NAME</td>
+                <td>CUSTOMER LAST NAME</td>
+                <td>CUSTOMER EMAIL</td>
+                <td>CUSTOMER ADDRESS</td>
+                <td>CUSTOMER POST CODE</td>
+                <td>CUSTOMER CITY</td>
+                <td>CUSTOMER COUNTRY</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.getId() }}</td>
+                    <td>{{ customer.getFirstName() }}</td>
+                    <td>{{ customer.getLastName() }}</td>
+                    <td>{{ customer.getEmail() }}</td>
+                    <td>{{ customer.getAddress() }}</td>
+                    <td>{{ customer.getPostcode() }}</td>
+                    <td>{{ customer.getCity() }}</td>
+                    <td>{{ customer.getCouid().getName() }}</td>
+
+                </tr>
+            {% else %}
+                <strong>THE CUSTOMER TABLE IS EMPTY.</strong>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
