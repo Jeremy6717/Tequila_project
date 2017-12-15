@@ -1,4 +1,4 @@
-@import 'foundation';
+﻿@import 'foundation';
 
 @import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Prata');
@@ -33,7 +33,7 @@ h1{
 }
 
 h2{
-    2.9rem;
+    font-size: 2.9rem;
 }
 
 /*HEADER HOME MOBILE VERSION*/
@@ -127,9 +127,6 @@ ul{
 #identification a{
     color: #f2c811;
 }
-
-
-
 
 
 /* HOME MOBILE */
@@ -231,6 +228,7 @@ ul{
         padding-bottom: 1rem;
     }
 
+
     #teamContent{
         width: 20rem;
         margin-left: auto;
@@ -242,6 +240,7 @@ ul{
        width: 100%;
         margin-left: 18%;
     }
+
 
 
 /*Sign In - mobile*/
@@ -277,6 +276,7 @@ ul{
 
     }
 
+
     .input-group-button {
 
         left: 84%;
@@ -286,6 +286,17 @@ ul{
 
     /* FOOTER DESKTOP */
 footer {
+
+    .input-group-button{
+        left: 84%;
+    }
+}
+
+
+/* FOOTER DESKTOP */
+
+footer{
+
     background: #333333;
     font-family: Arimo;
     color: white;
@@ -299,11 +310,23 @@ footer {
     margin-top: 35px;
 }
 
+
+
+
+#linksfb:hover,
+#linksG:hover,
+#linksLn:hover{
+    color:#f2c811;
+    font-size: 3rem;
+}
+
+
 #linksfb,
 #linksG,
 #linksLn,
 #linkGithub {
     margin: 1rem;
+
     color: white;
 }
 
@@ -313,6 +336,8 @@ footer {
 #linkGithub:hover {
     color: #f2c811;
     font-size: 3rem;
+
+
 }
 
 footer h5 {
@@ -357,8 +382,6 @@ article{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+
 }
-
-
-
 
