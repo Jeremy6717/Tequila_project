@@ -42,7 +42,12 @@ class Product {
     /**
      * Many Product have One Category.
      * @ManyToOne(targetEntity="Models\Category", inversedBy="products")
+<<<<<<< HEAD
+     * @JoinColumn(name="prod_cat_id", referencedColumnName="cat_id")}
+     *      )
+=======
      * @JoinColumn(name="prod_cat_id", referencedColumnName="cat_id")  
+>>>>>>> 1980d0b29bd710f0ca9e7a747891151900bcf7ce
      */
     private $catid;    
       

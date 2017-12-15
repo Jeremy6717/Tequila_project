@@ -7,10 +7,15 @@ namespace Models;
  * @Table(name="customer")
  */
 class Customer {
+    
+    
+    
+    
+    
     /**
      * @id()
      * @GeneratedValue()
-     * @Column(name="cat_id", type="integer", nullable=false)
+     * @Column(name="cust_id", type="integer", nullable=false)
      */
     protected $id;
     
@@ -45,9 +50,12 @@ class Customer {
     private $city;
     
     /**
-     * @Column(name="cust_cou_id", type="integer", nullable=false)
+    * @ManyToOne(targetEntity="Models\Country", inversedBy="customers")
+    * @JoinColumn(name="cust_cou_id", referencedColumnName="cou_id")
      */
     private $couid;
+    
+
     
     public function getId() {
         return $this->id;
