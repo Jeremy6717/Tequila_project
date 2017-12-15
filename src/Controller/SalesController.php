@@ -31,20 +31,20 @@ class SalesController {
     
        
    public function salesAction(Request $request, Application $app){
-        $entityManager = $this->getEntityManager($app);
-        $repository = $entityManager->getRepository(UserModel::class);
-        $users = $repository->findAll();
-        
+//        $entityManager = $this->getEntityManager($app);
+//        $repository = $entityManager->getRepository(Country::class);
+//        $countries = $repository->findAll();
+
         // return "ABC";
-        
+
         return $app['twig']->render(
-            'User/UserTemplate.html.twig',
-            [
-                'users' => $users
-            ]
-        );
+            'templates/sales.html.twig');
+//            [
+//                'countries' => $countries
+//            ]
         
-    } // fin de la méthode helloAction(Request $request, Application $app) de la Classe UserController
+
+    }
    
    
    
