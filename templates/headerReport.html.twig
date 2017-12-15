@@ -14,8 +14,16 @@
             <ul class="dropdown menu" data-dropdown-menu>
                 <li id="identification"><a href="">HOLA username</a></li>
                 <br>
-                <li><a href="{{ path ("report") }}">Reporting</a></li>
-                <li><a href="{{ path ("report") }}">Reporting customize </a></li>
+                <li><a href="{{ path ("report") }}">Reporting</a>
+                    <ul id="subMenu">
+                      <li><a href="">Category</a></li>
+                      <li><a href="">Country</a></li>
+                      <li><a href="">User</a></li>
+                      <li><a href="">Sales</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">Customers</a></li>
+                    </ul>
+                </li>
                 <li><a href="{{ path ("team") }}">Team</a></li>
 
             </ul>

@@ -36,6 +36,13 @@ h2{
     2.9rem;
 }
 
+@media (min-width:639px) {
+    #subMenu{
+        margin-top: 1.18rem;
+        left: -50%;
+    }
+}
+
 /*HEADER HOME MOBILE VERSION*/
 
 header{
@@ -243,6 +250,10 @@ ul{
         margin-left: 18%;
     }
 
+    img{
+        border-radius: 100%;
+    }
+
 
 /*Sign In - mobile*/
 
@@ -324,6 +335,14 @@ footer h5 {
 
 footer p {
     margin-left: 20px;
+}
+
+footer a{
+    color: white;
+}
+
+footer a:hover{
+    color: #f2c811;
 }
 
 #legal {
