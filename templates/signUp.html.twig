@@ -1,11 +1,29 @@
+{% extends "layout.html.twig" %}
+
 {% block header %}
-    {% include 'headerSign.html.twig' %}
+    {% include 'headerReport.html.twig' %}
 {% endblock %}
 
 
 {% block content %}
 
-   {{ form(form) }}
+    {{ form_start(form)}}
+        <div class="grid-container" id="form">
+            <fieldset>
+                <h2>Sing up</h2>
+                    <div class="grid-x grid-padding-x" id="form_data">
+                        <div>
+                            {{ form_row(form.firstname) }}
+                            {{ form_row(form.lastname) }}
+                            {{ form_row(form.username) }}
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.password) }}
+                            {{ form_row(form.submit) }}
+                        </div>
+            </fieldset>
+        </div>
+    {{ form_end(form) }}
+
 
 {% endblock %}
 
