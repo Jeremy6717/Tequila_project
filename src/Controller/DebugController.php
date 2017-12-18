@@ -92,6 +92,7 @@ class DebugController {
                 'customers' => $customers
             ]
         );
+        
 
     } // fin de la méthode debugcustomersAction(Request $request, Application $app) de la Classe DebugController
 
@@ -111,7 +112,79 @@ class DebugController {
 
     } // fin de la méthode debugproductsAction(Request $request, Application $app) de la Classe DebugController
 
+    public function debugproductscsvAction(Request $request, Application $app){
 
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Product::class);
+        $products = $repository->findAll();
+
+        // I open an export file in write mode
+        $fileFullName = "C:\\xampp\\htdocs\\Tequila_project\\var\\csv\\export-20171218.csv";
+        $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
+        // print_r ($filePointer);
+
+        // I parse the array and I create the csv lines
+        // $nbrProducts = count($resultproducts);
+        // echo "<br>There are {$nbrProducts} products in my array<br>";
+        $line='';
+        foreach ($products as $key => $value) {
+            $line = [
+                $value->getId(),
+                $value->getName(),
+                $value->getDescription(),
+                $value->getPrice(),
+                $value->getStock(),
+                $value->getVat(),
+                $value->getCatid()->getName()
+            ];
+
+            fputcsv($filePointer, $line, ';');
+        }
+
+        fclose($filePointer); // I close the file in write mode
+
+        // return file_get_contents($fileFullName);
+        return $app['twig']->render(
+            'Debug/ProductcsvTemplate.html.twig',
+            [
+                'products' => $products
+            ]
+        );
+    
+    } // end of the method debugproductscsvAction(Request $request, Application $app) of Class DebuController
+    
+    
+    public function debugproductsjsonAction(Request $request, Application $app){
+
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Product::class);
+        $products = $repository->findAll();
+                
+        $monjson = json_encode($products, JSON_PRETTY_PRINT);
+        // var_dump($monjson);
+
+        // I parse the array and I create the JSON
+        $tableau = [];
+        foreach ($products as $key => $value) {
+            // var_dump($value->toArray());
+            $tableau[] = $value->toArray();
+            // var_dump($tableau);
+        }
+        var_dump(json_encode($tableau, JSON_PRETTY_PRINT));
+        
+        // $monjson2 = json_encode( array_map( function($t){ return is_string($t) ? utf8_encode($t) : $t; }, $tableau ) );
+        // $monjson2 = json_encode($tableau, JSON_PRETTY_PRINT);
+        // var_dump($monjson2);
+
+        
+        return $app['twig']->render(
+            'Debug/ProductcsvTemplate.html.twig',
+            [
+                'products' => $products
+            ]
+        );
+    
+    } // end of the method debugproductsjsonAction(Request $request, Application $app) of Class DebuController
     
      public function debugstockAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
@@ -168,6 +241,10 @@ class DebugController {
             ]
         );
     } // end of the method debugorderlinesAction(Request $request, Application $app) of Class DebugController 
+    
+    
+    
+    
     
     
 } // end of Class DebugController

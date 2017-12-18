@@ -113,6 +113,19 @@ class Product {
         $this->catid = $catid;
         return $this;
     }
+    
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'price' => $this->price,
+            'stock' => $this->stock,
+            'vat' => $this->vat,
+            'catname'=> $this->catid->getName()
+        ];
+    } // end of function toArray of Class Product
 
 
 }

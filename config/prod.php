@@ -19,7 +19,11 @@ $app->register(
             'dbname'   => 'michelm_tequiladb',
             'host'     => 'wf3.progweb.fr',
             'user'     => 'michelm',
-            'password' => 'webforce3'
+            'password' => 'webforce3',
+            'driverOptions' =>
+            [
+                1002 => 'SET NAMES utf8'
+            ]
         ]
     ]
 );
