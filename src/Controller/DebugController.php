@@ -95,7 +95,7 @@ class DebugController {
 
     } // fin de la méthode debugcustomersAction(Request $request, Application $app) de la Classe DebugController
 
-} // end of class SalesController
+
 
    public function debugproductsAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
@@ -110,4 +110,66 @@ class DebugController {
         );
 
     } // fin de la méthode debugproductsAction(Request $request, Application $app) de la Classe DebugController
-} // end of class
+
+
+    
+     public function debugstockAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Product::class);
+        $products = $repository->findAll();
+        
+        return $app['twig']->render(
+            'Debug/StockTemplate.html.twig',
+            [
+                'products' => $products
+            ]
+        );
+        
+    } 
+    
+     public function debugMarketingAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Customer::class);
+        $customers = $repository->findAll();
+        
+        return $app['twig']->render(
+            'Debug/MarketingTemplate.html.twig',
+            [
+                'customers' => $customers
+            ]
+        );
+        
+    } 
+
+
+   public function debugordersAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Orders::class);
+        $orders = $repository->findAll();
+                     
+        return $app['twig']->render(
+            'Debug/OrdersTemplate.html.twig',
+            [
+                'orders' => $orders
+            ]
+        );
+    } // end of the method debugordersAction(Request $request, Application $app) of Class DebugController 
+    
+   
+    public function debugorderlinessAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Orderline::class);
+        $orderlines = $repository->findAll();
+                     
+        return $app['twig']->render(
+            'Debug/OrderlineTemplate.html.twig',
+            [
+                'orderlines' => $orderlines
+            ]
+        );
+    } // end of the method debugorderlinesAction(Request $request, Application $app) of Class DebugController 
+    
+    
+} // end of Class DebugController
+
+

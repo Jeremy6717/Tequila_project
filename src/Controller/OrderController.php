@@ -13,18 +13,16 @@ use \Models\Product;
 namespace Controller;
 
 /**
- * Description of CategoryController
+ * Description of OrderController
  *
  * @author Etudiant
  */
-class CategoryController {
-     public function categoryAction(Request $request, Application $app){
-       return 'hi';
+class OrderController {
+     public function orderAction(Request $request, Application $app){
+       return 'hi order controller';
    }
    
    
    
    
 }
-
-

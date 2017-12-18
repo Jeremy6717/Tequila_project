@@ -44,19 +44,25 @@ $app->get('/signin', function(Request $request)use ($app){
 })->bind('signin');
 
 //routing for signup page
-$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');
+
+$app->match('/signup', "Controller\UserController::userSignupAction")->bind('signup');
+
+
+/*$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');*/
+
+
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
-$app->get('/report/stock', "Controller\ReportController::stockAction")->bind('stock');
+$app->get('/report/stock', "Controller\StockController::stockAction")->bind('stock');
 //routing for category page
 $app->get('/report/category', "Controller\CategoryController::categoryAction")->bind('category');
 //routing for orders page
-$app->get('/report/orders', "Controller\ReportController::ordersAction")->bind('orders');
-//routing for prod page
-$app->get('/report/prod_in_cat', "Controller\ReportController::prodAction")->bind('prod');
+$app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
+//routing for products page
+$app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product');
 //routing for marketing page
-$app->get('/report/marketing', "Controller\ReportController::marketingAction")->bind('marketing');
+$app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing');
 
 
 
@@ -75,6 +81,21 @@ $app->get('/debugcustomers', "Controller\DebugController::debugcustomersAction")
 
 //routing for debug Products
 $app->get('/debugproducts', "Controller\DebugController::debugproductsAction")->bind('debugproducts');
+
+
+
+//routing for debug Stock
+$app->get('/debugstock', "Controller\DebugController::debugstockAction")->bind('debugstock');
+
+//routing for debug Marketing
+$app->get('/debugmarketing', "Controller\DebugController::debugMarketingAction")->bind('debugmarketing');
+
+//routing for debug Orders
+$app->get('/debugorders', "Controller\DebugController::debugordersAction")->bind('debugorders');
+
+//routing for debug Orderlines
+$app->get('/debugorderlines', "Controller\DebugController::debugorderlinessAction")->bind('debugorderlines');
+
 
 
 //Routing for homepage

@@ -5,8 +5,9 @@ namespace Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Models\User;
+use Models\UserModel;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -22,7 +23,7 @@ class UserForm extends AbstractType {
                     'constraints' => [
                         new Assert\NotBlank(),
                         new Assert\Regex([
-                            'pattern' => '/^[A-Za-z0-9_-]$/'
+                            'pattern' => '/^[A-Za-z0-9_-]*$/'
                         ])
                     ]
                 ]
@@ -44,7 +45,7 @@ class UserForm extends AbstractType {
                 ]
             )->add(
                 'email',
-                TextType::class,
+                EmailType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank(),

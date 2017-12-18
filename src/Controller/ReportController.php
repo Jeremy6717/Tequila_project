@@ -14,29 +14,11 @@ use \Model\Product;
 /**
  * Description of ReportController
  *
- * @author Etudiant
+ * @author Tam
  */
 
 class ReportController {
   
-   
-   public function stockAction(Request $request, Application $app){
-       
-   }
-   
   
-   
-   public function ordersAction(Request $request, Application $app){
-       
-   }
-   
-   public function prodAction(Request $request, Application $app){
-       
-   }
-   
-   public function marketingAction (Request $request, Application $app){
-       
-   }
-   
    
 }

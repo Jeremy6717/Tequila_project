@@ -35,6 +35,85 @@ h2{
     font-size: 2.9rem;
 }
 
+@media (min-width:639px) {
+    #subMenu{
+        margin-top: 1.18rem;
+        left: -50%;
+    }
+}
+
+
+/***** SIGN UP MOBILE *********/
+
+#form h2{
+    margin-left: 10%;
+    text-align: left;
+}
+
+#form{
+    width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15%;
+}
+
+#form div{
+    display: block;
+}
+
+
+#form li{
+    color: red;
+    padding-left: 3.5rem;
+    background:url(../img/warning.png) no-repeat 1rem ;
+}
+
+
+#form #form_data label{
+    margin-bottom: 0.6rem;
+}
+
+
+[type='text'], [type='password'], [type='email'], #form_data label{
+    width: 35%;
+}
+
+#form button{
+    background-color:#f2c811 ;
+    padding: 1rem;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 25%;
+}
+
+/***** SIGN UP DESKTOP *********/
+@media (min-width:639px){
+    #form{
+        width: 100rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10%;
+    }
+
+   #form h2{
+        margin-left: 35%;
+    }
+
+
+   #form_data{
+       width: 100%;
+       margin-left: auto;
+       margin-right: auto;
+       padding-left: 25%;
+   }
+
+    [type='text'], [type='password'], [type='email']{
+        width: 50%;
+    }
+}
+
+
 /*HEADER HOME MOBILE VERSION*/
 
 header{
@@ -242,6 +321,10 @@ ul{
         margin-left: 18%;
     }
 
+    img{
+        border-radius: 100%;
+    }
+
 
 
 /*Sign In - mobile*/
@@ -365,6 +448,14 @@ footer h5 {
 
 footer p {
     margin-left: 20px;
+}
+
+footer a{
+    color: white;
+}
+
+footer a:hover{
+    color: #f2c811;
 }
 
 #legal {
