@@ -8,17 +8,17 @@
 
     <div class="top-bar" id="example-menu">
         <div class="top-bar-left">
-            <li class="menu-text">Tequila</li>
+            <li class="menu-text"><a href="{{ path ("report") }}">Tequila</a></li>
         </div>
         <div class="top-bar-right">
             <ul class="dropdown menu" data-dropdown-menu>
                 <li id="identification"><a href="">HOLA {{ user.getUsername() }}</a></li>
                 <li><a href="{{ path ("logout") }}">Log Out</a>
-                <br>
+                    <br>
                 <li><a href="{{ path ("report") }}">Reporting</a>
                     <ul id="subMenu">
-                      <li><a href="{{ path ("category") }}">Category</a></li>
-                      <li><a href="{{ path ("sales") }}">Sales</a></li>
+                        <li><a href="{{ path ("category") }}">Category</a></li>
+                        <li><a href="{{ path ("sales") }}">Sales</a></li>
                         <li><a href="{{ path ("product") }}">Products</a></li>
                         <li><a href="{{ path ("order") }}">Customers orders</a></li>
                         <li><a href="{{ path ("stock") }}">Stock</a></li>

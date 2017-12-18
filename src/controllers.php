@@ -25,9 +25,9 @@ $app->get('/report', function() use ($app) {
 
 
 //Routing for team page
+
 $app->get('/team', function() use ($app) {
-    $user=null;
-    return $app['twig']->render('team.html.twig', array('user'=>$user));
+    return $app['twig']->render('team.html.twig', array());
 })
     ->bind('team');
 
