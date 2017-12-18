@@ -53,7 +53,6 @@ $app->register(
                     return new \Provider\DBUserProvider($repository);
                 },
                         
-
                 'logout' => [
                     'logout_path'=> '/logout',
                     'invalidate_session' => true,

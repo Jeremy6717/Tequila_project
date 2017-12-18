@@ -50,7 +50,6 @@ $app->match('/signup', "Controller\UserController::userSignupAction")->bind('sig
 
 /*$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');*/
 
-
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page

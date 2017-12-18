@@ -11,8 +11,18 @@ $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
+
+// add variable globale : users
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
-    // add custom globals, filters, tags, ...
+    
+    $user = null;
+    
+    $token = $app['security.token_storage']->getToken();
+    if ($token) {
+        $user = $token->getUser();
+    }
+    
+    $twig->addGlobal('user', $user);
 
     return $twig;
 });
