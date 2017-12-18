@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico');
+﻿@import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Prata');
 
 /*General*/
@@ -47,6 +47,7 @@ h2{
 }
 
 
+
 /***** SIGN UP MOBILE *********/
 
 #form h2{
@@ -82,7 +83,7 @@ h2{
     width: 35%;
 }
 
-#form button{
+[type='submit']{
     background-color:#f2c811 ;
     padding: 1rem;
     font-size: 1.25rem;
@@ -91,10 +92,25 @@ h2{
     margin-left: 25%;
 }
 
+[type='checkbox']{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form #role{
+    display: none;
+}
+
+#recapcha{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 /***** SIGN UP DESKTOP *********/
 @media (min-width:639px){
     #form{
-        width: 100rem;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         padding-left: 10%;
@@ -102,6 +118,7 @@ h2{
 
     #form h2{
         margin-left: 35%;
+        margin-top: 2rem;
     }
 
 
@@ -115,6 +132,15 @@ h2{
     [type='text'], [type='password'], [type='email']{
         width: 50%;
     }
+
+
+    [type='checkbox']{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }
 
 
@@ -272,6 +298,11 @@ ul{
 
 /* TEAM DESKTOP  */
 
+#teamContent{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
 #teamMemberPicture img{
     filter: grayscale(100%);
 }
@@ -286,6 +317,11 @@ ul{
     font-size: 1.3rem;
 }
 
+#mapArea{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
 
 #map{
     height: 400px;
@@ -293,6 +329,20 @@ ul{
     margin-bottom: 3rem;
 }
 
+
+#contact{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+textarea{
+    height: 20rem;
+}
+
+#contactSubmit{
+    width: 20%;
+    margin-left: auto;
+}
 
 
 /* TEAM MOBILE  */
@@ -377,11 +427,13 @@ input[type=password]:focus{
         padding: 1rem 2rem;
         color: black;
     }
+
     .signIn{
         margin-left: 10%;
         margin-right: 10%;
-    }
+
 }
+
 
 /*REPORT MOBILE*/
 
@@ -412,13 +464,25 @@ input[type=password]:focus{
 
 }
 
-/* FOOTER DESKTOP */
+
+/* REPORTS PAGE */
+
+table{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+    /* FOOTER DESKTOP 
+
 footer {
 
     .input-group-button{
         left: 84%;
     }
-}
+} */
 
 
 /* FOOTER DESKTOP */

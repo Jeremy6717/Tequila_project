@@ -1,0 +1,38 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include 'headerReport.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <table border="1">
+        <thead>
+        <tr>
+            <td>customer ID</td>
+            <td>customer NAME</td>
+            <td>customer Title</td>
+            <td>customer age</td>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+
+            <tr>
+                <td>{{ customer.getId() }}</td>
+                <td>{{ customer.getFirstname() }}</td>
+               {# <td>{{ Title }}</td>
+                <td>{{ age }}</td> #}
+
+            </tr>
+        {% else %}
+            <strong>LA TABLE customer EST VIDE</strong>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html.twig' %}
+{% endblock %}
