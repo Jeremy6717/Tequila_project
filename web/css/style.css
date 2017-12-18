@@ -12,7 +12,6 @@ bouton : (jaune) #f2c811
 background : (jaune) #f2c811
 */
 
-
 *{
   box-sizing: border-box;
   transition: 0.3s;
@@ -136,7 +135,7 @@ ul{
     font-family: pacifico;
 }
 
-.intro p, intro{
+.intro p, .intro, #advantage{
     margin: 30px;
 
 }
@@ -157,7 +156,11 @@ ul{
 }
 
 .button.large{
-        font-size: 1.5rem;
+    font-size: 1.5rem;
+}
+
+#advantage{
+    list-style: initial;
 }
 
 @media (min-width:639px){
@@ -166,11 +169,11 @@ ul{
         font-size: 2rem;
     }
 
-    .intro p, intro {
+    .intro p, .intro, #advantage {
         margin: 100px 100px;
 
     }
-    .intro h3{
+    .intro h3, .intro h4 {
         font-size: 2rem;
         margin: 70px 70px;
         font-family: pacifico;
