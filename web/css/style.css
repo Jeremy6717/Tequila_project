@@ -136,7 +136,7 @@ ul{
     font-family: pacifico;
 }
 
-.intro p{
+.intro p, intro{
     margin: 30px;
 
 }
@@ -166,7 +166,7 @@ ul{
         font-size: 2rem;
     }
 
-    .intro p{
+    .intro p, intro {
         margin: 100px 100px;
 
     }
