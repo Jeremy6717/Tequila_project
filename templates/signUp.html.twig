@@ -10,7 +10,7 @@
     {{ form_start(form)}}
         <div class="grid-container" id="form">
             <fieldset>
-                <h2>Sing up</h2>
+                <h2>Sign up</h2>
                     <div class="grid-x grid-padding-x" id="form_data">
                         <div>
                             {{ form_row(form.firstname) }}
@@ -18,18 +18,23 @@
                             {{ form_row(form.username) }}
                             {{ form_row(form.email) }}
                             {{ form_row(form.password) }}
-                            {{ form_row(form.submit) }}
                         </div>
-                        <div>
+                        <div id="check">
                             <label>Do you want receive monthly report ?</label>
                             <input type="checkbox" name="user_newsletter" id="checkBox_report">
                         </div>
-                        <div>
+                        <div id="check">
                             <label>Do you want receive newsletter ?</label>
                             <input type="checkbox" name="user_newsletter" id="checkBox_newsletter">
                         </div>
-
-                        <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR"></div>
+                        <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR"  id="recapcha"></div>
+                        <div>{{ form_row(form.submit) }}</div>
+                        <div id="role">
+                            <label for="user_role">Role :</label>
+                            <select name="user_role">
+                                <selected><option value="ROLE_ADMIN">ROLE_ADMIN</option></selected>
+                            </select>
+                        </div>
             </fieldset>
         </div>
     {{ form_end(form) }}

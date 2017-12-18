@@ -65,6 +65,8 @@ $app->get('/report/prod_in_cat', "Controller\ProductController::productAction")-
 $app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing');
 
 
+
+
 //routing for debug users
 $app->get('/debugusers', "Controller\DebugController::debugusersAction")->bind('debugusers');
 

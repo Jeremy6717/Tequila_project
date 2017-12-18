@@ -44,6 +44,7 @@ h2{
 }
 
 
+
 /***** SIGN UP MOBILE *********/
 
 #form h2{
@@ -79,7 +80,7 @@ h2{
     width: 35%;
 }
 
-#form button{
+[type='submit']{
     background-color:#f2c811 ;
     padding: 1rem;
     font-size: 1.25rem;
@@ -88,30 +89,55 @@ h2{
     margin-left: 25%;
 }
 
+[type='checkbox']{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form #role{
+    display: none;
+}
+
+#recapcha{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 /***** SIGN UP DESKTOP *********/
 @media (min-width:639px){
     #form{
-        width: 100rem;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         padding-left: 10%;
     }
 
-   #form h2{
+    #form h2{
         margin-left: 35%;
+        margin-top: 2rem;
     }
 
 
-   #form_data{
-       width: 100%;
-       margin-left: auto;
-       margin-right: auto;
-       padding-left: 25%;
-   }
+    #form_data{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 25%;
+    }
 
     [type='text'], [type='password'], [type='email']{
         width: 50%;
     }
+
+
+    [type='checkbox']{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }
 
 
@@ -354,7 +380,7 @@ ul{
 @media (min-width:639px) {
 
     label {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin: 2.2rem;
 
     }
