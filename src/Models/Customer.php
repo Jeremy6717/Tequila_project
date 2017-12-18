@@ -55,6 +55,15 @@ class Customer {
      */
     private $couid;
     
+    /**
+    * One Customer has Many Orders.
+    * @OneToMany(targetEntity="Orders", mappedBy="customer")
+    */
+    private $orders;
+    
+    public function __construct() {
+        $this->orders = new ArrayCollection();
+    }
 
     
     public function getId() {

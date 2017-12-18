@@ -6,7 +6,7 @@ namespace Models;
  * @Entity()
  * @Table(name="orders")
  */
-class Order {
+class Orders {
     /**
      * @id()
      * @GeneratedValue()
@@ -24,10 +24,25 @@ class Order {
      */
     private $payment;
     
+       
     /**
-     * @Column(name="ord_cust_id", type="integer", nullable=false)
-     */
+    * @ManyToOne(targetEntity="Customer")
+    * @JoinColumn(name="ord_cust_id", referencedColumnName="cust_id")
+    */
     private $custid;
+    
+    
+    // ...
+    /**
+    * One Order has Many Orderlines.
+    * @OneToMany(targetEntity="Orderline", mappedBy="order")
+    */
+    private $orderlines;
+    
+    public function __construct() {
+        $this->orderlines = new ArrayCollection();
+    }
+    
     
     function getId() {
         return $this->id;
