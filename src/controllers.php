@@ -52,17 +52,17 @@ $app->match('/signup', "Controller\UserController::userSignupAction")->bind('sig
 
 
 //routing for sales page
-$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
+$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales'); //can connect to report page
 //routing for stock page
-$app->get('/report/stock', "Controller\StockController::stockAction")->bind('stock');
+$app->get('/report/stock', "Controller\StockController::stockAction")->bind('stock'); //there is no report page, check Controller\stockController.php and modify pagename
 //routing for category page
-$app->get('/report/category', "Controller\CategoryController::categoryAction")->bind('category');
+$app->get('/report/category', "Controller\CategoryController::categoryAction")->bind('category'); //can connect to report page
 //routing for orders page
-$app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
+$app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order'); //there is no order page, check Controller\stockController.php and modify pagename
 //routing for products page
-$app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product');
+$app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product'); //can connect to report page
 //routing for marketing page
-$app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing');
+$app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing'); //there is no order page, check Controller\stockController.php and modify pagename
 
 
 

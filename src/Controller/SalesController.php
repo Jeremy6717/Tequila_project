@@ -32,34 +32,18 @@ class SalesController {
 
    public function salesAction(Request $request, Application $app){
 
-//        $entityManager = $this->getEntityManager($app);
-//        $repository = $entityManager->getRepository(Country::class);
-//        $countries = $repository->findAll();
-
-        // return "ABC";
-
-        //return $app['twig']->render(
-        //    'sales.html.twig');
-//           [
-//                'countries' => $countries
-//           ]
-
-        $entityManager = $this->getEntityManager($app);
+       $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(UserModel::class);
         $users = $repository->findAll();
-
-        return "this is sales controler";
-        /*
+       
         return $app['twig']->render(
-            'User/UserTemplate.html.twig',
+            'sales.html.twig',
             [
                 'users' => $users
             ]
-        );*/
+        );
 
-
-
-    }
+    }//end of fucntion salesAction
 
 
 
