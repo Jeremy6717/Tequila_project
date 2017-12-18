@@ -2,6 +2,9 @@
 
 {% block content %}
     {{ parent() }}
+    
+    <h2>The data has been exported into this file :</h2>
+    <h2>C:\\xampp\\htdocs\\Tequila_project\\var\\csv\\export-20171218.csv</h2>
     <table border="1">
         <thead>
             <tr>
@@ -17,7 +20,7 @@
         </thead>
         <tbody>
             {% for product in products %}
-                {% if product.getCatid().getId() == 1 %}
+                {% if product.getCatid().getId() == 2 %}
                 <tr>
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getName() }}</td>
@@ -26,12 +29,13 @@
                     <td>{{ product.getStock() }}</td>
                     <td>{{ product.getVat() }}</td>
                     <td>{{ product.getCatid().getName() }}</td>                    
+
                 </tr>
+                
                 {% endif %}
             {% else %}
                 <strong>LA TABLE product EST VIDE</strong>
             {% endfor %}
-            <a href="http://localhost/Tequila_project/web/index_dev.php/debugproductscsv"">EXPORT TO CSV</a>
         </tbody>
     </table>
 {% endblock %}
