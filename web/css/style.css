@@ -197,7 +197,6 @@ ul{
 
 }
 
-
 /*HEADER REPORT MOBILE */
 
 #identification a{
@@ -216,12 +215,10 @@ ul{
 
 .intro p, .intro, #advantage{
     margin: 30px;
-
 }
 
 .btn{
     text-align: center;
-
 }
 .button {
     color: white;
@@ -231,7 +228,6 @@ ul{
 }
 .button:hover{
     background-color: #333333;
-
 }
 
 .button.large{
@@ -261,7 +257,7 @@ ul{
 
 }
 
-/*Header Report - mobile*/
+/*HEADER REPORT - MOBILE*/
 
 #identification a{
     color: #f2c811;
@@ -324,48 +320,65 @@ ul{
     img{
         border-radius: 100%;
     }
+}
 
 
+/*SIGN IN - MOBILE*/
 
-/*Sign In - mobile*/
+label{
+    font-size: 1rem;
+    margin: 1.2rem;
+    position: relative;
+    left: 30%;
+}
+.input-group-button{
+    position: relative;
+    left: 40%;
+    border: #f2c811;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}
 
-    label{
-        font-size: 1rem;
-        margin: 1.2rem;
+input[type=text]:focus,
+input[type=password]:focus{
+    border: 2px solid #f2c811;
+    box-shadow: none;
+}
 
-    }
-    .input-group-button{
-        position: relative;
-        left : 27rem;
-        margin: 1.8rem;
-        border: #f2c811;
-    }
-
-    input[type=text]:focus,
-    input[type=password]:focus{
-        border: 2px solid #f2c811;
-        box-shadow: none;
-    }
-
-    #submit{
-        padding: 1rem 2rem;
-    }
+#submit{
+    padding: 1rem 2rem;
+    color: black;
 }
 
 @media (min-width:639px) {
 
-    label {
+    #login h2{
+        text-align: center;
+        margin-top: 2rem;
+    }
+    label{
         font-size: 1.5rem;
         margin: 2.2rem;
     }
-
-
-    .input-group-button {
-        left: 84%;
+    .input-group-button{
+        position: relative;
+        left: 60%;
+    }
+    input[type=text],
+    input[type=password]{
+        width: 100%;
+    }
+    #submit{
+        padding: 1rem 2rem;
+        color: black;
+    }
+    .grid-container{
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
-    /*REPORT MOBILE*/
+/*REPORT MOBILE*/
 
 
 .blockBtn{
