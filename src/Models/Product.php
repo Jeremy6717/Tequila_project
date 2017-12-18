@@ -40,19 +40,22 @@ class Product {
     private $vat;
     
     /**
-     * @Column(name="prod_cat_id", type="integer", nullable=false)
+     * Many Product have One Category.
+     * @ManyToOne(targetEntity="Models\Category", inversedBy="products")
+     * @JoinColumn(name="prod_cat_id", referencedColumnName="cat_id")  
      */
     private $catid;
     
-    /**
-     * Many Products have One Category
-     * @ManyToOne(targetEntity="Models\Category", inversedBy="products")
-     * @JoinTable(name="category",
-     *      joinColumn={(@JoinColumn(name="prod_cat_id", referencedColumnName="cat_id")}
-     *      )
-     */
-    private $category;
+        /**
+    * One Product has Many Orderlines.
+    * @OneToMany(targetEntity="Orderline", mappedBy="product")
+    */
+    private $orderlines;
     
+    public function __construct() {
+        $this->orderlines = new ArrayCollection();
+    }
+      
     public function getId() {
         return $this->id;
     }
@@ -80,7 +83,7 @@ class Product {
     public function getCatid() {
         return $this->catid;
     }
-
+    
     function setName($name) {
         $this->name = $name;
         return $this;

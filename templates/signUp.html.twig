@@ -6,7 +6,7 @@
 
 
 {% block content %}
-
+    
     {{ form_start(form)}}
         <div class="grid-container" id="form">
             <fieldset>
@@ -20,10 +20,19 @@
                             {{ form_row(form.password) }}
                             {{ form_row(form.submit) }}
                         </div>
+                        <div>
+                            <label>Do you want receive monthly report ?</label>
+                            <input type="checkbox" name="user_newsletter" id="checkBox_report">
+                        </div>
+                        <div>
+                            <label>Do you want receive newsletter ?</label>
+                            <input type="checkbox" name="user_newsletter" id="checkBox_newsletter">
+                        </div>
+
+                        <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR"></div>
             </fieldset>
         </div>
     {{ form_end(form) }}
-
 
 {% endblock %}
 
