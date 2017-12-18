@@ -12,7 +12,8 @@
         </div>
         <div class="top-bar-right">
             <ul class="dropdown menu" data-dropdown-menu>
-                <li id="identification"><a href="">HOLA username</a></li>
+                <li id="identification"><a href="">HOLA {{ user.getUserName() }} </a></li>
+                <li><a href="{{ path ("logout") }}">Log Out</a>
                 <br>
                 <li><a href="{{ path ("report") }}">Reporting</a>
                     <ul id="subMenu">
