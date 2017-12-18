@@ -13,7 +13,7 @@ use \Models\Product;
 use \Models\UserModel;
 
 class SalesController {
-    
+
     /**
      *  @return \Doctrine\DBAL\Query\QueryBuilder
      */
@@ -21,32 +21,31 @@ class SalesController {
          //calls the querybuilder of doctrine
         return $doctrine->createQueryBuilder();
     }
-    
+
     /**
      *  @return \Doctrine\ORM\EntityManager
      */
-    public function getEntityManager(Application $app){        
+    public function getEntityManager(Application $app){
         return $app['orm.em'];
     }
-    
-       
+
+
    public function salesAction(Request $request, Application $app){
-        $entityManager = $this->getEntityManager($app);
+
+       $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(UserModel::class);
         $users = $repository->findAll();
-        
-        return "this is sales controler";
-        /*
+       
         return $app['twig']->render(
-            'User/UserTemplate.html.twig',
+            'sales.html.twig',
             [
                 'users' => $users
             ]
-        );*/
-        
-    } // fin de la méthode helloAction(Request $request, Application $app) de la Classe UserController
-   
-   
-   
-   
+        );
+
+    }//end of fucntion salesAction
+
+
+
+
 } // end of class SalesController

@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include 'headerReport.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <table border="1">
+        <thead>
+        <tr>
+            <td>ORDERS ID</td>
+            <td>ORDERS DATE</td>
+            <td>ORDERS PAYMENT</td>
+            <td>ORDERS CUSTOMER FIRST NAME</td>
+            <td>ORDERS CUSTOMER LAST NAME</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.getId() }}</td>
+                <td>{{ order.getDate() }}</td>
+                <td>{{ order.getPayment() }}</td>
+                <td>{{ order.getCustid().getFirstname() }}</td>
+                <td>{{ order.getCustid().getLastname() }}</td>
+            </tr>
+        {% else %}
+            <strong>THE ORDERS TABLE IS EMPTY.</strong>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html.twig' %}
+{% endblock %}

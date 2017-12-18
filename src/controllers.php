@@ -62,7 +62,8 @@ $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('or
 //routing for products page
 $app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product');
 //routing for marketing page
-$app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing');
+$app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing'); //there is no order page, check Controller\stockController.php and modify pagename
+
 
 
 

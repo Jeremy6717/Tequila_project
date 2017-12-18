@@ -6,34 +6,77 @@
 
 {% block content %}
     {{ parent() }}
-    <div class="grid-container">
-        <table border="1">
-            <thead>
+    <table border="1">
+        <thead>
+        <tr>
+            <td>product ID</td>
+            <td>product NAME</td>
+            <td>product DESCRIPTION</td>
+            <td>product PRICE</td>
+            <td>product STOCK</td>
+            <td>product VAT</td>
+            <td>product CATID</td>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <h3> NO STOCK </h3>
+        {% for product in products %}
+            {% if product.stock == 0 %}
+
                 <tr>
-                    <td>ID</td>
-                    <td>PRENOM</td>
-                    <td>NOM DE FAMILLE</td>
-                    <td>USER NAME</td>
-                    <td>ROLES</td>
-                    <td>MOT DE PASSE</td>
+                    <td>{{ product.getId() }}</td>
+                    <td>{{ product.getName() }}</td>
+                    <td>{{ product.getDescription() }}</td>
+                    <td>{{ product.getPrice() }}</td>
+                    <td>{{ product.getStock() }}</td>
+                    <td>{{ product.getVat() }}</td>
+                    <td>{{ product.getCatid().getName() }}</td>
+
                 </tr>
-            </thead>
-            <tbody>
-                {% for user in users %}
-                    <tr>
-                        <td>{{ user.getId() }}</td>
-                        <td>{{ user.getFirstname() }}</td>
-                        <td>{{ user.getLastname() }}</td>
-                        <td>{{ user.getUserName() }}</td>
-                        <td>{{ user.getRoles()|join('*') }}</td>
-                        <td>{{ user.getPassword() }}</td>
-                    </tr>
-                {% else %}
-                    <strong>LA TABLE USER EST VIDE</strong>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3> LOW STOCK </h3>
+
+
+    <table border="1">
+        <thead>
+        <tr>
+            <td>product ID</td>
+            <td>product NAME</td>
+            <td>product DESCRIPTION</td>
+            <td>product PRICE</td>
+            <td>product STOCK</td>
+            <td>product VAT</td>
+            <td>product CATID</td>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            {% if product.stock > 0 and product.stock < 3 %}
+
+                <tr>
+                    <td>{{ product.getId() }}</td>
+                    <td>{{ product.getName() }}</td>
+                    <td>{{ product.getDescription() }}</td>
+                    <td>{{ product.getPrice() }}</td>
+                    <td>{{ product.getStock() }}</td>
+                    <td>{{ product.getVat() }}</td>
+                    <td>{{ product.getCatid().getName() }}</td>
+
+                </tr>
+            {% endif %}
+
+        {% else %}
+            <strong>LA TABLE product EST VIDE</strong>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
 
 {% block footer %}

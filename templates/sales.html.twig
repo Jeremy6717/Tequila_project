@@ -1,0 +1,25 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include 'headerReport.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <table border="1">
+        <thead>
+        <tr>
+            <td>ORDER ID</td>
+            <td>PROD ID</td>
+            <td>QUANTITY</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html.twig' %}
+{% endblock %} 

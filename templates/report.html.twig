@@ -8,73 +8,46 @@
 
     <div class="intro">
         <h3>Report made easy</h3>
-        <p>Create reports with interactive data visualizations.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu nunc consequat, tincidunt tellus ac, gravida odio. Morbi hendrerit risus ut tempus viverra. Praesent tempor eleifend metus quis vulputate. Integer vel commodo justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet iaculis justo, in tincidunt sem commodo eu. Integer convallis turpis at metus fermentum ultricies. </p>
+        <p>Analyze and Present your Data at the Click of a Button!
+        <br> Create and publish reports and graphs, and share them with your team. On the move, these mobile reporting tools will help you quickly turn your data into clear, easy-to-use visualizations.
+        <br><br>Start analyzing your data with just one click! </p>
     </div>
 
-    <div class="intro">
-        <h4>Customizable Reporting</h4>
-        <h5>Upload a Customizable Reporting</h5>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x footer">
 
-        <fieldset class="fieldset">
-            <legend>All order by client</legend>
-            <input id="date" type="date" value="2017-11-15">
-            <input id="date" type="date" value="2017-12-15">
-            <div class="small-3 cell">
-                <label for="right-label" class="text-right">Label</label>
-            </div>
-            <div class="input-group-button">
-                <input type="submit" class="button" value="Export CSV file">
-            </div>
-        </fieldset>
+                <div class="blockBtn">   
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-chart-line"></i></div>
+                    <div><a class="button large btnReport" href="{{ path ("stock") }}">Stock</a></div>
+                </div>
+                <div class="blockBtn">   
+                    <div class="large-4 medium-4 small-12 cell"><i class="far fa-money-bill-alt"></i></div>
+                    <div><a class="button large btnReport" href="{{ path ("sales") }}">Sales</a></div>
+                </div>
+                <div class="blockBtn">
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-list"></i></div>
+                    <div><a class="button large btnReport" href="{{ path ("category") }}">Category</a></div>
+                </div>
+                <div class="blockBtn">
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-shopping-cart"></i></div>
+                    <div><a class="button large btnReport" href="{{ path ("order") }}">Orders</a></div>
+                </div>
+                <div class="blockBtn">   
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-cubes"></i></div>
+                    <div><a class="button large btnReport" href="{{ path ("product") }}">Product</a></div>
+                </div>
+                <div class="blockBtn">   
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-user"></i></div>
+                    <div><a class="button large btnReport" href="{{ path ("marketing") }}">Marketing</a></div>
+                </div>
 
-
-        <fieldset class="fieldset">
-            <legend>All items by category</legend>
-
-            <label>Select category
-                <select>
-                    <option value="Category1">Category1</option>
-                    <option value="Category2">Category2</option>
-                    <option value="Category3">Category3</option>
-                    <option value="Category4">Category4</option>
-                </select>
-            </label>
-            <div class="input-group-button">
-                <input type="submit" class="button" value="Export CSV file">
-            </div>
-        </fieldset>
-
-        <fieldset class="fieldset">
-            <legend>Market segmentation</legend>
-            <label>Select category
-                <select>
-                    <option value="Category1">Category1</option>
-                    <option value="Category2">Category2</option>
-                    <option value="Category3">Category3</option>
-                    <option value="Category4">Category4</option>
-                </select>
-            </label>
-            <label>Select product
-                <select>
-                    <option value="Product1">Product1</option>
-                    <option value="Product2">Product2</option>
-                    <option value="Product3">Product3</option>
-                    <option value="Product4">Product4</option>
-                </select>
-            </label>
-            <div class="input-group-button">
-                <input type="submit" class="button" value="Show the graph">
-            </div>
-        </fieldset>
-
+        </div>
     </div>
-    
-    
-    
 
 {% endblock %}
 
 {% block footer %}
     {% include 'footer.html.twig' %}      
 {% endblock %}  
+
+
