@@ -37,7 +37,15 @@ class Category {
     public function getName() {
         return $this->name;
     }
-       
+    
+    function getProducts() {
+        return $this->products;
+    }
+
+    function setProducts($products) {
+        $this->products = $products;
+        return $this;
+    }
 
     function setName($name) {
         $this->name = $name;
