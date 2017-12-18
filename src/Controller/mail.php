@@ -2,24 +2,23 @@
 
 namespace Controller;
 
-use Mailgun\Mailgun;
+require_once 'vendor/autoload.php';
 
+// Create the Transport
+$transport = (new Swift_SmtpTransport('smtp.tequila.com', 25))
+    ->setUsername('your username')
+    ->setPassword('your password')
+;
 
-require 'vendor/autoload.php';
+// Create the Mailer using your created Transport
+$mailer = new Swift_Mailer($transport);
 
+// Create a message
+$message = (new Swift_Message('Wonderful Subject'))
+    ->setFrom(['tequila@gmail.com' => 'Tequila Team'])
+    ->setTo(['receiver@domain.org', 'other@domain.org' => 'A name'])
+    ->setBody('Hello, you will find next the link for changing your password')
+;
 
-class mail
-{
-    public function mail(){
-    # First, instantiate the SDK with your API credentials
-    $mg = Mailgun::create('key-');
-
-    # Now, compose and send your message.
-    # $mg->messages()->send($domain, $params);
-    $mg->messages()->send('sandboxacff6eb40fd84da496b7999cb2cb3102.mailgun.org', [
-        'from'    => 'tequila-report@gmail.com',
-        'to'      => 'jeremydeumer@gmail.com',
-        'subject' => 'Recovery password',
-        'text'    => 'Click on the link under for defining a new password']);
-    }
-}
+// Send the message
+$result = $mailer->send($message);
