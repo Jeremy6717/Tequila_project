@@ -44,7 +44,7 @@ $app->get('/signin', function(Request $request)use ($app){
 })->bind('signin');
 
 //routing for signup page
-$app->get('/signup', "Controller\UserController::userSignupAction")->bind('signup');
+$app->match('/signup', "Controller\UserController::userSignupAction")->bind('signup');
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
