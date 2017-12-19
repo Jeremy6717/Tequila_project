@@ -1,7 +1,9 @@
 <?php
 
 namespace Controller;
-
+/**
+ * NOT IN USE AT THE MOMENT
+ */
 use \Symfony\Component\HttpFoundation\Request;
 use \Silex\Application;
 use \Models\Category;
