@@ -89,8 +89,8 @@ $app->get('/debugcustomers', "Controller\DebugController::debugcustomersAction")
 //routing for debug Products
 $app->get('/debugproducts', "Controller\DebugController::debugproductsAction")->bind('debugproducts');
 
-//routing for debug Products CSV
-$app->get('/debugproductscsv', "Controller\DebugController::debugproductscsvAction")->bind('debugproductscsv');
+//routing for Products CSV
+$app->get('/productscsv', "Controller\ProductController::productscsvAction")->bind('productscsv');
 
 //routing for debug Products JSON
 $app->get('/debugproductsjson', "Controller\DebugController::debugproductsjsonAction")->bind('debugproductsjson');

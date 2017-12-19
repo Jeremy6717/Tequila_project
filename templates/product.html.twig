@@ -6,6 +6,7 @@
 
 {% block content %}
     {{ parent() }}
+    <a href="{{ path ("productscsv") }}">EXPORT TO CSV</a>
     <table border="1">
         <thead>
             <tr>
