@@ -3,6 +3,7 @@ namespace Models;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 
+
 /**
  * User is a Class for the table User where User are those connecting to the
  * reporting application

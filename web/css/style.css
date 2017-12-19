@@ -159,6 +159,7 @@ ul{
 }
 .button:hover{
     background-color: #333333;
+    color: white;
 }
 
 .button.large{
@@ -472,6 +473,23 @@ h3{
     margin-left: auto;
     margin-right: auto;
     margin-top: 8rem;
+
+}
+
+.orderBtn{
+    width: 159px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #f2c811;
+    border-radius: 3px;
+    padding: 8px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.orderBtn:hover{
+    background-color: #f2c811;
+    color : white;
 
 }
 

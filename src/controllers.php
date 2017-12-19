@@ -8,38 +8,33 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\UserController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
-
-
-
-
 //Routing for report page
 $app->get('/report', function() use ($app) {
-    $user=null;
-    $token = $app['security.token_storage']->getToken();
-    if (null!==$token){
-        $user = $token->getUser();
-    }
-    return $app['twig']->render('report.html.twig', array('user'=>$user));
-})
-->bind('report');
+            $user = null;
+            $token = $app['security.token_storage']->getToken();
+            if (null !== $token) {
+                $user = $token->getUser();
+            }
+            return $app['twig']->render('report.html.twig', array('user' => $user));
+        })
+        ->bind('report');
 
 
 //Routing for team page
 
 $app->get('/team', function() use ($app) {
-    return $app['twig']->render('team.html.twig', array());
-})
-    ->bind('team');
+            return $app['twig']->render('team.html.twig', array());
+        })
+        ->bind('team');
 
 
 //routing for signin
-$app->get('/signin', function(Request $request)use ($app){
-    return $app['twig']->render('signIn.html.twig',
-        [
-            //recuperation de la derniere erreur de connection - session depuis la request
-            'error'=>$app['security.last_error']($request),
-            'last_username' => $app['session']->get('_security.last_username')
-        ]
+$app->get('/signin', function(Request $request)use ($app) {
+    return $app['twig']->render('signIn.html.twig', [
+                //recuperation de la derniere erreur de connection - session depuis la request
+                'error' => $app['security.last_error']($request),
+                'last_username' => $app['session']->get('_security.last_username')
+                    ]
     );
 })->bind('signin');
 
@@ -48,7 +43,7 @@ $app->get('/signin', function(Request $request)use ($app){
 $app->match('/signup', "Controller\UserController::userSignupAction")->bind('signup');
 
 
-/*$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');*/
+/* $app->get('/signup', "Form\UserForm::buildForm")->bind('signup'); */
 
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
@@ -56,6 +51,8 @@ $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sal
 $app->get('/report/stock', "Controller\StockController::stockAction")->bind('stock');
 //routing for category page
 $app->get('/report/category', "Controller\CategoryController::categoryAction")->bind('category');
+//routing for choose category page
+$app->get('/report/choosecategory', "Controller\CategoryController::categorychooseAction")->bind('choosecategory');
 //routing for orders page
 $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
 
@@ -66,7 +63,6 @@ $app->get('/report/orderlines', "Controller\OrderlineController::orderlinesActio
 $app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product');
 //routing for marketing page
 $app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing'); //there is no order page, check Controller\stockController.php and modify pagename
-
 //routing for sending message contact page
 $app->post('/team', "Controller\MailController::mailAction")->bind('mail');
 
@@ -106,9 +102,9 @@ $app->get('/debugorderlines', "Controller\DebugController::debugorderlinessActio
 
 //Routing for homepage
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('home.html.twig', array());
-})
-->bind('home')
+            return $app['twig']->render('home.html.twig', array());
+        })
+        ->bind('home')
 ;
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
@@ -118,9 +114,9 @@ $app->error(function (\Exception $e, Request $request, $code) use ($app) {
 
     // 404.html, or 40x.html, or 4xx.html, or error.html
     $templates = array(
-        'errors/'.$code.'.html.twig',
-        'errors/'.substr($code, 0, 2).'x.html.twig',
-        'errors/'.substr($code, 0, 1).'xx.html.twig',
+        'errors/' . $code . '.html.twig',
+        'errors/' . substr($code, 0, 2) . 'x.html.twig',
+        'errors/' . substr($code, 0, 1) . 'xx.html.twig',
         'errors/default.html.twig',
     );
 

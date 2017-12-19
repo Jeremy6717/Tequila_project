@@ -13,32 +13,18 @@
 
             <div class="large-4 medium-4 small-12 cell">
 
-                
-                    <h5>Select Category</h5>
-                    <select>
 
-                        <!--{% set id = product.getCatid().getId()('1').find() %}
-                        {% set category = id|group('postDate.year') %}
+                <h5>Select Category</h5>
+                <select>
 
-                        {% for year, entriesInYear in category %}
-                            <h2>{{ year }}</h2>
+                    {% for product in products %}
+                        <option value="category">{{ product.getCatid().getName() }}</option>
 
-                            <ul>
-                                {% for entry in entriesInYear %}
-                                    <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-                                    {% endfor %}
-                            </ul>
-                        {% endfor %}-->
-                        
-                        
-                        {% for product in products %}
-                            <option value="category">{{ product.getCatid().getName() }}</option>
-
-                        {% endfor %}
-                    </select>
-                    <div class="input-group-button">
-                        <input type="submit" class="button" id="submit" value="Submit">
-                    </div>
+                    {% endfor %}
+                </select>
+                <div class="orderBtn">
+                    <a href="http://localhost/Tequila_project/web/index_dev.php/report/prod_in_cat">Submit</a>
+                </div>
 
             </div>
 
