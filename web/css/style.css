@@ -37,7 +37,6 @@ h2{
     margin-top: 7rem;
     margin-bottom: 3rem;
 }
-
 @media (min-width:639px) {
     #subMenu{
         margin-top: 1.18rem;
@@ -490,12 +489,14 @@ h3{
     margin-right: auto;
 }
 
+
+
 .orderBtn:hover{
     background-color: #f2c811;
     color : white;
-
-
 }
+
+
 
 /* FOOTER DESKTOP */
 footer {
