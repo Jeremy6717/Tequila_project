@@ -1,20 +1,18 @@
-﻿@import 'foundation';
+@import 'foundation';
+@import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico|Prata');
 
-@import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico');
-@import url('https://fonts.googleapis.com/css?family=Prata');
+/*********General*********/
 
-/*General*/
-
-/*
+/*******
 titre : black
 paragraphe : ( noir ou gris ) #333333
 bouton : (jaune) #f2c811
 background : (jaune) #f2c811
-*/
+********/
 
 *{
-  box-sizing: border-box;
-  transition: 0.3s;
+    box-sizing: border-box;
+    transition: 0.3s;
 }
 
 body{
@@ -30,9 +28,14 @@ h1, h2, h3{
 h1{
     font-size: 3.2rem;
 }
+p{
+    font-size: 1.2rem; 
+}
 
 h2{
     font-size: 2.9rem;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
 }
 
 @media (min-width:639px) {
@@ -140,7 +143,7 @@ h2{
 }
 
 
-/*HEADER HOME MOBILE VERSION*/
+/*******HEADER HOME MOBILE VERSION*********/
 
 header{
     background-image: url(../img/header.jpeg);
@@ -162,9 +165,8 @@ header{
     font-family: Prata;
     font-size: 2rem;
     margin-left: 2rem;
-    margin-top: 1.8rem;
+    margin-top: 0.1rem;
     text-align: right;
-
 }
 
 ul{
@@ -177,6 +179,10 @@ ul{
 
 .menu-text{
     display: none;
+}
+
+.menu-text a{
+    color: white;
 }
 
 .title-bar-title{
@@ -192,7 +198,7 @@ ul{
     color: #f2c811;
 }
 
-/*HEADER DESKTOP VERSION*/
+/******HEADER DESKTOP VERSION*******/
 
 @media (min-width:639px){
     header{
@@ -204,6 +210,7 @@ ul{
     #mainTitle{
         font-size: 4rem;
         margin-left: 22rem;
+		margin-top: 3.5rem;
         text-align: left;
     }
 
@@ -223,13 +230,7 @@ ul{
 
 }
 
-
-/*HEADER REPORT MOBILE */
-
-#identification a{
-    color: #f2c811;
-}
-
+/*******HEADER REPORT MOBILE *******/
 
 /* HOME MOBILE */
 
@@ -242,12 +243,10 @@ ul{
 
 .intro p, .intro, #advantage{
     margin: 30px;
-
 }
 
 .btn{
     text-align: center;
-
 }
 .button {
     color: white;
@@ -257,7 +256,6 @@ ul{
 }
 .button:hover{
     background-color: #333333;
-
 }
 
 .button.large{
@@ -271,7 +269,7 @@ ul{
 @media (min-width:639px){
 
     .button.large{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .intro p, .intro, #advantage {
@@ -279,12 +277,10 @@ ul{
 
     }
     .intro h3, .intro h4 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin: 70px 70px;
         font-family: pacifico;
     }
-
-
 }
 
 /*Header Report - mobile*/
@@ -293,13 +289,11 @@ ul{
     color: #f2c811;
 }
 
-
-
 /* TEAM DESKTOP  */
 
 #teamContent{
     margin-top: 4rem;
-    margin-bottom: 4rem;
+	margin-bottom: 4rem;
 }
 
 #teamMemberPicture img{
@@ -320,7 +314,6 @@ ul{
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
-
 
 #map{
     height: 400px;
@@ -344,7 +337,7 @@ textarea{
 }
 
 
-/* TEAM MOBILE  */
+/****** TEAM MOBILE  *********/
 @media (max-width:639px){
 
     h1{
@@ -352,71 +345,90 @@ textarea{
     }
 
     h2{
-       font-size: 2.5rem;
+       	font-size: 2.5rem;
         text-align: center;
-        padding-top: 4rem;
+		padding-top: 4rem;
         padding-bottom: 1rem;
     }
-
 
     #teamContent{
         width: 20rem;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-
     }
     #teamMemberPicture{
-       width: 100%;
+       	width: 100%;
         margin-left: 18%;
     }
-
     img{
         border-radius: 100%;
     }
-
-
-
-/*Sign In - mobile*/
-
-    label{
-        font-size: 1rem;
-        margin: 1.2rem;
-
-    }
-    .input-group-button{
-        position: relative;
-        left : 27rem;
-        margin: 1.8rem;
-        border: #f2c811;
-    }
-
-    input[type=text]:focus,
-    input[type=password]:focus{
-        border: 2px solid #f2c811;
-        box-shadow: none;
-    }
-
-    #submit{
-        padding: 1rem 2rem;
-    }
 }
+
+#mapArea{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+
+/******Sign In - mobile********/
+label{
+    font-size: 1rem;
+    margin: 1.2rem;
+	position: relative;
+    left: 30%;
+
+}
+.input-group-button{
+	left: 40%;
+    border: #f2c811;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}
+
+input[type=text]:focus,
+input[type=password]:focus{
+    border: 2px solid #f2c811;
+    box-shadow: none;
+}
+
+#submit{
+    padding: 1rem 2rem;
+	color: black;
+}
+
 
 @media (min-width:639px) {
 
-    label {
-        font-size: 1.3rem;
+     #login h2{
+        text-align: center;
+        margin-top: 2rem;
+    }
+    label{
+        font-size: 1.5rem;
         margin: 2.2rem;
     }
+    .input-group-button{
+        position: relative;
+        left: 60%;
+    }
+    input[type=text],
+    input[type=password]{
+        width: 100%;
+    }
+    #submit{
+        padding: 1rem 2rem;
+        color: black;
+    }
 
-
-    .input-group-button {
-        left: 84%;
+    .signIn{
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
     /*REPORT MOBILE*/
-
 
 .blockBtn{
     font-size: 2.8rem;
@@ -438,6 +450,9 @@ textarea{
         margin-right:auto;
         padding-bottom: 4rem;
     }
+	.btnFa{
+	        font-size: 6rem;
+	    }
 
 }
 
@@ -452,16 +467,24 @@ table{
     margin-bottom: 4rem;
 }
 
+h3{
+    font-size: 2rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    
+}
+
     /* FOOTER DESKTOP */
 footer {
-
     .input-group-button{
         left: 84%;
     }
 }
 
 
-/* FOOTER DESKTOP */
+/********** FOOTER DESKTOP ********/
 
 footer{
 
@@ -538,7 +561,6 @@ footer a:hover{
     clear: both;
     height: 0rem !important;
 }
-
 
 
 

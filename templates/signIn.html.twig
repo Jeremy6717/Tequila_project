@@ -5,37 +5,34 @@
     {% include 'headerSign.html.twig' %}
 {% endblock %}
 
-
 {% block content %}
 
-    <div>
-        <h2>Login :</h2>
-    </div>
-        
-    <form action="{{path('login_check')}}" method="post">
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label>Username
-              <input type="text" name="_username" value="{{last_username}}" placeholder="username">
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label>Password
-              <input type="password" name="_password" value="" placeholder="password">
-            </label>
-          </div>
-            <div class="input-group-button">
-                <input type="submit" class="button" id="submit" value="Submit">
+    <div id="login">
+        <form  action="{{path('login_check')}}" method="post">
+            <div>
+                <h2>Login </h2>
             </div>
-        </div>
-      </div>
-    </form>
+            <div class="grid-container signIn">
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-6 cell">
+                        <label>Username
+                            <input type="text" name="_username" value="{{last_username}}" placeholder="username">
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Password
+                            <input type="password" name="_password" value="" placeholder="password">
+                        </label>
+                    </div>
+                    <div class="input-group-button">
+                        <input type="submit" class="button" id="submit" value="Submit">
+                    </div>
+                </div>
+            </div>
+    </div>
+</form>
 
 {% endblock %}
-
-
-
 
 
 {% block footer %}
