@@ -29,7 +29,7 @@ h1{
     font-size: 3.2rem;
 }
 p{
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
 }
 
 h2{
@@ -441,7 +441,7 @@ input[type=password]:focus{
 .button{
     text-align: center;
 }
- 
+
 @media (min-width:639px) {
     .blockBtn{
         font-size: 2.8rem;
@@ -473,7 +473,7 @@ h3{
     margin-left: auto;
     margin-right: auto;
     margin-top: 8rem;
-    
+
 }
 
     /* FOOTER DESKTOP */
@@ -574,4 +574,3 @@ article{
     text-align: center;
 
 }
-
