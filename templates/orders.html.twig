@@ -6,30 +6,81 @@
 
 {% block content %}
     {{ parent() }}
+
+    <h3>Orders In a Given Period For One Customer</h3>
+
+
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x footer">
+
+            <div class="large-4 medium-4 small-12 cell">
+                <article id="contact">
+                    <h5>Select the date of the start</h5>
+                    <input type="date" class="span2" value="02-12-2017" id="dp1">
+                </article>
+            </div>
+
+            <div class="large-4 medium-4 small-12 cell">
+                <article id="contact">
+                    <h5>Select the date of the end</h5>
+                    <input type="date" class="span2" value="31-12-2017" id="dp1">
+                </article>
+            </div>
+
+            <div class="large-4 medium-4 small-12 cell">
+                <article id="contact">
+                   
+                        <h5>Select Last Name of Client</h5>
+                        <select>
+                            {% for order in orders %}
+                                <option value="LastName">{{ order.getCustid().getLastname() }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="input-group-button">
+                            <input type="submit" class="button" id="submit" value="Submit">
+                        </div>
+
+                    </label
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+
+
+
+    </div> 
+
+    <hr/>
+
+    <h3>All Orders </h3>
     <table border="1">
         <thead>
-        <tr>
-            <td>ORDERS ID</td>
-            <td>ORDERS DATE</td>
-            <td>ORDERS PAYMENT</td>
-            <td>ORDERS CUSTOMER FIRST NAME</td>
-            <td>ORDERS CUSTOMER LAST NAME</td>
-        </tr>
+
+            <tr>
+                <td>ORDERS ID</td>
+                <td>ORDERS DATE</td>
+                <td>ORDERS PAYMENT</td>
+                <td>ORDERS CUSTOMER FIRST NAME</td>
+                <td>ORDERS CUSTOMER LAST NAME</td>
+            </tr>
         </thead>
         <tbody>
-        {% for order in orders %}
-            <tr>
-                <td>{{ order.getId() }}</td>
-                <td>{{ order.getDate() }}</td>
-                <td>{{ order.getPayment() }}</td>
-                <td>{{ order.getCustid().getFirstname() }}</td>
-                <td>{{ order.getCustid().getLastname() }}</td>
-            </tr>
-        {% else %}
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.getId() }}</td>
+                    <td>{{ order.getDate() }}</td>
+                    <td>{{ order.getPayment() }}</td>
+                    <td>{{ order.getCustid().getFirstname() }}</td>
+                    <td>{{ order.getCustid().getLastname() }}</td>
+                </tr>
+            {% else %}
             <strong>THE ORDERS TABLE IS EMPTY.</strong>
         {% endfor %}
-        </tbody>
-    </table>
+    </tbody>
+</table>
 {% endblock %}
 
 {% block footer %}
