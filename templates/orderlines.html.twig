@@ -7,38 +7,41 @@
 
 {% block content %}
     {{ parent() }}
+    
+    <h3>Sales Report With VAT</h3>
     <table border="1">
         <thead>
             <tr>
-                <td>ORDERLINE ORDER ID</td>
-                <td>ORDERLINE ORDER DATE</td>
-                <td>ORDERLINE ORDER PAYMENT</td>
-                <td>ORDERLINE CUSTOMER ID</td>
-                <td>ORDERLINE CUSTOMER FIRST NAME</td>
-                <td>ORDERLINE CUSTOMER LAST NAME</td>
-                <td>ORDERLINE CUSTOMER COUNTRY</td>
-                <td>ORDERLINE QUANTITY</td>
-                <td>ORDERLINE PRODUCT ID</td>
-                <td>ORDERLINE PRODUCT NAME</td>
-                <td>ORDERLINE PRODUCT CATEGORY ID</td>
-                <td>ORDERLINE PRODUCT CATEGORY NAME</td>
+                <td> DATE OF PURCHASE</td>
+                <td> ORDER NUMBER</td>
+                <td> TYPE OF PAYMENT</td>
+                <td> CUSTOMER ACCOUNT NUMBER</td>
+                <td> PRODUCT ID</td>
+                <td> QUANTITY</td>
+                <td> PRICE</td>
+                <td> SHIPPING COST</td>
+                <td> TAX INCLUSIVE</td>
+                <td> TAX EXCLUSIVE</td>
+                <td> VAT</td>
+                
             </tr>
         </thead>
         <tbody>
             {% for orderline in orderlines %}
                 <tr>
-                    <td>{{ orderline.getOrder().getId() }}</td>
                     <td>{{ orderline.getOrder().getDate() }}</td>
+                    <td>{{ orderline.getOrder().getId() }}</td>
                     <td>{{ orderline.getOrder().getPayment() }}</td>
                     <td>{{ orderline.getOrder().getCustid().getId() }}</td>
-                    <td>{{ orderline.getOrder().getCustid().getFirstname() }}</td>
-                    <td>{{ orderline.getOrder().getCustid().getLastname() }}</td>
-                    <td>{{ orderline.getOrder().getCustid().getCouId().getName() }}</td>
-                    <td>{{ orderline.getQuantity() }}</td>
                     <td>{{ orderline.getProduct().getId() }}</td>
-                    <td>{{ orderline.getProduct().getName() }}</td>
-                    <td>{{ orderline.getProduct().getCatId().getId() }}</td>
-                    <td>{{ orderline.getProduct().getCatId().getName() }}</td>
+                    <td>{{ orderline.getQuantity() }}</td>  
+                    <td>{{ orderline.getProduct().getPrice() }}</td>
+                    {{% set var_1 = orderline.getProduct().getPrice() + var1|number_format(2,'.',',')%}}
+                    {{% set var_2 = 3 + var2|number_format(2,'.',',') %}}
+                    <td>{{ (var_1 * var_2 + var_1) }}</td>
+                    <td>{{ orderline.getProduct().getVat() }}</td>
+                    
+                    
                 </tr>
             {% else %}
                 <strong>THE ORDERLINES TABLE IS EMPTY.</strong>

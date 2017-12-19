@@ -6,37 +6,67 @@
 
 {% block content %}
     {{ parent() }}
+
+    <h3>Products By Category</h3>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x footer">
+
+            <div class="large-4 medium-4 small-12 cell">
+
+
+                <h5>Select Category</h5>
+                <select>
+
+                    {% for product in products %}
+                        <option value="category">{{ product.getCatid().getName() }}</option>
+
+                    {% endfor %}
+                </select>
+                <div class="orderBtn">
+                    <a href="http://localhost/Tequila_project/web/index_dev.php/report/prod_in_cat">Submit</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <hr />
+
+    <h3>All Products By Category</h3>
     <table border="1">
         <thead>
             <tr>
-                <td>product ID</td>
-                <td>product NAME</td>
-                <td>product DESCRIPTION</td>
-                <td>product PRICE</td>
-                <td>product STOCK</td>
-                <td>product VAT</td>
-                <td>product CATID</td>
-                
+                <td>CATEGORY ID</td>
+                <td>CATEGORY NAME</td>
+                <td>PRODUCT ID</td>
+                <td>PRODUCT NAME</td>
+                <td>PRODUCT DESCRIPTION</td>
+                <td>QUANTITY</td>
+
+
+
             </tr>
         </thead>
         <tbody>
             {% for product in products %}
-                
+
                 <tr>
+                    <td>{{ product.getCatid().getId() }}</td>  
+                    <td>{{ product.getCatid().getName() }}</td>  
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getName() }}</td>
                     <td>{{ product.getDescription() }}</td>
-                    <td>{{ product.getPrice() }}</td>
                     <td>{{ product.getStock() }}</td>
-                    <td>{{ product.getVat() }}</td>
-                    <td>{{ product.getCatid().getName() }}</td>                    
+
+
 
                 </tr>
             {% else %}
-                <strong>THE TABLE product IS EMPTY</strong>
-            {% endfor %}
-        </tbody>
-    </table>
+            <strong>THE TABLE product IS EMPTY</strong>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
 
 {% block footer %}

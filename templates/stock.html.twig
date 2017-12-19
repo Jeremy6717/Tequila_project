@@ -6,53 +6,44 @@
 
 {% block content %}
     {{ parent() }}
+    
+    <h3>Out of Stock and Low Stock Report</h3>
     <table border="1">
         <thead>
         <tr>
-            <td>product ID</td>
-            <td>product NAME</td>
-            <td>product DESCRIPTION</td>
-            <td>product PRICE</td>
-            <td>product STOCK</td>
-            <td>product VAT</td>
-            <td>product CATID</td>
+            <td> CATEGORY NAME</td>
+            <td> PRODUCT ID</td>
+            <td> PRODUCT NAME</td>
+            <td> QUANTITY</td>
 
         </tr>
         </thead>
         <tbody>
 
-        <h3> NO STOCK </h3>
+        <h3> No Stock </h3>
         {% for product in products %}
             {% if product.stock == 0 %}
-
                 <tr>
+                    <td>{{ product.getCatid().getName() }}</td>
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getName() }}</td>
-                    <td>{{ product.getDescription() }}</td>
-                    <td>{{ product.getPrice() }}</td>
                     <td>{{ product.getStock() }}</td>
-                    <td>{{ product.getVat() }}</td>
-                    <td>{{ product.getCatid().getName() }}</td>
-
                 </tr>
             {% endif %}
         {% endfor %}
         </tbody>
     </table>
 
-    <h3> LOW STOCK </h3>
+    <h3> Low Stock </h3>
 
 
     <table border="1">
         <thead>
         <tr>
-            <td>product ID</td>
-            <td>product NAME</td>
-            <td>product DESCRIPTION</td>
-            <td>product PRICE</td>
-            <td>product STOCK</td>
-            <td>product VAT</td>
-            <td>product CATID</td>
+            <td> CATEGORY NAME</td>
+            <td> PRODUCT ID</td>
+            <td> PRODUCT NAME</td>
+            <td> QUANTITY</td>
 
         </tr>
         </thead>
@@ -61,14 +52,10 @@
             {% if product.stock > 0 and product.stock < 3 %}
 
                 <tr>
+                    <td>{{ product.getCatid().getName() }}</td>
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getName() }}</td>
-                    <td>{{ product.getDescription() }}</td>
-                    <td>{{ product.getPrice() }}</td>
-                    <td>{{ product.getStock() }}</td>
-                    <td>{{ product.getVat() }}</td>
-                    <td>{{ product.getCatid().getName() }}</td>
-
+                    <td>{{ product.getStock() }}</td>                
                 </tr>
             {% endif %}
 
@@ -79,7 +66,9 @@
     </table>
 
 
+
     <div id="chart_div"></div>
+
 {% endblock %}
 
 {% block footer %}

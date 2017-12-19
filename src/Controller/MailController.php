@@ -48,53 +48,19 @@ class MailController {
 //    $result = $mailer->send($message);
 
 
-
-
-
-//    // Create the Transport
-//    $transport = (new Swift_SmtpTransport('smtp.gmail.com', 25))
-//        ->setUsername('tequilateam2017')
-//        ->setPassword(file_get_contents('pwd.txt');)
-//    ;
+//        public function mailAction(Request $request)
+//        use ($app) {
+//            $message = \Swift_Message::newInstance()
+//                ->setSubject('subject')
+//                ->setFrom(array('name','email'))
+//                ->setTo(array('tequilateam2017@gmail.com'))
+//                ->setBody($request->match('message'));
 //
-//    try{
-//    // Create the message from contact page
-//    $message = (new Swift_Message())
-//        ->setFrom(['{email}' => '{name}'])
-//        ->setTo(['tequilateam2017@gmail.com' => 'Tequila team'])
-//        // Give the message a subject
-//        ->setSubject('{subject}')
-//        ->setBody('{message}');
+//            $app['mailer']->send($message);
 //
-//
-//        // Send the message
-//        $result = $mailer->send($message);
-//
-//        echo 'Message has been sent';
-//        } catch (Exception $e) {
-//            echo 'Message could not be sent.';
-//            echo 'Mailer Error: ' . $mail->ErrorInfo;
-//        }
-//
+//            return new Response('Thank you for your message', 201);
+//        });
 
-
-
-
-
-
-        public function mailAction(Request $request)
-        use ($app) {
-            $message = \Swift_Message::newInstance()
-                ->setSubject('subject')
-                ->setFrom(array('name','email'))
-                ->setTo(array('tequilateam2017@gmail.com'))
-                ->setBody($request->match('message'));
-
-            $app['mailer']->send($message);
-
-            return new Response('Thank you for your message', 201);
-        });
-
-}
+} // end of Class
 
 

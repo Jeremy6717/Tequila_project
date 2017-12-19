@@ -6,6 +6,9 @@
 
 {% block content %}
     {{ parent() }}
+    <h3>All items on given Category</h3>
+
+    
     <div class="grid-container">
         <table border="1">
             <thead>
@@ -26,8 +29,12 @@
                 {% endfor %}
             </tbody>
         </table>
+            
+            
     </div>
 {% endblock %}
+
+
 
 {% block footer %}
     {% include 'footer.html.twig' %}

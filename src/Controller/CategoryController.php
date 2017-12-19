@@ -1,4 +1,5 @@
 <?php
+
 namespace Controller;
 
 use \Symfony\Component\HttpFoundation\Request;
@@ -12,35 +13,47 @@ use \Models\Product;
 use \Models\UserModel;
 
 class CategoryController {
+
     /**
      *  @return \Doctrine\DBAL\Query\QueryBuilder
      */
-    protected function getQueryBuilder($doctrine){
-         //calls the querybuilder of doctrine
+    protected function getQueryBuilder($doctrine) {
+        //calls the querybuilder of doctrine
         return $doctrine->createQueryBuilder();
     }
 
     /**
      *  @return \Doctrine\ORM\EntityManager
      */
-    public function getEntityManager(Application $app){
+    public function getEntityManager(Application $app) {
         return $app['orm.em'];
     }
 
-   public function categoryAction(Request $request, Application $app){
+    public function categoryAction(Request $request, Application $app) {
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Category::class);
         $categories = $repository->findAll();
 
         return $app['twig']->render(
-            'category.html.twig',
-            [
-                'categories' => $categories
-            ]
+                        'category.html.twig', [
+                    'categories' => $categories
+                        ]
         );
+    }
 
-    } // end of function categoryAction
-      
+// end of function categoryAction
+
+    public function categorychooseAction(Request $request, Application $app) {
+        $entityManager = $this->getEntityManager($app);
+        $repository = $entityManager->getRepository(Category::class);
+        $categories = $repository->findAll();
+
+        return $app['twig']->render(
+                        'chooseCategory.html.twig', [
+                    'categories' => $categories
+                        ]
+        );
+    }
+
+// end of function categoryAction
 }
-
-
