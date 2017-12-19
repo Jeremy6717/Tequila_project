@@ -48,29 +48,51 @@ $app->register(
     new SecurityServiceProvider(),
     [
         'security.firewalls'=> [
-            'admin'=>[                   // Name of firewall
+            'admin'=>[        // Name of firewall
                 'pattern'=>'^/',    // firewall scope
                 'anonymous' => true,
-
+                
+                'users'=>function() use($app){
+                    $repository =$app['orm.em']->getRepository(Models\UserModel::class);
+                    return new \Provider\DBUserProvider($repository);
+                },
+                        
                 'logout' => [
                     'logout_path'=> '/logout',
                     'invalidate_session' => true,
                     'target_url' => '/'
                 ],
+                        
                 'form' => [
                     'login_path' => '/signin',
-                    'check_path' =>'/login_check'
+                    'check_path' =>'/login_check',
+                    'default_target_path' => '/report',
+                    'always_use_default_target_path'=> 'true'
                 ]
             ]
         ],
 
 
-        'security.default_encoder'=> function(){      // it's a service = imutable and share in all application
+        'security.default_encoder'=> function(){// it's a service = imutable and share in all application
             return new PlaintextPasswordEncoder();
         },
     ]
 
 );
+
+
+
+$app['swiftmailer.options'] = array(
+    'host' => 'host',
+    'port' => '25',
+    'username' => 'tequilateam2017',
+    'password' => 'Tequila2017@',
+    'encryption' => null,
+    'auth_mode' => null
+);
+
+
+
 
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new FormServiceProvider());
@@ -83,3 +105,5 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->register(new \Silex\Provider\SessionServiceProvider());
 
+
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());

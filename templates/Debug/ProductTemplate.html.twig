@@ -31,7 +31,7 @@
             {% else %}
                 <strong>LA TABLE product EST VIDE</strong>
             {% endfor %}
-            <a href="http://localhost/Tequila_project/web/index_dev.php/debugproductscsv"">EXPORT TO CSV</a>
+            <a href="{{ path ("debugproductscsv") }}">EXPORT TO CSV</a>
         </tbody>
     </table>
 {% endblock %}
