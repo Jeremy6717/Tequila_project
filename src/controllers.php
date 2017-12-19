@@ -67,7 +67,8 @@ $app->get('/report/prod_in_cat', "Controller\ProductController::productAction")-
 //routing for marketing page
 $app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing'); //there is no order page, check Controller\stockController.php and modify pagename
 
-
+//routing for sending message contact page
+$app->post('/team', "Controller\MailController::mailAction")->bind('mail');
 
 
 

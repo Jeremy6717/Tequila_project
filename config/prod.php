@@ -72,9 +72,20 @@ $app->register(
         'security.default_encoder'=> function(){// it's a service = imutable and share in all application
             return new PlaintextPasswordEncoder();
         },
-    ]
+    ]         
 
 );
+        
+//data connection swiftmailer
+    $app['swiftmailer.options'] = array(
+    'host' => 'host',
+    'port' => '25',
+    'username' => 'tequilateam2017',
+    'password' => 'Tequila2017@',
+    'encryption' => null,
+    'auth_mode' => null
+);
+
 
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new FormServiceProvider());
@@ -86,4 +97,6 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 
 
 $app->register(new \Silex\Provider\SessionServiceProvider());
+
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 

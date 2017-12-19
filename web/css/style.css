@@ -174,7 +174,7 @@ ul{
 }
 
 .demo-toggle-title {
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .menu-text{
@@ -210,7 +210,7 @@ ul{
     #mainTitle{
         font-size: 4rem;
         margin-left: 22rem;
-		margin-top: 3.5rem;
+        margin-top: 3.5rem;
         text-align: left;
     }
 
@@ -293,7 +293,7 @@ ul{
 
 #teamContent{
     margin-top: 4rem;
-	margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 #teamMemberPicture img{
@@ -347,7 +347,7 @@ textarea{
     h2{
        	font-size: 2.5rem;
         text-align: center;
-		padding-top: 4rem;
+        padding-top: 4rem;
         padding-bottom: 1rem;
     }
 
@@ -376,12 +376,12 @@ textarea{
 label{
     font-size: 1rem;
     margin: 1.2rem;
-	position: relative;
+    position: relative;
     left: 30%;
 
 }
 .input-group-button{
-	left: 40%;
+    left: 40%;
     border: #f2c811;
     margin-bottom: 2rem;
     margin-top: 1.5rem;
@@ -395,13 +395,13 @@ input[type=password]:focus{
 
 #submit{
     padding: 1rem 2rem;
-	color: black;
+    color: black;
 }
 
 
 @media (min-width:639px) {
 
-     #login h2{
+    #login h2{
         text-align: center;
         margin-top: 2rem;
     }
@@ -428,7 +428,7 @@ input[type=password]:focus{
     }
 }
 
-    /*REPORT MOBILE*/
+/*REPORT MOBILE*/
 
 .blockBtn{
     font-size: 2.8rem;
@@ -441,7 +441,7 @@ input[type=password]:focus{
 .button{
     text-align: center;
 }
- 
+
 @media (min-width:639px) {
     .blockBtn{
         font-size: 2.8rem;
@@ -450,9 +450,9 @@ input[type=password]:focus{
         margin-right:auto;
         padding-bottom: 4rem;
     }
-	.btnFa{
-	        font-size: 6rem;
-	    }
+    .btnFa{
+        font-size: 6rem;
+    }
 
 }
 
@@ -473,10 +473,10 @@ h3{
     margin-left: auto;
     margin-right: auto;
     margin-top: 8rem;
-    
+
 }
 
-    /* FOOTER DESKTOP */
+/* FOOTER DESKTOP */
 footer {
     .input-group-button{
         left: 84%;
