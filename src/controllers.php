@@ -60,13 +60,13 @@ $app->get('/report/category', "Controller\CategoryController::categoryAction")->
 //routing for orders page
 $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
 
-//routing for orderlines page
+//routing for orderlines displayed as Sales in the report menu
 $app->get('/report/orderlines', "Controller\OrderlineController::orderlinesAction")->bind('orderlines');
 
 //routing for products page
 $app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product');
 //routing for marketing page
-$app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing'); //there is no order page, check Controller\stockController.php and modify pagename
+$app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing'); 
 //routing for sendin message contact page
 $app->post('/team', "Controller\MailController::mailAction")->bind('mail');
 

@@ -2,6 +2,7 @@
 namespace Models;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+use Models\Role;
 
 /**
  * User is a Class for the table User where User are those connecting to the
