@@ -6,8 +6,11 @@
 
 {% block content %}
     {{ parent() }}
+    <a href="{{ path ("stockcsv") }}">EXPORT TO CSV</a>
     
     <h3>Out of Stock and Low Stock Report</h3>
+
+    
     <table border="1">
         <thead>
         <tr>
