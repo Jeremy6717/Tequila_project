@@ -50,8 +50,9 @@ $app->match('/signup', "Controller\UserController::userSignupAction")->bind('sig
 
 /*$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');*/
 
-//routing for sales page
-$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
+//routing for sales page which is not in use at the moment
+//$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
+
 //routing for stock page
 $app->get('/report/stock', "Controller\StockController::stockAction")->bind('stock');
 //routing for category page

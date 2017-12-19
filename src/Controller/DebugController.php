@@ -119,7 +119,7 @@ class DebugController {
         $products = $repository->findAll();
 
         // I open an export file in write mode
-        $fileFullName = "C:\\xampp\\htdocs\\Tequila_project\\var\\csv\\export-20171218.csv";
+        $fileFullName = "C:\\xampp\\htdocs\\00_Tequila\\var\\csv\\export-20171218.csv";
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
         // print_r ($filePointer);
 
