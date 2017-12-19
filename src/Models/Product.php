@@ -114,7 +114,7 @@ class Product {
         return $this;
     }
     
-    public function toArray()
+    public function toArrayComplete()
     {
         return [
             'id' => $this->id,
@@ -127,5 +127,11 @@ class Product {
         ];
     } // end of function toArray of Class Product
 
-
+    public function toArray()
+    {
+        return [
+            'name' => $this->name,
+            'stock' => $this->stock
+        ];
+    } // end of function toArray of Class Product
 }
