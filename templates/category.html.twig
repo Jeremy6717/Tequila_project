@@ -6,9 +6,9 @@
 
 {% block content %}
     {{ parent() }}
-    <h3>All items on given Category</h3>
 
-    
+    <a href="{{ path ("categorycsv") }}">EXPORT TO CSV</a>
+    <h3>All items on given Category</h3>
     <div class="grid-container">
         <table border="1">
             <thead>

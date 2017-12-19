@@ -6,6 +6,8 @@
 
 {% block content %}
     {{ parent() }}
+    <a href="{{ path ("productscsv") }}">EXPORT TO CSV</a>
+
 
     <h3>Products By Category</h3>
     <div class="grid-container">
@@ -28,6 +30,9 @@
     <hr />
 
     <h3>All Products By Category</h3>
+
+    
+
     <table border="1">
         <thead>
             <tr>
