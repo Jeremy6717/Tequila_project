@@ -83,6 +83,6 @@ class ProductController {
             ]
         );
     
-    } // end of the method debugproductscsvAction(Request $request, Application $app) of Class DebuController
+    } // end of the method productscsvAction(Request $request, Application $app) of Class DebuController
    
 }

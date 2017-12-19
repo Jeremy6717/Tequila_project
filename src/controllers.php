@@ -50,18 +50,17 @@ $app->match('/signup', "Controller\UserController::userSignupAction")->bind('sig
 
 /*$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');*/
 
-//routing for sales page
-$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
+//routing for sales page which is not in use at the moment
+//$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
+
 //routing for stock page
 $app->get('/report/stock', "Controller\StockController::stockAction")->bind('stock');
 //routing for category page
 $app->get('/report/category', "Controller\CategoryController::categoryAction")->bind('category');
 //routing for orders page
 $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
-
 //routing for orderlines page
 $app->get('/report/orderlines', "Controller\OrderlineController::orderlinesAction")->bind('orderlines');
-
 //routing for products page
 $app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product');
 //routing for marketing page
@@ -91,6 +90,18 @@ $app->get('/debugproducts', "Controller\DebugController::debugproductsAction")->
 
 //routing for Products CSV
 $app->get('/productscsv', "Controller\ProductController::productscsvAction")->bind('productscsv');
+
+//routing for Categories CSV
+$app->get('/categorycsv', "Controller\CategoryController::categorycsvAction")->bind('categorycsv');
+
+//routing for Stock CSV
+$app->get('/stockcsv', "Controller\StockController::stockcsvAction")->bind('stockcsv');
+
+//routing for orders CSV
+$app->get('/report/orderscsv', "Controller\OrderController::ordercsvAction")->bind('ordercsv');
+
+//routing for orderlines CSV
+$app->get('orderlinescsv', "Controller\OrderlineController::orderlinescsvAction")->bind('orderlinescsv');
 
 //routing for debug Products JSON
 $app->get('/debugproductsjson', "Controller\DebugController::debugproductsjsonAction")->bind('debugproductsjson');

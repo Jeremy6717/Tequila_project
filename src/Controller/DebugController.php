@@ -112,47 +112,7 @@ class DebugController {
 
     } // fin de la méthode debugproductsAction(Request $request, Application $app) de la Classe DebugController
 
-    public function debugproductscsvActionSAVED(Request $request, Application $app){
-
-        $entityManager = $this->getEntityManager($app);
-        $repository = $entityManager->getRepository(Product::class);
-        $products = $repository->findAll();
-
-        // I open an export file in write mode
-        $fileFullName = "C:\\xampp\\htdocs\\Tequila_project\\var\\csv\\export-20171218.csv";
-        $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
-        // print_r ($filePointer);
-
-        // I parse the array and I create the csv lines
-        // $nbrProducts = count($resultproducts);
-        // echo "<br>There are {$nbrProducts} products in my array<br>";
-        $line='';
-        foreach ($products as $key => $value) {
-            $line = [
-                $value->getId(),
-                $value->getName(),
-                $value->getDescription(),
-                $value->getPrice(),
-                $value->getStock(),
-                $value->getVat(),
-                $value->getCatid()->getName()
-            ];
-
-            fputcsv($filePointer, $line, ';');
-        }
-
-        fclose($filePointer); // I close the file in write mode
-
-        // return file_get_contents($fileFullName);
-        return $app['twig']->render(
-            'Debug/ProductcsvTemplate.html.twig',
-            [
-                'products' => $products
-            ]
-        );
-    
-    } // end of the method debugproductscsvAction(Request $request, Application $app) of Class DebuController
-    
+        
     public function debugproductscsvAction(Request $request, Application $app){
 
         $entityManager = $this->getEntityManager($app);
