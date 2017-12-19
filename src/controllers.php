@@ -25,9 +25,9 @@ $app->get('/report', function() use ($app) {
 
 
 //Routing for team page
+
 $app->get('/team', function() use ($app) {
-    $user=null;
-    return $app['twig']->render('team.html.twig', array('user'=>$user));
+    return $app['twig']->render('team.html.twig', array());
 })
     ->bind('team');
 
@@ -50,7 +50,6 @@ $app->match('/signup', "Controller\UserController::userSignupAction")->bind('sig
 
 /*$app->get('/signup', "Form\UserForm::buildForm")->bind('signup');*/
 
-
 //routing for sales page
 $app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
 //routing for stock page
@@ -67,6 +66,8 @@ $app->get('/report/orderlines', "Controller\OrderlineController::orderlinesActio
 $app->get('/report/prod_in_cat', "Controller\ProductController::productAction")->bind('product');
 //routing for marketing page
 $app->get('/report/marketing', "Controller\MarketingController::marketingAction")->bind('marketing'); //there is no order page, check Controller\stockController.php and modify pagename
+//routing for sendin message contact page
+$app->post('/team', "Controller\MailController::mailAction")->bind('mail');
 
 
 

@@ -12,7 +12,10 @@ use Silex\Provider\FormServiceProvider;
  *
  * @author tequila team
  */
-class UserController
+
+
+
+class UserController 
 {
 
     public function  userSignupAction(Request $request, Application $app){

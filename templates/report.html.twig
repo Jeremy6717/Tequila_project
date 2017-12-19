@@ -7,37 +7,37 @@
 {% block content %}
 
     <div class="intro">
-        <h3>Report made easy</h3>
+        <h3>Simple to use. More power than you can imagine.</h3>
         <p>Analyze and Present your Data at the Click of a Button!
-        <br> Create and publish reports and graphs, and share them with your team. On the move, these mobile reporting tools will help you quickly turn your data into clear, easy-to-use visualizations.
-        <br><br>Start analyzing your data with just one click! </p>
+            <br> Create and publish reports and graphs, and share them with your team. On the move, these mobile reporting tools will help you quickly turn your data into clear, easy-to-use visualizations.
+            <br><br>Start analyzing your data with just one click! </p>
     </div>
 
     <div class="grid-container">
         <div class="grid-x grid-padding-x footer">
 
-                <div class="blockBtn">   
-                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-chart-line"></i></div>
+                <div class="blockBtn">
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-chart-line btnFa"><a href="{{ path ("stock") }}"></a></i></div>
                     <div><a class="button large btnReport" href="{{ path ("stock") }}">Stock</a></div>
                 </div>
-                <div class="blockBtn">   
-                    <div class="large-4 medium-4 small-12 cell"><i class="far fa-money-bill-alt"></i></div>
+                <div class="blockBtn">
+                    <div class="large-4 medium-4 small-12 cell"><i class="far fa-money-bill-alt btnFa"><a href="{{ path ("sales") }}"></a></i></div>
                     <div><a class="button large btnReport" href="{{ path ("sales") }}">Sales</a></div>
                 </div>
                 <div class="blockBtn">
-                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-list"></i></div>
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-list btnFa"></i></div>
                     <div><a class="button large btnReport" href="{{ path ("category") }}">Category</a></div>
                 </div>
                 <div class="blockBtn">
-                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-shopping-cart btnFa"></i></div>
                     <div><a class="button large btnReport" href="{{ path ("order") }}">Orders</a></div>
                 </div>
-                <div class="blockBtn">   
-                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-cubes"></i></div>
+                <div class="blockBtn">
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-cubes btnFa"></i></div>
                     <div><a class="button large btnReport" href="{{ path ("product") }}">Product</a></div>
                 </div>
-                <div class="blockBtn">   
-                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-user"></i></div>
+                <div class="blockBtn">
+                    <div class="large-4 medium-4 small-12 cell"><i class="fas fa-user btnFa"></i></div>
                     <div><a class="button large btnReport" href="{{ path ("marketing") }}">Marketing</a></div>
                 </div>
 
@@ -47,7 +47,5 @@
 {% endblock %}
 
 {% block footer %}
-    {% include 'footer.html.twig' %}      
-{% endblock %}  
-
-
+    {% include 'footer.html.twig' %}
+{% endblock %}
