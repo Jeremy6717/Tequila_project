@@ -6,6 +6,10 @@
 
 {% block content %}
     {{ parent() }}
+
+
+
+
     <table border="1">
         <thead>
         <tr>
@@ -43,6 +47,8 @@
     <h3> LOW STOCK </h3>
 
 
+    <div id="chart_div"></div>
+
     <table border="1">
         <thead>
         <tr>
@@ -78,8 +84,8 @@
         </tbody>
     </table>
 
-
     <div id="chart_div"></div>
+
 {% endblock %}
 
 {% block footer %}

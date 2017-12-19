@@ -4,7 +4,7 @@ namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 
 class MailController {
@@ -82,8 +82,7 @@ class MailController {
 
 
 
-        public function mailAction(Request $request)
-        use ($app) {
+        public function mailAction(Request $request, Application $app){
             $message = \Swift_Message::newInstance()
                 ->setSubject('subject')
                 ->setFrom(array('name','email'))
@@ -93,7 +92,8 @@ class MailController {
             $app['mailer']->send($message);
 
             return new Response('Thank you for your message', 201);
-        });
+        }
+
 
 }
 
