@@ -8,10 +8,6 @@ namespace Models;
  */
 class Customer {
     
-    
-    
-    
-    
     /**
      * @id()
      * @GeneratedValue()
@@ -75,7 +71,6 @@ class Customer {
         $this->orders = new ArrayCollection();
     }
 
-    
     public function getId() {
         return $this->id;
     }

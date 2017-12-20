@@ -71,5 +71,5 @@ class UserController {
             );
     } //end of function
 
+} // end of class UserController
 
-} //end of class UserController

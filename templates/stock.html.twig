@@ -6,9 +6,12 @@
 
 {% block content %}
     {{ parent() }}
-
         
     <h3>Out of Stock and Low Stock Report</h3>
+    
+    <div class="orderBtn">
+        <a href="{{ path ("stockcsv") }}">Export to CSV</a>
+    </div>
 
 
     <table border="1">
@@ -68,13 +71,6 @@
         {% endfor %}
     </tbody>
 </table>
-
-
-<div class="orderBtn">
-    <a href="{{ path ("stockcsv") }}">Export to CSV</a>
-</div>
-
-
 
 {% endblock %}
 

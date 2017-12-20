@@ -8,7 +8,11 @@
 {% block content %}
     {{ parent() }}
 
-    <h3>Sales Report With VAT</h3>
+    <h3>Sales Report With VAT For Current Month</h3>
+    
+    <div class="orderBtn">
+    <a href="{{ path ("orderlinescsv") }}">Export to CSV</a>
+    </div>
 
     <table border="1">
         <thead>
@@ -47,9 +51,7 @@
     </tbody>
 </table>
 
-<div class="orderBtn">
-    <a href="{{ path ("orderlinescsv") }}">Export to CSV</a>
-</div>
+
 {% endblock %}
 
 {% block footer %}
@@ -75,9 +77,8 @@
             data.addColumn('string', 'Items ID');
             data.addColumn('number', 'quantity per order');
             data.addRows([
-                {% for order in orders %}
-                ['{{ orderline.getProduct().getId() }}', {{ orderline.getQuantity() }}],
-                {% endif %}
+                {% for orderline in orderlines %}
+                ['{{ orderline.getProduct().getId() }}', '{{ orderline.getQuantity() }}']
                 {% endfor %}
             ]);
             // Set chart options

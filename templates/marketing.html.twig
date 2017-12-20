@@ -6,6 +6,9 @@
 
 {% block content %}
     {{ parent() }}
+    
+    <h3>Segmentation Market</h3>
+    
     <table border="1">
         <thead>
         <tr>
@@ -22,7 +25,13 @@
                 <td>{{ customer.getId() }}</td>
                 <td>{{ customer.getFirstname() }}</td>
                 <td>{{ customer.getLastname() }}</td>
-                <td>{{ customer.getGender() }}</td>
+                
+                {% if customer.getGender == 1 %}
+                    <td>Female</td>
+                    {% else %}
+                    <td>Male</td>
+                {% endif %}
+                
                 <td>{{ customer.getDob() }}</td>
             </tr>
         {% else %}
@@ -35,3 +44,5 @@
 {% block footer %}
     {% include 'footer.html.twig' %}
 {% endblock %}
+
+

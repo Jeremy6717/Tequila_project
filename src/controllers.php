@@ -53,6 +53,9 @@ $app->get('/report/choosecategory', "Controller\CategoryController::categorychoo
 //Routing for orders page
 $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
 
+//Routing for customer page
+$app->get('/report/customer', "Controller\CustomerController::customerAction")->bind('customer');
+
 //Routing for orderlines displayed as Sales in the report menu
 $app->get('/report/orderlines', "Controller\OrderlineController::orderlinesAction")->bind('orderlines');
 
