@@ -33,11 +33,11 @@ class OrderlineController {
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Orderline::class);
         $orderlines = $repository->findAll();
-                     
+        
         return $app['twig']->render(
             'orderlines.html.twig',
             [
-                'orderlines' => $orderlines
+                'orderlines' => $this->filterByDate($orderlines)
             ]
         );
     }
@@ -47,18 +47,20 @@ class OrderlineController {
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Orderline::class);
         $orderlines = $repository->findAll();
-
+                
         // I open an export file in write mode
-        $today= date("Y-m-d-h-i-sa");
-        $fileFullName = __DIR__."\\csv\\orderline-".$today.".csv";
+        $now = new \DateTime();
+        $fileFullName = __DIR__."\\csv\\orderline-".$now->format("Y-m-d-h-i-sa").".csv";
         echo $fileFullName;
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
         // print_r ($filePointer);
 
         // I parse the array and I create the csv lines
         $line='';
-        foreach ($orderlines as $key => $value) {
-            $line = [
+        $filteredOrderline=$this->filterByDate($orderlines);
+        
+        foreach ($filteredOrderline as $key => $value) {
+                $line = [
                 $value->getOrder()->getId(),
                 $value->getOrder()->getDate(),
                 $value->getOrder()->getPayment(),
@@ -71,8 +73,9 @@ class OrderlineController {
                 $value->getProduct()->getName(),
                 $value->getProduct()->getCatId()->getId(),
                 $value->getProduct()->getCatId()->getName()
-            ];
-            fputcsv($filePointer, $line, ';');
+                ];
+                fputcsv($filePointer, $line, ';');
+            
         } // end of parsing all orderlines
 
         fclose($filePointer); // I close the file in write mode
@@ -81,12 +84,28 @@ class OrderlineController {
         return $app['twig']->render(
             'orderlines.html.twig',
             [
-                'orderlines' => $orderlines
+                'orderlines' => $filteredOrderline
             ]
         );
     
     } // end of the method orderlinescsvAction(Request $request, Application $app) of Class DebuController
     
+    private function filterByDate($orderlines){
+        $now = new \DateTime();
+        $firstDay = new \DateTime('first day of this month');
+        
+        $orderlinesArray = [];
+        
+        foreach ($orderlines as $key => $value) {
+            $orderDate = \DateTime::createFromFormat('d/m/Y', $value->getOrder()->getDate());
+
+            if ($orderDate >= $firstDay && $orderDate <= $now){
+              $orderlinesArray[]=$value;
+            }
+            
+        } // end of parsing all orderlines
+        return $orderlinesArray;
+    }
 
 
 }// end of public function orderlineAction
