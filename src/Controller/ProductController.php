@@ -40,12 +40,34 @@ class ProductController {
 
         return $app['twig']->render(
                         'product.html.twig', [
-                    'products' => $products,
-                    'categories'=>$categories
+                            'products' => $products,
+                            'categories'=> $categories
                         ]
         );
     }
 
+    public function productsOfCategoryAction(Request $request, Application $app) {
+        $entityManager = $this->getEntityManager($app);
+        
+        $categoryRepository = $entityManager->getRepository(Category::class);
+        $categories = $categoryRepository->findAll();
+        
+        $productRepository = $entityManager->getRepository(Product::class);
+              
+        $filteredProducts = $productRepository->findByCatid(
+            $categoryRepository->find($request->query->get('selectCategory'))
+        );
+        
+        var_dump(count($filteredProducts));
+         return $app['twig']->render(
+                        'product.html.twig', [
+                            'categories'=> $categories,
+                            'products' => $filteredProducts                            
+                        ]
+        );
+        
+        
+    }//closes function productsOfCategoryAction
 
    public function productscsvAction(Request $request, Application $app){
 
@@ -56,7 +78,7 @@ class ProductController {
         // I open an export file in write mode
         $today= date("Y-m-d-h-i-sa");
         $fileFullName = __DIR__."\\csv\\product-".$today.".csv";
-        echo $fileFullName;
+        
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
         // print_r ($filePointer);
 

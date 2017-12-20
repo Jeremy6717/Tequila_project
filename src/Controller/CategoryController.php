@@ -31,21 +31,24 @@ class CategoryController {
 
     public function categoryAction(Request $request, Application $app) {
         $entityManager = $this->getEntityManager($app);
+        
         $repository = $entityManager->getRepository(Category::class);
-        $categories = $repository->findAll();
-
+        $categories = $repository->findAll();        
+        
         return $app['twig']->render(
             'category.html.twig',
             [
-            'categories' => $categories
+                'categories' => $categories                
             ]
         );
     } // end of function categoryAction
 
-    public function categorychooseAction(Request $request, Application $app) {
+    
+    /*public function categorychooseAction(Request $request, Application $app) {
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Category::class);
         $categories = $repository->findAll();
+        
         
         
         return $app['twig']->render(
@@ -56,7 +59,7 @@ class CategoryController {
         );
     } // end of method categorychooseAction
 
-
+    */
 
 
     
