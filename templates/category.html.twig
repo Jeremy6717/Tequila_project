@@ -6,7 +6,6 @@
 
 {% block content %}
     {{ parent() }}
-
     <h3>All items on given Category</h3>
     <div class="grid-container">
         <table border="1">
@@ -23,7 +22,7 @@
                         <td>{{ category.getName() }}</td>
                     </tr>
                 {% else %}
-                <strong>LA TABLE category EST VIDE</strong>
+                    <strong>LA TABLE category EST VIDE</strong>
                 {% endfor %}
             </tbody>
         </table>
@@ -32,8 +31,6 @@
         </div>            
     </div>
 {% endblock %}
-
-
 
 {% block footer %}
     {% include 'footer.html.twig' %}
