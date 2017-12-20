@@ -56,6 +56,16 @@ class Customer {
     private $couid;
     
     /**
+     * @Column(name="cust_gender", type="boolean", length=1, nullable=false)
+     */
+    private $gender;
+    
+    /**
+     * @Column(name="cust_dob", type="string", length=10, nullable=false)
+     */
+    private $dob;
+    
+    /**
     * One Customer has Many Orders.
     * @OneToMany(targetEntity="Orders", mappedBy="customer")
     */
@@ -97,6 +107,14 @@ class Customer {
     public function getCouid() {
         return $this->couid;
     }
+    
+    public function getGender() {
+        return $this->gender;
+    }
+    
+    public function getDob() {
+        return $this->dob;
+    }
 
     function setFirstname($firstname) {
         $this->firstname = $firstname;
@@ -130,6 +148,16 @@ class Customer {
 
     function setCouid($couid) {
         $this->couid = $couid;
+        return $this;
+    }
+    
+    function setGender($gender) {
+        $this->gender = $gender;
+        return $this;
+    }
+    
+    function setDob($dob) {
+        $this->dob = $dob;
         return $this;
     }
 
