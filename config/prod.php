@@ -71,27 +71,6 @@ $app->register(
         ]
 );
 
-//data connection swiftmailer
-$app['swiftmailer.options'] = array(
-    'host' => 'host',
-    'port' => '25',
-    'username' => 'tequilateam2017',
-    'password' => 'Tequila2017@',
-    'encryption' => null,
-    'auth_mode' => null
-);
-
-
-$app['swiftmailer.options'] = array(
-    'host' => 'host',
-    'port' => '25',
-    'username' => 'tequilateam2017',
-    'password' => 'Tequila2017@',
-    'encryption' => null,
-    'auth_mode' => null
-);
-
-
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new FormServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
@@ -102,7 +81,13 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->register(new \Silex\Provider\SessionServiceProvider());
 
+
 //Swiftmailer
-$app->register(new Silex\Provider\SwiftmailerServiceProvider());
-
-
+$app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
+    'host' => 'smtp.gmail.com',
+    'port' => '25',
+    'username' => 'tequilateam2017',
+    'password' => 'Tequila2017@',
+    'encryption' => null,
+    'auth_mode' => null
+));
