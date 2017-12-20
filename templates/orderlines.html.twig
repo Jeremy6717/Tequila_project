@@ -8,7 +8,6 @@
 {% block content %}
     {{ parent() }}
 
-    <a href="{{ path ("orderlinescsv") }}">EXPORT TO CSV</a>
     <h3>Sales Report With VAT</h3>
 
     <table border="1">
@@ -21,9 +20,7 @@
                 <td> PRODUCT ID</td>
                 <td> QUANTITY</td>
                 <td> PRICE</td>
-                <td> SHIPPING COST</td>
                 <td> TAX INCLUSIVE</td>
-                <td> TAX EXCLUSIVE</td>
                 <td> VAT</td>
 
             </tr>
@@ -38,9 +35,10 @@
                     <td>{{ orderline.getProduct().getId() }}</td>
                     <td>{{ orderline.getQuantity() }}</td>  
                     <td>{{ orderline.getProduct().getPrice() }}</td>
-                    {{% set var_1 = orderline.getProduct().getPrice() + var1|number_format(2,'.',',')%}}
-                    {{% set var_2 = 3 + var2|number_format(2,'.',',') %}}
-                    <td>{{ (var_1 * var_2 + var_1) }}</td>
+                    {% set var_1 = orderline.getProduct().getPrice() %}
+                    {% set var_2 = orderline.getProduct().getVat() %}
+
+                    <td>{{ (var_1 * (1 + var_2/100)) }}</td> 
                     <td>{{ orderline.getProduct().getVat() }}</td>
                 </tr>
             {% else %}
