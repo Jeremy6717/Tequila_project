@@ -86,7 +86,10 @@ $app->get('/debugproducts', "Controller\DebugController::debugproductsAction")->
 //Routing for Products CSV
 $app->get('/productscsv', "Controller\ProductController::productscsvAction")->bind('productscsv');
 
-//Routing for Categories CSV
+//routing for Products Submit button
+$app->get('/productsofcategory', "Controller\ProductController::productsOfCategoryAction")->bind('productsofcategory');
+
+//routing for Categories CSV
 $app->get('/categorycsv', "Controller\CategoryController::categorycsvAction")->bind('categorycsv');
 
 //Routing for Stock CSV
