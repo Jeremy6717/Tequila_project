@@ -46,7 +46,6 @@ class OrderlineController {
         // I open an export file in write mode
         $now = new \DateTime();
         $fileFullName = __DIR__."\\csv\\orderline-".$now->format("Y-m-d-h-i-sa").".csv";
-        echo $fileFullName;
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
         // print_r ($filePointer);
 

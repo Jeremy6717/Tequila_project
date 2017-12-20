@@ -47,7 +47,6 @@ class StockController {
         // I open an export file in write mode
         $today= date("Y-m-d-h-i-sa");
         $fileFullName = __DIR__."\\csv\\stock-".$today.".csv";
-        echo $fileFullName;
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
         // print_r ($filePointer);
 
