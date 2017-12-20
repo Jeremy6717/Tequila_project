@@ -6,7 +6,7 @@
 
 {% block content %}
     {{ parent() }}
-    <a href="{{ path ("ordercsv") }}">EXPORT TO CSV</a>
+    
     <h3>Orders In a Given Period For One Customer</h3>
 
     <div class="grid-container">
@@ -44,8 +44,12 @@
         <a href="http://localhost/Tequila_project/web/index_dev.php/report/orders">Submit</a>
     </div>
 
+    <div class="orderBtn">
+        <a href="{{ path ("ordercsv") }}">Export to CSV</a>
+    </div>
 
-<hr/>
+
+    <hr/>
 
     <h3>All Orders </h3>
 
@@ -75,8 +79,4 @@
         {% endfor %}
     </tbody>
 </table>
-{% endblock %}
-
-{% block footer %}
-    {% include 'footer.html.twig' %}
 {% endblock %}

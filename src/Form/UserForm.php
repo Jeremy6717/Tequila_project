@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class UserForm extends AbstractType {
@@ -48,10 +49,8 @@ class UserForm extends AbstractType {
                 EmailType::class,
                 [
                     'constraints' => [
-                        new Assert\NotBlank(),
-                        new Assert\Regex([
-                            'pattern' => '/^[a-zA-Z0-9]+[a-zA-Z0-9.]+@([a-zA-Z0-9]+\.)+[a-zA-Z]{2,10}$/'
-                        ])
+                        new Assert\NotBlank()
+                        
                     ]
                 ]
             )->add(
@@ -70,8 +69,25 @@ class UserForm extends AbstractType {
                         new Assert\NotBlank()
                     ]
                 ]
+            )->add(
+                'report',
+                ChoiceType::class, array (
+                    'choices' => array ( 
+                        'Yes' => true,
+                        'No' => null
+                    )
+                )
+                 
+            )->add(
+                'newsletter',
+                ChoiceType::class,array (
+                    'choices' => array ( 
+                        'Yes' => true,
+                        'No' => null
+                    )
+                )
             );
-        
+      
         if ($options['standalone']) {
             $builder->add('submit', SubmitType::class);
         }

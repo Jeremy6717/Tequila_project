@@ -6,8 +6,6 @@
 
 {% block content %}
     {{ parent() }}
-    <a href="{{ path ("productscsv") }}">EXPORT TO CSV</a>
-
 
     <h3>Products By Category</h3>
     <div class="grid-container">
@@ -15,23 +13,21 @@
             <div class="large-4 medium-4 small-12 cell">
                 <h5>Select Category</h5>
                 <select>
-                    {% for product in products %}
-                        <option value="category">{{ product.getCatid().getName() }}</option>
+                    {% for category in categories %}
+                        <option value="{{ category.getId() }}">{{ category.getName() }}</option>
                     {% endfor %}
-                </select>
-                
+                </select>                
             </div>
         </div>
     </div>
     <div class="orderBtn">
         <a href="http://localhost/Tequila_project/web/index_dev.php/report/prod_in_cat">Submit</a>
-    </div>
-                
+    </div>    
+    <div class="orderBtn">
+        <a href="{{ path ("productscsv") }}">Export to CSV</a>
+    </div>               
     <hr />
-
     <h3>All Products By Category</h3>
-
-    
 
     <table border="1">
         <thead>
@@ -46,7 +42,6 @@
         </thead>
         <tbody>
             {% for product in products %}
-
                 <tr>
                     <td>{{ product.getCatid().getId() }}</td>  
                     <td>{{ product.getCatid().getName() }}</td>  
@@ -62,6 +57,3 @@
 </table>
 {% endblock %}
 
-{% block footer %}
-    {% include 'footer.html.twig' %}      
-{% endblock %}  

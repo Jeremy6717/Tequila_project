@@ -21,7 +21,7 @@
                         </div>
                         <div id="check">
                             <label>Do you want receive monthly report ?</label>
-                            <input type="checkbox" name="user_newsletter" id="checkBox_report">
+                            <input type="checkbox" name="user_report" id="checkBox_report">
                         </div>
                         <div id="check">
                             <label>Do you want receive newsletter ?</label>
@@ -29,12 +29,12 @@
                         </div>
                         <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR"  id="recapcha"></div>
                         <div>{{ form_row(form.submit) }}</div>
-                        {#<div id="role">
+                        <div id="role">
                             <label for="usr_role">Role :</label>
                             <select name="usr_role">
                                 <selected><option value="ROLE_ADMIN">ROLE_ADMIN</option></selected>
                             </select>
-                        </div>#}
+                        </div>
             </fieldset>
         </div>
     {{ form_end(form) }}
