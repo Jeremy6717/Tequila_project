@@ -7,7 +7,6 @@
 {% block content %}
     {{ parent() }}
 
-    <a href="{{ path ("categorycsv") }}">EXPORT TO CSV</a>
     <h3>All items on given Category</h3>
     <div class="grid-container">
         <table border="1">
@@ -22,15 +21,15 @@
                     <tr>
                         <td>{{ category.getId() }}</td>
                         <td>{{ category.getName() }}</td>
-
                     </tr>
                 {% else %}
-                    <strong>LA TABLE category EST VIDE</strong>
+                <strong>LA TABLE category EST VIDE</strong>
                 {% endfor %}
             </tbody>
         </table>
-            
-            
+        <div class="orderBtn">
+            <a href="{{ path ("categorycsv") }}">Export to CSV</a>
+        </div>            
     </div>
 {% endblock %}
 

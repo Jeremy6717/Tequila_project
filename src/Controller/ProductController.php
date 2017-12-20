@@ -31,12 +31,17 @@ class ProductController {
 
     public function productAction(Request $request, Application $app) {
         $entityManager = $this->getEntityManager($app);
-        $repository = $entityManager->getRepository(Product::class);
-        $products = $repository->findAll();
+        
+        $productRepository = $entityManager->getRepository(Product::class);
+        $products = $productRepository->findAll();
+        
+        $categoryRepository = $entityManager->getRepository(Category::class);
+        $categories = $categoryRepository->findAll();
 
         return $app['twig']->render(
                         'product.html.twig', [
-                    'products' => $products
+                    'products' => $products,
+                    'categories'=>$categories
                         ]
         );
     }
