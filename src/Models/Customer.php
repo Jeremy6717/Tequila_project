@@ -67,6 +67,7 @@ class Customer {
     */
     private $orders;
     
+    
     public function __construct() {
         $this->orders = new ArrayCollection();
     }

@@ -2,12 +2,12 @@
 
 /*********General*********/
 
-/*******
+/**********************
 titre : black
-paragraphe : ( noir ou gris ) #333333
+paragraphe : ( gris ) #333333
 bouton : (jaune) #f2c811
 background : (jaune) #f2c811
-********/
+**********************/
 
 *{
     box-sizing: border-box;
@@ -27,120 +27,18 @@ h1, h2, h3{
 h1{
     font-size: 3.2rem;
 }
-p{
-    font-size: 1.2rem;
-}
 
 h2{
     font-size: 2.9rem;
     margin-top: 7rem;
     margin-bottom: 3rem;
 }
-@media (min-width:639px) {
-    #subMenu{
-        margin-top: 0.5rem;
-        left: -50%;
-    }
+
+p{
+    font-size: 1.2rem;
 }
 
-
-
-/***** SIGN UP MOBILE *********/
-
-#form h2{
-    margin-left: 10%;
-    text-align: left;
-}
-
-#form{
-    width: 50rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15%;
-}
-
-#form div{
-    display: block;
-}
-
-
-#form li{
-    color: red;
-    padding-left: 3.5rem;
-    background:url(../img/warning.png) no-repeat 1rem ;
-}
-
-
-#form #form_data label{
-    margin-bottom: 0.6rem;
-}
-
-
-[type='text'], [type='password'], [type='email'], #form_data label{
-    width: 35%;
-}
-
-[type='submit']{
-    background-color:#f2c811 ;
-    padding: 1rem;
-    font-size: 1.25rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    margin-left: 25%;
-}
-
-[type='checkbox']{
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#form #role{
-    display: none;
-}
-
-#recapcha{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-/***** SIGN UP DESKTOP *********/
-@media (min-width:639px){
-    #form{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 10%;
-    }
-
-    #form h2{
-        margin-left: 35%;
-        margin-top: 2rem;
-    }
-
-
-    #form_data{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 25%;
-    }
-
-    #form_data input[type='text'], #form_data input[type='password'], [type='email']{
-        width: 50%;
-    }
-
-
-    [type='checkbox']{
-        width: 40%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-}
-
-
+/************************************HEADER***********************************/
 /*******HEADER HOME MOBILE VERSION*********/
 
 header{
@@ -228,10 +126,18 @@ ul{
 
 }
 
+/**HEADER MENU DEROULANT**/
+
+@media (min-width:639px) {
+    #subMenu{
+        margin-top: 0.5rem;
+        left: -50%;
+    }
+}
+
 /*******HEADER REPORT MOBILE *******/
 
 /* HOME MOBILE */
-
 
 .intro h3{
     font-size: 2rem;
@@ -288,7 +194,9 @@ ul{
     color: #f2c811;
 }
 
-/***** SIGN UP MOBILE *********/
+
+/************************************SIGN UP***********************************/
+/********** SIGN UP MOBILE *********/
 
 #form h2{
     margin-left: 10%;
@@ -373,17 +281,15 @@ ul{
         width: 50%;
     }
 
-
     [type='checkbox']{
         width: 40%;
         margin-left: auto;
         margin-right: auto;
     }
-
-
 }
 
-/* TEAM DESKTOP  */
+/************************************TEAM***********************************/
+/********* TEAM DESKTOP **********/
 
 #teamContent{
     margin-top: 4rem;
@@ -430,8 +336,6 @@ textarea{
     margin-left: auto;
 }
 
-
-
 /****** TEAM MOBILE  *********/
 @media (max-width:639px){
 
@@ -466,8 +370,9 @@ textarea{
     margin-bottom: 2rem;
 }
 
+/************************************SIGN IN***********************************/
+/******SIGN IN - MOBILE********/
 
-/******Sign In - mobile********/
 .cell label{
     font-size: 1rem;
     margin: 1.2rem;
@@ -493,6 +398,7 @@ input[type=password]:focus{
     color: black;
 }
 
+/******SIGN IN - DESKTOP********/
 
 @media (min-width:639px) {
 
@@ -523,7 +429,8 @@ input[type=password]:focus{
     }
 }
 
-/*REPORT MOBILE*/
+/************************************HOME REPORT***********************************/
+/***********REPORT MOBILE**********/
 
 .blockBtn{
     font-size: 2.8rem;
@@ -551,8 +458,8 @@ input[type=password]:focus{
 
 }
 
-
-/* REPORTS PAGE */
+/************************************REPORTS PAGES***********************************/
+/******** REPORTS PAGE ********/
 
 table{
     width: 90%;
@@ -585,16 +492,17 @@ h3{
     margin-right: auto;
 }
 
-
-
+#select{
+    width: 100%;
+    margin-left: auto;
+    margin-left: auto;
+}
 .orderBtn:hover{
     background-color: #f2c811;
     color : white;
 }
 
-
-
-
+/************************************FOOTER***********************************/
 /********** FOOTER DESKTOP ********/
 
 footer{
@@ -612,15 +520,11 @@ footer{
     margin-top: 35px;
 }
 
-
-
-
 #linksfb,
 #linksG,
 #linksLn,
 #linkGithub {
     margin: 1rem;
-
     color: white;
 }
 
@@ -630,18 +534,16 @@ footer{
 #linkGithub:hover {
     color: #f2c811;
     font-size: 3rem;
-
-
 }
 
-footer h5 {
+footer h5{
     font-family: Pacifico;
     font-size: 2rem;
     margin-top: 2rem;
     margin-left: 20px;
 }
 
-footer p {
+footer p{
     margin-left: 20px;
 }
 
@@ -653,13 +555,13 @@ footer a:hover{
     color: #f2c811;
 }
 
-#legal {
+#legal{
     font-size: 1rem;
     margin-top: 2rem;
     margin-left: auto;
 }
 
-.copyright {
+.copyright{
     text-align: center;
     font-size: 1rem;
     color: #f2c811;
@@ -668,14 +570,12 @@ footer a:hover{
     padding-bottom: 2.5rem;
 }
 
-.sf-toolbar-clearer {
+.sf-toolbar-clearer{
     clear: both;
     height: 0rem !important;
 }
 
-
-
-/****** FOOTER MOBILE********************/
+/****** FOOTER MOBILE*******/
 
 article{
     display: block;

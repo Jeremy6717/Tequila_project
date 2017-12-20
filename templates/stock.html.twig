@@ -99,7 +99,7 @@
             data.addRows([
                 {% for product in products %}
                 {% if product.stock < 6 %}
-                ['{{ product.getName() }}', {{ product.getStock() }}],
+                ['{{ product.getName() }}', '{{ product.getStock() }}'],
                 {% endif %}
                 {% endfor %}
             ]);

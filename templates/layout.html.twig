@@ -7,10 +7,10 @@
             <meta http-equiv="x-ua-compatible" content="ie=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             
-            <title>{% block title %}Tequila{% endblock %}</title>
+            <title>{% block title %}Tequila - Dashboard{% endblock %}</title>
 
             {#<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"/>#}
-             {#<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"/>#}
+            {#<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"/>#}
             {#<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"/>#}
             {#<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"/>#}
 
@@ -21,9 +21,6 @@
             <link href="{{ asset('js/script.js') }}" rel="stylesheet" type="text/css" />
             <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
 
-
-
-
             <script src='https://www.google.com/recaptcha/api.js'></script>
         {% endblock %}
         
@@ -33,11 +30,9 @@
    {% block header %}
        {% include 'headerHome.html.twig' %}
    {% endblock %}
-        
-        
+          
    {% block content %}{% endblock %}
  
-    
    {% block footer %}
        {% include 'footer.html.twig' %}      
    {% endblock %}
