@@ -60,11 +60,11 @@ class UserController {
             return $app->json($user->toArray());      
 
 
-            /*return $app['twig']->render(
+            return $app['twig']->render(
                             'signUp.html.twig', [
                         'form' => $userForm->createView()
                             ]
-            );*/
+            );
         }
     }
 

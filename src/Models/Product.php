@@ -127,6 +127,7 @@ class Product {
         ];
     } // end of function toArray of Class Product
 
+
     public function toArray()
     {
         return [
