@@ -47,7 +47,6 @@ class CategoryController {
         $repository = $entityManager->getRepository(Category::class);
         $categories = $repository->findAll();
         
-        
         return $app['twig']->render(
             'chooseCategory.html.twig',
             [
@@ -56,10 +55,6 @@ class CategoryController {
         );
     } // end of method categorychooseAction
 
-
-
-
-    
     public function categorycsvAction(Request $request, Application $app){
 
         $entityManager = $this->getEntityManager($app);
@@ -80,10 +75,8 @@ class CategoryController {
                 $value->getId(),
                 $value->getName()
             ];
-
             fputcsv($filePointer, $line, ';');
         }
-
         fclose($filePointer); // I close the file in write mode
 
         // return file_get_contents($fileFullName);
@@ -95,7 +88,4 @@ class CategoryController {
         );
     
     } // end of the method categorycsvAction(Request $request, Application $app) of Class DebuController
-    
-    
-      
 } // end of Class CategoryController

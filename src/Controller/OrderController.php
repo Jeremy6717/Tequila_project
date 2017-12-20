@@ -16,31 +16,30 @@ class OrderController {
     /**
     *  @return \Doctrine\DBAL\Query\QueryBuilder
     */
-   protected function getQueryBuilder($doctrine){
-   //calls the querybuilder of doctrine
-   return $doctrine->createQueryBuilder();
-   }
-
-   /**
+    protected function getQueryBuilder($doctrine){
+    //calls the querybuilder of doctrine
+    return $doctrine->createQueryBuilder();
+    }
+    
+    /**
     *  @return \Doctrine\ORM\EntityManager
     */
-   public function getEntityManager(Application $app){
-   return $app['orm.em'];
-   }
-
-   public function orderAction(Request $request, Application $app){
+    public function getEntityManager(Application $app){
+    return $app['orm.em'];
+    }
+    
+    public function orderAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Orders::class);
         $orders = $repository->findAll();
 
-     return $app['twig']->render(
-     'orders.html.twig',
-     [
-     'orders' => $orders
-     ]
-     );
+        return $app['twig']->render(
+            'orders.html.twig',
+            [
+                'orders' => $orders
+            ]
+        );
      } // end of the method orderAction
-     
      
      public function ordercsvAction(Request $request, Application $app){
 
@@ -77,11 +76,7 @@ class OrderController {
                 'orders' => $orders
             ]
         );
-    
     } // end of the method ordercsvAction(Request $request, Application $app) of Class DebuController
-
-
-
   } //end of class
 
  

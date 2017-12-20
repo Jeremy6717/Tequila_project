@@ -36,7 +36,6 @@ $app->get('/signin', function(Request $request)use ($app) {
 //Routing for signup page
 $app->match('/signup', "Controller\UserController::userSignupAction")->bind('signup');
 
-
 /* $app->get('/signup', "Form\UserForm::buildForm")->bind('signup'); */
 
 //Routing for sales page which is not in use at the moment

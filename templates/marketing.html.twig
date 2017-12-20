@@ -9,22 +9,21 @@
     <table border="1">
         <thead>
         <tr>
-            <td>customer ID</td>
-            <td>customer NAME</td>
-            <td>customer Title</td>
-            <td>customer age</td>
-
+            <td>CUSTOMER ID</td>
+            <td>FIRSTNAME</td>
+            <td>LASTNAME</td>
+            <td>GENDER</td>
+            <td>DATE OF BIRTHDATE</td>
         </tr>
         </thead>
         <tbody>
         {% for customer in customers %}
-
             <tr>
                 <td>{{ customer.getId() }}</td>
                 <td>{{ customer.getFirstname() }}</td>
-               {# <td>{{ Title }}</td>
-                <td>{{ age }}</td> #}
-
+                <td>{{ customer.getLastname() }}</td>
+                <td>{{ customer.getGender() }}</td>
+                <td>{{ customer.getDob() }}</td>
             </tr>
         {% else %}
             <strong>LA TABLE customer EST VIDE</strong>

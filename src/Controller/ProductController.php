@@ -43,15 +43,18 @@ class ProductController {
                     'products' => $products,
                     'categories'=>$categories
                         ]
-        );
-    }
+        );// end of the method productAction
+    } // end of Class
 
-
-   public function productscsvAction(Request $request, Application $app){
-
+    public function productscsvAction(Request $request, Application $app){
+             
         $entityManager = $this->getEntityManager($app);
-        $repository = $entityManager->getRepository(Product::class);
-        $products = $repository->findAll();
+        
+        $productRepository = $entityManager->getRepository(Product::class);
+        $products = $productRepository->findAll();
+        
+        $categoryRepository = $entityManager->getRepository(Category::class);
+        $categories = $categoryRepository->findAll();
 
         // I open an export file in write mode
         $today= date("Y-m-d-h-i-sa");
@@ -84,7 +87,8 @@ class ProductController {
         return $app['twig']->render(
             'product.html.twig',
             [
-                'products' => $products
+                'products' => $products,
+                'categories'=>$categories
             ]
         );
     

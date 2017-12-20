@@ -1,3 +1,4 @@
+<!--Category page-->
 {% extends "layout.html.twig" %}
 
 {% block header %}
@@ -25,17 +26,13 @@
                     <strong>LA TABLE category EST VIDE</strong>
                 {% endfor %}
             </tbody>
-        </table>
+        </table>   
+            
+        <!--CSV session-->    
         <div class="orderBtn">
             <a href="{{ path ("categorycsv") }}">Export to CSV</a>
-        </div>            
+        </div>  
+        
     </div>
 {% endblock %}
 
-<<<<<<< HEAD
-{% block footer %}
-    {% include 'footer.html.twig' %}
-{% endblock %}
-=======
-
->>>>>>> Jérémy
