@@ -73,14 +73,14 @@ class CategoryController {
         }
         fclose($filePointer); // I close the file in write mode
         
-        
         // Now that the CSV file has been created on the web server, I can download it to the user's local drive
         if (file_exists($fileFullName)) {
             return new BinaryFileResponse(
                 $fileFullName,
                 200,
                 [
-                    'Content-Type' => 'application/octet-stream'
+                    'Content-Type' => 'application/octet-stream',
+                    'Content-Disposition' => 'attachment; filename="'.basename($fileFullName).'"'
                 ]
             );
         } // end of the download of the CSV file, from the web server into the user's local drive

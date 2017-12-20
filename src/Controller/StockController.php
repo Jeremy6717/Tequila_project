@@ -81,7 +81,8 @@ class StockController {
                 $fileFullName,
                 200,
                 [
-                    'Content-Type' => 'application/octet-stream'
+                    'Content-Type' => 'application/octet-stream',
+                    'Content-Disposition' => 'attachment; filename="'.basename($fileFullName).'"'
                 ]
             );
         } // end of the download of the CSV file, from the web server into the user's local drive
