@@ -77,7 +77,19 @@ class OrderlineController {
 
         fclose($filePointer); // I close the file in write mode
 
-        // return file_get_contents($fileFullName);
+        // Now that the CSV file has been created on the web server, I can download it to the user's local drive
+        if (file_exists($fileFullName)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="'.basename($fileFullName).'"');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($fileFullName));
+            readfile($fileFullName);
+            exit;
+        } // end of the download of the CSV file, from the web server into the user's local drive
+        
         return $app['twig']->render(
             'orderlines.html.twig',
             [
