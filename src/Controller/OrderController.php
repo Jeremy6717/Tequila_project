@@ -4,13 +4,9 @@ namespace Controller;
 
 use \Symfony\Component\HttpFoundation\Request;
 use \Silex\Application;
-use \Models\Category;
-use \Models\Country;
-use \Models\Customer;
-use \Models\Orderline;
+
 use \Models\Orders;
-use \Models\Product;
-use \Models\UserModel;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class OrderController {
     /**
