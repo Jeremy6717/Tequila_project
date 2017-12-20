@@ -8,14 +8,14 @@
 
     <div class="top-bar" id="example-menu">
         <div class="top-bar-left">
-            <li class="menu-text"><a href="{{ path ("report") }}">Tequila</a></li>
+            <li class="menu-text titleMenu"><a href="{{ path ("report") }}">Tequila</a></li>
         </div>
         <div class="top-bar-right">
             <ul class="dropdown menu" data-dropdown-menu>
                 <li id="identification"><a href="">HOLA {{ user.getUsername() }}</a></li>
-                <li><a href="{{ path ("logout") }}">Log Out</a>
+                <li class="titleMenu"><a href="{{ path ("logout") }}">Log Out</a>
                     <br>
-                <li><a href="{{ path ("report") }}">Reporting</a>
+                <li class="titleMenu"><a href="{{ path ("report") }}">Reporting</a>
                     <ul id="subMenu">
                         <li><a href="{{ path ("category") }}">Category</a></li>
                         <li><a href="{{ path ("orderlines") }}">Sales</a></li>
@@ -26,7 +26,7 @@
                         <li><a href="{{ path ("marketing") }}">Marketing</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ path ("team") }}">Team</a></li>
+                <li class="titleMenu"><a href="{{ path ("team") }}">Team</a></li>
 
             </ul>
             </ul>

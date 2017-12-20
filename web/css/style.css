@@ -39,7 +39,7 @@ p{
 }
 
 /************************************HEADER***********************************/
-/*******HEADER HOME MOBILE VERSION*********/
+/*******HEADER HOME MOBILE*********/
 
 header{
     background-image: url(../img/header.jpeg);
@@ -188,10 +188,15 @@ ul{
     }
 }
 
-/*Header Report - mobile*/
+/****HEADER : NAME OF USER ****/
 
 #identification a{
     color: #f2c811;
+  
+}
+
+.titleMenu{
+    vertical-align: center;
 }
 
 
@@ -575,13 +580,10 @@ footer a:hover{
     height: 0rem !important;
 }
 
-/****** FOOTER MOBILE*******/
-
 article{
     display: block;
     width: 10rem;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-
 }
