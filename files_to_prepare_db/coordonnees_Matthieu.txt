@@ -1,0 +1,3 @@
+email = matthieu.vallance@vesperiagroup.com
+
+GitHub = matthieu88160
