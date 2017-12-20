@@ -21,9 +21,7 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     if ($token) {
         $user = $token->getUser();
     }
-    
     $twig->addGlobal('user', $user);
-
     return $twig;
 });
 

@@ -7,20 +7,17 @@
             <tr>
                 <td>customer ID</td>
                 <td>customer NAME</td>
-                <td>customer Title</td>
-                <td>customer age</td>
-                      
+                <td>customer TITLE</td>
+                <td>customer AGE</td>     
             </tr>
         </thead>
         <tbody>
             {% for customer in customers %}
-                
                 <tr>
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getFirstname() }}</td>
                     <td>{{ Title }}</td>
                     <td>{{ age }}</td>
-                   
                 </tr>
             {% else %}
                 <strong>LA TABLE customer EST VIDE</strong>
