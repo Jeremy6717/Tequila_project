@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico|Prata');
 
-/*********General*********/
-
+/*********************************General*********************************/
 /**********************
 titre : black
 paragraphe : ( gris ) #333333
@@ -34,8 +33,13 @@ h2{
     margin-bottom: 3rem;
 }
 
+
 p{
     font-size: 1.2rem;
+}
+
+a{
+    color: black;
 }
 
 /************************************HEADER***********************************/
@@ -126,7 +130,7 @@ ul{
 
 }
 
-/**HEADER MENU DEROULANT**/
+/*****HEADER MENU DEROULANT**/
 
 @media (min-width:639px) {
     #subMenu{
@@ -135,9 +139,21 @@ ul{
     }
 }
 
-/*******HEADER REPORT MOBILE *******/
+/****HEADER : NAME OF USER ****/
 
-/* HOME MOBILE */
+#identification a{
+    color: #f2c811;
+  
+}
+
+.titleMenu{
+    vertical-align: middle;
+}
+
+
+/************************************HOME PAGE***********************************/
+
+/**** HOME MOBILE **/
 
 .intro h3{
     font-size: 2rem;
@@ -188,17 +204,6 @@ ul{
     }
 }
 
-/****HEADER : NAME OF USER ****/
-
-#identification a{
-    color: #f2c811;
-  
-}
-
-.titleMenu{
-    vertical-align: center;
-}
-
 
 /************************************SIGN UP***********************************/
 /********** SIGN UP MOBILE *********/
@@ -219,7 +224,6 @@ ul{
     display: block;
 }
 
-
 #form li{
     color: red;
     padding-left: 3.5rem;
@@ -231,7 +235,6 @@ ul{
     margin-bottom: 0.6rem;
 }
 
-
 [type='text'], [type='password'], [type='email'], #form_data label{
     width: 35%;
 }
@@ -239,7 +242,7 @@ ul{
 [type='submit']{
     background-color:#f2c811 ;
     padding: 1rem;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
     margin-left: 25%;
@@ -260,7 +263,7 @@ ul{
     margin-bottom: 2rem;
 }
 
-/***** SIGN UP DESKTOP *********/
+/******* SIGN UP DESKTOP *********/
 @media (min-width:639px){
     #form{
         width: 100%;
@@ -325,7 +328,6 @@ ul{
     width: 100%;
     margin-bottom: 3rem;
 }
-
 
 #contact{
     margin-top: 4rem;
@@ -403,7 +405,7 @@ input[type=password]:focus{
     color: black;
 }
 
-/******SIGN IN - DESKTOP********/
+/******SIGN IN DESKTOP********/
 
 @media (min-width:639px) {
 
@@ -434,8 +436,8 @@ input[type=password]:focus{
     }
 }
 
-/************************************HOME REPORT***********************************/
-/***********REPORT MOBILE**********/
+/************************************HOME REPORT PAGE***********************************/
+/***********HOME REPORT MOBILE**********/
 
 .blockBtn{
     font-size: 2.8rem;
@@ -466,13 +468,6 @@ input[type=password]:focus{
 /************************************REPORTS PAGES***********************************/
 /******** REPORTS PAGE ********/
 
-table{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-}
 
 h3{
     font-size: 2rem;
@@ -482,6 +477,20 @@ h3{
     margin-top: 8rem;
 
 }
+
+.titleSelect{
+    margin-left: 17%;
+    margin-top: 5%;
+}
+
+table{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
 
 .orderBtn{
     width: 159px;
@@ -505,6 +514,10 @@ h3{
 .orderBtn:hover{
     background-color: #f2c811;
     color : white;
+}
+
+.selectSubmit{
+    text-align: center;
 }
 
 /************************************FOOTER***********************************/
