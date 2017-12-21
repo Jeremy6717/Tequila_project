@@ -12,7 +12,7 @@
         <div class="grid-container">
             <div class="grid-x grid-padding-x footer">
                 <div class="large-4 medium-4 small-12 cell">
-                    <h5>Select Category</h5>
+                    <h5 class="">Select Category</h5>
                     <select name="selectCategory">
                         {% for category in categories %}
                             <option value="{{ category.getId() }}">{{ category.getName() }}</option>
@@ -21,11 +21,12 @@
                 </div>
             </div>
         </div>
-        <div class="orderBtn">
-            <button type="submit">Submit</button>
+        <div class="selectSubmit">
+            <button class="orderBtn" type="submit">Submit</button>
         </div>
     </form>
 
+    <h5 class="titleSelect">Click on the button to export CSV on your disk</h5>
     <div class="orderBtn">
         <a href="{{ path ("productscsv") }}">Export to CSV</a>
     </div>
