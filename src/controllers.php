@@ -56,6 +56,9 @@ $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('or
 //Routing for customer page
 $app->get('/report/customer', "Controller\CustomerController::customerAction")->bind('customer');
 
+//Routing for customer CSV
+$app->get('/report/customercsv', "Controller\CustomerController::customercsvAction")->bind('customercsv');
+
 //Routing for orderlines displayed as Sales in the report menu
 $app->get('/report/orderlines', "Controller\OrderlineController::orderlinesAction")->bind('orderlines');
 

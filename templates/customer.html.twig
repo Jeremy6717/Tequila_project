@@ -8,6 +8,9 @@
     {{ parent() }}
     
     <h3>List of Customers</h3>
+    <div class="orderBtn">
+        <a href="{{ path ("customercsv") }}">Export to CSV</a>
+    </div> 
     
     <table border="1">
         <thead>
