@@ -53,7 +53,7 @@ $app->get('/report/choosecategory', "Controller\CategoryController::categorychoo
 $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
 
 //Routing for button for orders by customer
-$app->get('/report/ordersbycustomer', "Controller\ordersByClientAction")->bind('ordersbycustomer');
+$app->get('/report/ordersbycustomer', "Controller\OrderController::ordersByClientAction")->bind('ordersbycustomer');
 
 //Routing for customer page
 $app->get('/report/customer', "Controller\CustomerController::customerAction")->bind('customer');

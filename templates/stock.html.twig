@@ -6,13 +6,14 @@
 
 {% block content %}
     {{ parent() }}
-        
+
     <h3>Out of Stock and Low Stock Report</h3>
-    
+
     <div class="orderBtn">
         <a href="{{ path ("stockcsv") }}">Export to CSV</a>
     </div>
 
+    <h3> No Stock </h3>
 
     <table border="1">
         <thead>
@@ -24,12 +25,6 @@
         </tr>
         </thead>
         <tbody>
-
-        <div id="responsiveChartStock">
-            <div id="chart_OutOfStock"></div>
-        </div>
-
-        <h3> No Stock </h3>
         {% for product in products %}
             {% if product.stock == 0 %}
                 <tr>
@@ -62,7 +57,7 @@
                     <td>{{ product.getCatid().getName() }}</td>
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getName() }}</td>
-                    <td>{{ product.getStock() }}</td>                
+                    <td>{{ product.getStock() }}</td>
                 </tr>
             {% endif %}
         {% else %}

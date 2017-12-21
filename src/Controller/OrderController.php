@@ -4,7 +4,7 @@ namespace Controller;
 
 use \Symfony\Component\HttpFoundation\Request;
 use \Silex\Application;
-
+use \Models\Customer;
 use \Models\Orders;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
@@ -26,27 +26,43 @@ class OrderController {
     
     public function orderAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
+        
         $repository = $entityManager->getRepository(Orders::class);
         $orders = $repository->findAll();
+        
+        $customersRepository = $entityManager->getRepository(Customer::class);
+        $customers = $customersRepository->findAll();
 
         return $app['twig']->render(
             'orders.html.twig',
             [
-                'orders' => $orders
+                'orders' => $orders,
+                'customers' => $customers
             ]
         );
      } // end of the method orderAction
      
      public function ordersByClientAction(Request $request, Application $app){
          $entityManager = $this->getEntityManager($app);
+         
          $ordersRepository = $entityManager->getRepository(Orders::class);
-                  
-         $filterOrders = $ordersRepository->findbyCustid($request->query->get('custId'));
+         $customersRepository = $entityManager->getRepository(Customer::class);
+         
+         if($request->query->has('custId')) {
+            $orders = $ordersRepository->findByCustid(
+                    $customersRepository->find($request->query->get('custId'))
+            );
+         } else {
+             $orders = $ordersRepository->findAll();
+         }
+         
+         $filterCustomer = $customersRepository->findAll();
          
          return $app['twig']->render(
                  'orders.html.twig',
                     [
-                        'orders' => $orders
+                        'orders' => $orders,
+                        'customers' => $filterCustomer
                     ]
                  );
                  
