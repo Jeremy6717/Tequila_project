@@ -1,3 +1,5 @@
+{# Page : Stock #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
@@ -8,11 +10,13 @@
     {{ parent() }}
 
     <h3>Out of Stock and Low Stock Report</h3>
-
+    
+    {# CSV Section #}
     <div class="orderBtn">
         <a href="{{ path ("stockcsv") }}">Export to CSV</a>
     </div>
 
+    {# Table No Stock #}
     <h3> No Stock </h3>
 
     <table border="1">
@@ -38,6 +42,7 @@
         </tbody>
     </table>
 
+    {# Table Low Stock #}
     <h3> Low Stock </h3>
 
     <table border="1">

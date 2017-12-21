@@ -1,9 +1,10 @@
+{# Page : Signup #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
     {% include 'headerSign.html.twig' %}
 {% endblock %}
-
 
 {% block content %}
     
@@ -19,31 +20,29 @@
                             {{ form_row(form.email) }}
                             {{ form_row(form.password) }}
                         </div>
-                        <div id="check">
+                        <div class="check">
                             <label>Do you want receive monthly report ?</label>
                             <input type="checkbox" name="user_report" id="checkBox_report">
                         </div>
-                        <div id="check">
+                        <div class="check">
                             <label>Do you want receive newsletter ?</label>
                             <input type="checkbox" name="user_newsletter" id="checkBox_newsletter">
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR"  id="recapcha"></div>
+                        <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR" id="recapcha"></div>
                         <div>{{ form_row(form.submit) }}</div>
+                        {# this function is to be use after- this label is hidden for this moment #}
                         <div id="role">
                             <label for="usr_role">Role :</label>
                             <select name="usr_role">
-                                <selected><option value="ROLE_ADMIN">ROLE_ADMIN</option></selected>
+                               <option value="ROLE_ADMIN">ROLE_ADMIN</option>
                             </select>
                         </div>
+                    </div>
             </fieldset>
         </div>
     {{ form_end(form) }}
 
 {% endblock %}
-
-
-
-
 
 {% block footer %}
     {% include 'footer.html.twig' %}
