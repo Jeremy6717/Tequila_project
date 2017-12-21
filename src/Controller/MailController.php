@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 class MailController {
 
         public function mailAction(Request $request, Application $app){
-
+            // data of the sending message
             $message = (new \Swift_Message('subject'))
                 ->setSubject('subject')
                 ->setFrom(array('tequilateam2017@gmail.com'))

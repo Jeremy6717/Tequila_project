@@ -56,7 +56,9 @@
         </tr>
         </thead>
         <tbody>
+        {# body of the table generated with the data of the database#}
         {% for product in products %}
+            {# condition wich restrict the data sendin for the generation of the chart #}
             {% if product.stock > 0 and product.stock < 3 %}
                 <tr>
                     <td>{{ product.getCatid().getName() }}</td>
@@ -75,7 +77,7 @@
 
 {% block footer %}
     {{ parent() }}
-
+    <!----------------------------------Google chart Script---------------------------------------------------->
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -96,8 +98,9 @@
             data.addColumn('string', 'Items');
             data.addColumn('number', 'Number of items');
             data.addRows([
+                <!--Foreach of the table for filling the chart-->
                 {% for product in products %}
-
+                    <!--Condition for selecting the data sending for the chart-->
                     {% if product.stock < 6 %}
                         ['{{ product.getName() }}', {{ product.getStock() }}],
                     {% endif %}

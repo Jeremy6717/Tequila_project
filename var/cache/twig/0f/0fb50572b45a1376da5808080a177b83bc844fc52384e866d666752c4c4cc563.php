@@ -94,7 +94,10 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
             <h2>Contact us</h2>
             <form method=\"post\">
                 <p>Your name</p><input type=\"text\" name=\"name\">
-                <p>Your email</p><input type=\"email\" name=\"email\">
+                <p>Your email</p>
+                <div id=\"emailContactInput\">
+                    <input type=\"email\" name=\"email\">
+                </div>
                 <p>Subject</p><input type=\"text\" name=\"subject\">
                 <textarea id=\"message\" placeholder=\"Your message\" name=\"message\"></textarea>
                 <button type=\"submit\" id=\"contactSubmit\"><i class=\"far fa-envelope\" id=\"envelope\"></i>Send</button>
@@ -106,12 +109,12 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
 ";
     }
 
-    // line 75
+    // line 78
     public function block_footer($context, array $blocks = array())
     {
-        // line 76
+        // line 79
         echo "    ";
-        $this->loadTemplate("footer.html.twig", "team.html.twig", 76)->display($context);
+        $this->loadTemplate("footer.html.twig", "team.html.twig", 79)->display($context);
         echo "      
 ";
     }
@@ -128,7 +131,7 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
 
     public function getDebugInfo()
     {
-        return array (  113 => 76,  110 => 75,  41 => 8,  38 => 7,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  116 => 79,  113 => 78,  41 => 8,  38 => 7,  33 => 4,  30 => 3,  11 => 1,);
     }
 
     public function getSourceContext()
@@ -196,7 +199,10 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
             <h2>Contact us</h2>
             <form method=\"post\">
                 <p>Your name</p><input type=\"text\" name=\"name\">
-                <p>Your email</p><input type=\"email\" name=\"email\">
+                <p>Your email</p>
+                <div id=\"emailContactInput\">
+                    <input type=\"email\" name=\"email\">
+                </div>
                 <p>Subject</p><input type=\"text\" name=\"subject\">
                 <textarea id=\"message\" placeholder=\"Your message\" name=\"message\"></textarea>
                 <button type=\"submit\" id=\"contactSubmit\"><i class=\"far fa-envelope\" id=\"envelope\"></i>Send</button>

@@ -49,6 +49,7 @@
             </tr>
         </thead>
         <tbody>
+            {# body of the table generated with the data of the database#}
             {% for product in products %}
                 <tr>
                     <td>{{ product.getCatid().getId() }}</td>
@@ -67,7 +68,7 @@
 
 {% block footer %}
     {{ parent() }}
-
+<!----------------------------------Google chart Script---------------------------------------------------->
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -88,7 +89,9 @@
             data.addColumn('string', 'Category');
             data.addColumn('number', 'Number of items');
             data.addRows([
+                <!--Foreach of the table for filling the chart-->
                 {% for product in products %}
+                    <!--Condition for selecting the data sending for the chart-->
                     {% if product.getCatid().getId() == 4 %}
                         ['{{ product.getName() }}', {{ product.getStock() }}],
                     {% endif %}

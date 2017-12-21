@@ -96,19 +96,21 @@ class UserForm extends AbstractType {
             )->add(
                 'report',
                 ChoiceType::class, array (
-                    'choices' => array ( 
-                        'Yes' => true,
-                        'No' => null
-                    )
+                    'choices' => array (
+                        1 => 'yes',
+                        0 => 'no'
+                    ),
+                    'expanded'=> true
                 )
-                 
+
             )->add(
                 'newsletter',
                 ChoiceType::class,array (
-                    'choices' => array ( 
-                        'Yes' => true,
-                        'No' => null
-                    )
+                    'choices' => array (
+                        1 => 'yes',
+                        0 => 'no'
+                    ),
+                    'expanded'=> true
                 )
             );
       

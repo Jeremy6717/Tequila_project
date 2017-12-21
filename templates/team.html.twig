@@ -61,7 +61,10 @@
             <h2>Contact us</h2>
             <form method="post">
                 <p>Your name</p><input type="text" name="name">
-                <p>Your email</p><input type="email" name="email">
+                <p>Your email</p>
+                <div id="emailContactInput">
+                    <input type="email" name="email">
+                </div>
                 <p>Subject</p><input type="text" name="subject">
                 <textarea id="message" placeholder="Your message" name="message"></textarea>
                 <button type="submit" id="contactSubmit"><i class="far fa-envelope" id="envelope"></i>Send</button>

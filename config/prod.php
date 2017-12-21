@@ -81,7 +81,7 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->register(new \Silex\Provider\SessionServiceProvider());
 
-//Swiftmailer
+//Swiftmailer data of connection
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
 $app['swiftmailer.options'] = array(
     'host' => 'smtp.gmail.com',
