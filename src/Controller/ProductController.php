@@ -56,12 +56,11 @@ class ProductController {
             $categoryRepository->find($request->query->get('selectCategory'))
         );
         
-        var_dump(count($filteredProducts));
-         return $app['twig']->render(
-                        'product.html.twig', [
-                            'categories'=> $categories,
-                            'products' => $filteredProducts                            
-                        ]
+        return $app['twig']->render(
+               'product.html.twig', [
+                     'categories'=> $categories,
+                     'products' => $filteredProducts                            
+                      ]
         );
         
         
