@@ -1,3 +1,5 @@
+{# Layout #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
@@ -5,6 +7,9 @@
 {% endblock %}
 
 {% block content %}
+    
+{# Intro section #}
+    
 <div class="intro">
     <h3>Report made easy</h3>
     <p>Create reports with interactive data visualizations.
@@ -16,12 +21,11 @@
 <div class="btn">
 
 <a class="button large" href="{{ path ("signin") }}">Sign In</a>
-
 <a class="button large" href="{{ path ("signup") }}">Sign Up</a>
 
 </div>
 
-
+{# Advantage section #}
 <div class="intro" >
     <h3>Advantages </h3>
     
