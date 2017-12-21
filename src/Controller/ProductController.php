@@ -20,7 +20,7 @@ class ProductController {
 
     /**
      *  @return \Doctrine\ORM\EntityManager
-     */
+     */ 
     public function getEntityManager(Application $app) {
         return $app['orm.em'];
     }
