@@ -27,15 +27,17 @@ class MarketingController {
     public function getEntityManager(Application $app){
         return $app['orm.em'];
     }
-   public function marketingAction(Request $request, Application $app){
+    
+    public function marketingAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Customer::class);
         $customers = $repository->findAll();
         
         $customerswithage=$this->calculateAge($customers);
 
+         //returns all the customer's records after age calculation in marketing.html.twig page 
         return $app['twig']->render(
-            'marketing.html.twig', //correct the name of the page
+            'marketing.html.twig', 
             [
                 'customers' => $customerswithage
             ]
@@ -43,19 +45,20 @@ class MarketingController {
         
     } //end of function marketingAction
     
-        private function calculateAge($customers){
+    private function calculateAge($customers){
         $today = date("Y-m-d");
         
         $customersArray = [];
         
         foreach ($customers as $key => $value) {
-            // $customerDate = \DateTime::createFromFormat('d/m/Y', $value->getDob());
             
+            //calculation of the age of the customer from current date
             $diff = date_diff(\DateTime::createFromFormat('d/m/Y', $value->getDob()), date_create($today));
             
             $customerage = $diff->format('%y');
             $value->setDob($customerage);
             $customersArray[]=$value;
+            
         } // end of parsing all orderlines
         return $customersArray;
     } // end of function calculateAge($customers)

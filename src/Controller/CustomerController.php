@@ -36,8 +36,9 @@ class CustomerController {
         $repository = $entityManager->getRepository(Customer::class);
         $customers = $repository->findAll();
         
+         //returns all the customer's records in customer.html.twig page       
         return $app['twig']->render(
-            'customer.html.twig', //check name of page
+            'customer.html.twig', 
             [
                 'customers' => $customers
             ]
@@ -55,8 +56,7 @@ class CustomerController {
         $today= date("Y-m-d-h-i-sa");
         $fileFullName = __DIR__."\\csv\\customer-".$today.".csv";
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
-        // print_r ($filePointer);
-
+        
         // I parse the array and I create the csv lines
         $line='';
         foreach ($categories as $key => $value) {
@@ -95,7 +95,7 @@ class CustomerController {
             ]
         );
     
-    } // end of the method customercsvAction(Request $request, Application $app) of Class DebuController
+    } // end of the method customercsvAction
   
    
-}
+}//end of CustomerController

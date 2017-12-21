@@ -34,16 +34,22 @@ class ProductController {
         $categoryRepository = $entityManager->getRepository(Category::class);
         $categories = $categoryRepository->findAll();
 
+        //returns all the products in all categories to product.html.twig page         
         return $app['twig']->render(
-                        'product.html.twig', [
-                            'products' => $products,
-                            'categories'=> $categories
-                        ]
+            'product.html.twig', 
+            [
+                'products' => $products,
+                'categories'=> $categories
+            ]
 
         );// end of the method productAction
     } // end of Class
 
 
+    /**
+     * Method to filter products by Category
+     * Returns the products of selected Category
+     */
     public function productsOfCategoryAction(Request $request, Application $app) {
         $entityManager = $this->getEntityManager($app);
         
@@ -56,11 +62,13 @@ class ProductController {
             $categoryRepository->find($request->query->get('selectCategory'))
         );
         
+        //returns all the products in selected category to product.html.twig page       
         return $app['twig']->render(
-               'product.html.twig', [
-                     'categories'=> $categories,
-                     'products' => $filteredProducts                            
-                      ]
+            'product.html.twig', 
+            [
+                'categories'=> $categories,
+                'products' => $filteredProducts                            
+            ]
         );
         
         
@@ -84,8 +92,6 @@ class ProductController {
         // print_r ($filePointer);
 
         // I parse the array and I create the csv lines
-        // $nbrProducts = count($resultproducts);
-        // echo "<br>There are {$nbrProducts} products in my array<br>";
         $line='';
         foreach ($products as $key => $value) {
             $line = [
@@ -124,7 +130,6 @@ class ProductController {
             ]
         );
     
-    } // end of the method productscsvAction(Request $request, Application $app) of Class DebuController
-   
+    } // end of the method productscsvAction
 
 } // end of Class ProductController

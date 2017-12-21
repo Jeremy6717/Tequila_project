@@ -46,7 +46,7 @@ class Product {
      */
     private $catid;
     
-        /**
+    /**
     * One Product has Many Orderlines.
     * @OneToMany(targetEntity="Orderline", mappedBy="product")
     */
@@ -135,4 +135,4 @@ class Product {
             'stock' => $this->stock
         ];
     } // end of function toArray of Class Product
-}
+}//class Product

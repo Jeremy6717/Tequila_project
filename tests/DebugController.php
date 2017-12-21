@@ -12,6 +12,9 @@ use \Models\Orders;
 use \Models\Product;
 use \Models\UserModel;
 
+/**
+ * DEBUGCONTROLLER used for development only
+ */
 class DebugController {
 
     /**

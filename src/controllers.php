@@ -25,11 +25,12 @@ $app->get('/team', function() use ($app) {
 
 //Routing for signin
 $app->get('/signin', function(Request $request)use ($app) {
-    return $app['twig']->render('signIn.html.twig', [
-        //recuperation de la derniere erreur de connection - session depuis la request
+    return $app['twig']->render('signIn.html.twig', 
+    [
+        //retrieval of last error connection/session since request
         'error' => $app['security.last_error']($request),
         'last_username' => $app['session']->get('_security.last_username')
-            ]
+    ]
     );
 })->bind('signin');
 
@@ -73,21 +74,6 @@ $app->get('/report/marketing', "Controller\MarketingController::marketingAction"
 //Routing for sending message contact page
 $app->post('/team', "Controller\MailController::mailAction")->bind('mail');
 
-//Routing for debug users
-$app->get('/debugusers', "Controller\DebugController::debugusersAction")->bind('debugusers');
-
-//Routing for debug countries
-$app->get('/debugcountries', "Controller\DebugController::debugcountriesAction")->bind('debugcountries');
-
-//Routing for debug categories
-$app->get('/debugcategories', "Controller\DebugController::debugcategoriesAction")->bind('debugcategories');
-
-//Routing for debug customers
-$app->get('/debugcustomers', "Controller\DebugController::debugcustomersAction")->bind('debugcustomers');
-
-//Routing for debug Products
-$app->get('/debugproducts', "Controller\DebugController::debugproductsAction")->bind('debugproducts');
-
 //Routing for Products CSV
 $app->get('/productscsv', "Controller\ProductController::productscsvAction")->bind('productscsv');
 
@@ -105,21 +91,6 @@ $app->get('/report/orderscsv', "Controller\OrderController::ordercsvAction")->bi
 
 //Routing for orderlines CSV
 $app->get('orderlinescsv', "Controller\OrderlineController::orderlinescsvAction")->bind('orderlinescsv');
-
-//Routing for debug Products JSON
-$app->get('/debugproductsjson', "Controller\DebugController::debugproductsjsonAction")->bind('debugproductsjson');
-
-//Routing for debug Stock
-$app->get('/debugstock', "Controller\DebugController::debugstockAction")->bind('debugstock');
-
-//Routing for debug Marketing
-$app->get('/debugmarketing', "Controller\DebugController::debugMarketingAction")->bind('debugmarketing');
-
-//Routing for debug Orders
-$app->get('/debugorders', "Controller\DebugController::debugordersAction")->bind('debugorders');
-
-//Routing for debug Orderlines
-$app->get('/debugorderlines', "Controller\DebugController::debugorderlinessAction")->bind('debugorderlines');
 
 
 //Routing for homepage

@@ -30,7 +30,7 @@ class StockController {
         $products = $repository->findAll();
         
         return $app['twig']->render(
-            'stock.html.twig', //check name of page
+            'stock.html.twig', 
             [
                 'products' => $products
             ]
@@ -48,8 +48,7 @@ class StockController {
         $today= date("Y-m-d-h-i-sa");
         $fileFullName = __DIR__."\\csv\\stock-".$today.".csv";
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
-        // print_r ($filePointer);
-
+       
         // I parse the array and I create the csv lines
         $line='';
         foreach ($products as $key => $value) {
@@ -88,8 +87,6 @@ class StockController {
             ]
         );
     
-    } // end of the method stockvAction(Request $request, Application $app) of Class DebuController
+    } // end of the method stockcsvAction
     
-    
-    
-}
+}//end of StockController

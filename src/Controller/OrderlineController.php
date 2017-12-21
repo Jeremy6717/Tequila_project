@@ -24,11 +24,12 @@ class OrderlineController {
         return $app['orm.em'];
     }
 
-   public function orderlinesAction(Request $request, Application $app){
+    public function orderlinesAction(Request $request, Application $app){
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Orderline::class);
         $orderlines = $repository->findAll();
         
+        //returns all the filtered orders in orderlines.html.twig page  
         return $app['twig']->render(
             'orderlines.html.twig',
             [
@@ -47,8 +48,7 @@ class OrderlineController {
         $now = new \DateTime();
         $fileFullName = __DIR__."\\csv\\orderline-".$now->format("Y-m-d-h-i-sa").".csv";
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
-        // print_r ($filePointer);
-
+        
         // I parse the array and I create the csv lines
         $line='';
         $filteredOrderline=$this->filterByDate($orderlines);
@@ -93,9 +93,15 @@ class OrderlineController {
             ]
         );
     
-    } // end of the method orderlinescsvAction(Request $request, Application $app) of Class DebuController
+    } // end of the method orderlinescsvAction
     
+    /**
+     * Method that retrieves current date and first date of the month to calculate
+     * the current period from the first day of the month 
+     * Returns an array of filtered orders in current period
+     */
     private function filterByDate($orderlines){
+        
         $now = new \DateTime();
         $firstDay = new \DateTime('first day of this month');
         
@@ -110,7 +116,7 @@ class OrderlineController {
             
         } // end of parsing all orderlines
         return $orderlinesArray;
-    }
+    }//end of function filterByDate
 
 
 }// end of Class OrderlineController

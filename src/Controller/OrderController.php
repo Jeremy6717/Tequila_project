@@ -33,6 +33,7 @@ class OrderController {
         $customersRepository = $entityManager->getRepository(Customer::class);
         $customers = $customersRepository->findAll();
 
+        //returns all the customer's and order's records in orders.html.twig page 
         return $app['twig']->render(
             'orders.html.twig',
             [
@@ -41,35 +42,43 @@ class OrderController {
             ]
         );
      } // end of the method orderAction
-     
-     public function ordersByClientAction(Request $request, Application $app){
-         $entityManager = $this->getEntityManager($app);
-         
-         $ordersRepository = $entityManager->getRepository(Orders::class);
-         $customersRepository = $entityManager->getRepository(Customer::class);
-         
-         if($request->query->has('custId')) {
+    
+    /**
+     * Method that filters the orders by customer
+     * Returns the filtered orders
+     */
+    public function ordersByClientAction(Request $request, Application $app){
+        $entityManager = $this->getEntityManager($app);
+        
+        //loads orders and customers class' into own repositories and calls content from DB
+        $ordersRepository = $entityManager->getRepository(Orders::class);
+        $customersRepository = $entityManager->getRepository(Customer::class);
+        
+        //filtering orders by customer ID if customer is selected (custID is retrieved)
+        if($request->query->has('custId')) {
             $orders = $ordersRepository->findByCustid(
                     $customersRepository->find($request->query->get('custId'))
-            );
-         } else {
-             $orders = $ordersRepository->findAll();
-         }
+                );
+            } else {
+                //retrieves all orders if no ID is selected
+                 $orders = $ordersRepository->findAll();
+            }
          
-         $filterCustomer = $customersRepository->findAll();
+        $filterCustomer = $customersRepository->findAll();
          
-         return $app['twig']->render(
-                 'orders.html.twig',
-                    [
-                        'orders' => $orders,
-                        'customers' => $filterCustomer
-                    ]
-                 );
+        //returns all the filtered orders in orders.html.twig page        
+        return $app['twig']->render(
+            'orders.html.twig',
+            [
+                'orders' => $orders,
+                'customers' => $filterCustomer
+            ]
+        );
                  
          
      }//end of function ordersByClientAction
      
-     public function ordercsvAction(Request $request, Application $app){
+    public function ordercsvAction(Request $request, Application $app){
 
         $entityManager = $this->getEntityManager($app);
         $repository = $entityManager->getRepository(Orders::class);
@@ -79,8 +88,7 @@ class OrderController {
         $today= date("Y-m-d-h-i-sa");
         $fileFullName = __DIR__."\\csv\\order-".$today.".csv";
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
-        // print_r ($filePointer);
-
+        
         // I parse the array and I create the csv lines
         $line='';
         foreach ($orders as $key => $value) {
@@ -114,7 +122,7 @@ class OrderController {
                 'orders' => $orders
             ]
         );
-    } // end of the method ordercsvAction(Request $request, Application $app) of Class DebuController
+    } // end of the method ordercsvAction
   } //end of class
 
  

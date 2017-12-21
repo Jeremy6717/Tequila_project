@@ -27,9 +27,11 @@ class CategoryController {
     public function categoryAction(Request $request, Application $app) {
         $entityManager = $this->getEntityManager($app);
         
+        //loads Category class and calls content from DB
         $repository = $entityManager->getRepository(Category::class);
         $categories = $repository->findAll();        
         
+        //returns all the category records in category.html.twig page
         return $app['twig']->render(
             'category.html.twig',
             [
@@ -37,24 +39,7 @@ class CategoryController {
             ]
         );
     } // end of function categoryAction
-
     
-    /*public function categorychooseAction(Request $request, Application $app) {
-        $entityManager = $this->getEntityManager($app);
-        $repository = $entityManager->getRepository(Category::class);
-        $categories = $repository->findAll();
-
-        return $app['twig']->render(
-            'chooseCategory.html.twig',
-            [
-                'categories' => $categories
-            ]
-        );
-    } // end of method categorychooseAction
-
-
-    */
-
     public function categorycsvAction(Request $request, Application $app){
 
         $entityManager = $this->getEntityManager($app);
@@ -65,8 +50,7 @@ class CategoryController {
         $today= date("Y-m-d-h-i-sa");
         $fileFullName = __DIR__."\\csv\\category-".$today.".csv";
         $filePointer = fopen($fileFullName, 'w'); // I open this file in write mode, the file is created if it was absent
-        // print_r ($filePointer);
-
+        
         // I parse the array and I create the csv lines
         $line='';
         foreach ($categories as $key => $value) {
@@ -98,5 +82,5 @@ class CategoryController {
             ]
         );
     
-    } // end of the method categorycsvAction(Request $request, Application $app) of Class DebuController
+    } // end of the method categorycsvAction
 } // end of Class CategoryController

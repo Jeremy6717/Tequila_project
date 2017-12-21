@@ -25,9 +25,11 @@ class UserForm extends AbstractType {
                 'username',
                 TextType::class,
                 [
-                    'constraints' => [
+                    'constraints' => 
+                    [
                         new Assert\NotBlank(),
-                        new Assert\Regex([
+                        new Assert\Regex
+                        ([
                             'pattern' => '/^[A-Za-z0-9_-]*$/'
                         ])
                     ]
@@ -36,7 +38,8 @@ class UserForm extends AbstractType {
                 'firstname',
                 TextType::class,
                 [
-                    'constraints' => [
+                    'constraints' => 
+                    [
                         new Assert\NotBlank()
                     ]
                 ]
@@ -44,7 +47,8 @@ class UserForm extends AbstractType {
                 'lastname',
                 TextType::class,
                 [
-                    'constraints' => [
+                    'constraints' => 
+                    [
                         new Assert\NotBlank()
                     ]
                 ]
@@ -52,7 +56,8 @@ class UserForm extends AbstractType {
                 'email',
                 EmailType::class,
                 [
-                    'constraints' => [
+                    'constraints' => 
+                    [
                         new Assert\NotBlank()
                         
                     ]
@@ -65,38 +70,47 @@ class UserForm extends AbstractType {
                     'required' => true,
                     'first_options' => [
                         'label' => 'Password',
-                        'constraints' => [
+                        'constraints' => 
+                        [
                             new Assert\NotBlank(),
-                            new Assert\Regex([
+                            new Assert\Regex
+                            ([
                                 'pattern' => '/[A-Z]+/',
                                 'message'=> 'The password must contain at least 1 Uppercase'                                                   
                             ]),
-                            new Assert\Regex([
+                            new Assert\Regex
+                            ([
                                 'pattern' => '/[a-z]+/',
                                 'message'=> 'The password must contain Lowercase characters'
                             ]),
-                            new Assert\Regex([
+                            new Assert\Regex
+                            ([
                                 'pattern' => '/[0-9]+/',
                                 'message'=> 'The password must contain at least 1 Number'
                             ]),
-                            new Assert\Regex([
+                            new Assert\Regex
+                            ([
                                 'pattern' => '/[^0-9A-Za-z]+/',
                                 'message'=> 'The password must contain at least 1 Special character'
                             ]),
-                            new Assert\Length([
+                            new Assert\Length
+                            ([
                                 'min'        => 8,
                                 'max'        => 45
                             ])
                         ]
                     ],
-                    'second_options' => [
+                    'second_options' => 
+                    [
                         'label' => 'Repeat password'
                     ]
                 ]
             )->add(
                 'report',
-                ChoiceType::class, array (
-                    'choices' => array (
+                ChoiceType::class, 
+                array (
+                    'choices' => 
+                    array (
                         1 => 'yes',
                         0 => 'no'
                     ),
@@ -105,8 +119,10 @@ class UserForm extends AbstractType {
 
             )->add(
                 'newsletter',
-                ChoiceType::class,array (
-                    'choices' => array (
+                ChoiceType::class,
+                array (
+                    'choices' => 
+                    array (
                         1 => 'yes',
                         0 => 'no'
                     ),

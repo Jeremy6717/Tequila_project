@@ -20,9 +20,9 @@ class UserController {
 
     public function userSignupAction(Request $request, Application $app) {
              
-        //If there are less than 5 then the user can be added
         $user = new UserModel();
        
+        //call to symfony component formfactory and UserForm class
         $formFactory = $app['form.factory'];
         $userForm = $formFactory->create(UserForm::class, $user, ['standalone'=>true]);
         $userForm->handleRequest($request);
@@ -44,6 +44,7 @@ class UserController {
                 $password = $encoder->encodePassword($user->getPassword(), null);
                 $user->setPassword($password);
                 
+                //data retrieved and pushed into DB
                 $entityManager = $app['orm.em'];
                 $entityManager->persist($user);
                 $entityManager->flush();
@@ -53,9 +54,10 @@ class UserController {
         }
         
         return $app['twig']->render(
-                            'signUp.html.twig', [
-                        'form' => $userForm->createView()
-                            ]
+               'signUp.html.twig', 
+                [
+                    'form' => $userForm->createView()
+                ]
             );
     } //end of function
 
