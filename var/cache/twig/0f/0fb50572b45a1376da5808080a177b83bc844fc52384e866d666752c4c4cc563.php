@@ -92,7 +92,7 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
         </div>
         <div id=\"contact\">
             <h2>Contact us</h2>
-            <form method=\"post\" action=\"\">
+            <form method=\"post\">
                 <p>Your name</p><input type=\"text\" name=\"name\">
                 <p>Your email</p><input type=\"email\" name=\"email\">
                 <p>Subject</p><input type=\"text\" name=\"subject\">
@@ -194,7 +194,7 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
         </div>
         <div id=\"contact\">
             <h2>Contact us</h2>
-            <form method=\"post\" action=\"\">
+            <form method=\"post\">
                 <p>Your name</p><input type=\"text\" name=\"name\">
                 <p>Your email</p><input type=\"email\" name=\"email\">
                 <p>Subject</p><input type=\"text\" name=\"subject\">

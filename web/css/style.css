@@ -318,6 +318,10 @@ ul{
     font-size: 1.3rem;
 }
 
+.fa-linkedin{
+    color: #0077b5;
+}
+
 #mapArea{
     margin-top: 4rem;
     margin-bottom: 4rem;
@@ -481,8 +485,7 @@ input[type=password]:focus{
 }
 
 /************************************REPORTS PAGES***********************************/
-/******** REPORTS PAGE ********/
-
+/******** REPORTS PAGE MOBILE ********/
 
 h3{
     font-size: 2rem;
@@ -533,6 +536,41 @@ table{
 
 .selectSubmit{
     text-align: center;
+}
+
+/*resize th chart for the desktop*/
+@media (max-width:638px) {
+    #responsiveChartCategory{
+        transform: scale(0.60);
+    }
+
+    #responsiveChartStock{
+        transform: scale(0.80);
+        margin-left: -4rem;
+        margin-top: -15rem;
+        margin-bottom: -18rem;
+    }
+}
+
+/******** REPORTS PAGE DESKTOP ********/
+
+@media (min-width:639px) {
+
+    #chart_OutOfStock{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -8rem;
+        margin-bottom: -8.5rem;
+    }
+
+
+    #chart_category{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -4rem;
+    }
 }
 
 /************************************FOOTER***********************************/
