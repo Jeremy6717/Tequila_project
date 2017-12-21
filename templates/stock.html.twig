@@ -22,7 +22,9 @@
         </thead>
         <tbody>
 
-        <div id="chart_OutOfStock"></div>
+        <div id="responsiveChartStock">
+            <div id="chart_OutOfStock"></div>
+        </div>
 
         <h3> No Stock </h3>
         {% for product in products %}
@@ -39,9 +41,6 @@
     </table>
 
     <h3> Low Stock </h3>
-
-
-    <div id="chart_div"></div>
 
     <table border="1">
         <thead>
@@ -102,15 +101,20 @@
             data.addColumn('number', 'Number of items');
             data.addRows([
                 {% for product in products %}
-                {% if product.stock < 6 %}
-                ['{{ product.getName() }}', {{ product.getStock() }}],
-                {% endif %}
+                    {% if product.stock < 6 %}
+                        ['{{ product.getName() }}', {{ product.getStock() }}],
+                    {% endif %}
                 {% endfor %}
             ]);
             // Set chart options
             var options = {'title':'Stock level of the items',
-                'width':900,
-                'height':1200};
+                width:1300,
+                height:1200,
+                legend: 'bottom',
+                backgroundColor: 'none'
+            };
+
+
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.BarChart(document.getElementById('chart_OutOfStock'));

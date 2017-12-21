@@ -422,6 +422,10 @@ ul{
     margin-bottom: 4rem;
 }
 
+[type='email']{
+    width: 100%;
+}
+
 textarea{
     height: 20rem;
 }
@@ -429,6 +433,11 @@ textarea{
 #contactSubmit{
     width: 20%;
     margin-left: auto;
+
+}
+
+#envelope{
+    width: 2em;
 }
 
 
@@ -460,12 +469,14 @@ textarea{
     img{
         border-radius: 100%;
     }
+
+    [type='text'], [type='email']{
+        width: 100%;
+    }
+
 }
 
-#mapArea{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-}
+
 
 
 /******Sign In - mobile********/
@@ -550,10 +561,31 @@ input[type=password]:focus{
         font-size: 6rem;
     }
 
+    #chart_category{
+        width: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
+/* REPORTS PAGE MOBILE */
+@media (max-width:639px){
+    #responsiveChartCategory{
+        transform: scale(0.80);
+        margin-left: -24rem;
+    }
 
-/* REPORTS PAGE */
+    #responsiveChartStock{
+        transform: scale(0.60);
+        margin-left: -9rem;
+        margin-top: -20rem;
+        margin-bottom: -24rem;
+    }
+
+}
+
+/* REPORTS PAGE DESKTOP */
 
 table{
     width: 90%;
@@ -594,6 +626,22 @@ h3{
 }
 
 
+#chart_OutOfStock{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10rem;
+    margin-bottom: -8.5rem;
+}
+
+
+#chart_category{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -4rem;
+}
+
 
 
 /********** FOOTER DESKTOP ********/
@@ -605,6 +653,10 @@ footer{
     color: white;
     width: 100%;
     height: 100%;
+}
+
+#contactFooter p{
+    margin-left: -2rem;
 }
 
 .social {

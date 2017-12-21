@@ -81,13 +81,19 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->register(new \Silex\Provider\SessionServiceProvider());
 
-
 //Swiftmailer
-$app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());
+$app['swiftmailer.options'] = array(
     'host' => 'smtp.gmail.com',
-    'port' => '25',
-    'username' => 'tequilateam2017',
+    'port' => '465',
+    'username' => 'tequilateam2017@gmail.com',
     'password' => 'Tequila2017@',
-    'encryption' => null,
-    'auth_mode' => null
-));
+    'encryption' => 'ssl',
+    'auth_mode' => 'login',
+    'stream_context_options'=>[
+        'ssl' =>[
+            'allow_self_signed' => true,
+            'verify_peer' => false
+        ]
+    ]
+);
