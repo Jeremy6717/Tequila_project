@@ -37,6 +37,22 @@ class OrderController {
         );
      } // end of the method orderAction
      
+     public function ordersByClientAction(Request $request, Application $app){
+         $entityManager = $this->getEntityManager($app);
+         $ordersRepository = $entityManager->getRepository(Orders::class);
+                  
+         $filterOrders = $ordersRepository->findbyCustid($request->query->get('custId'));
+         
+         return $app['twig']->render(
+                 'orders.html.twig',
+                    [
+                        'orders' => $orders
+                    ]
+                 );
+                 
+         
+     }//end of function ordersByClientAction
+     
      public function ordercsvAction(Request $request, Application $app){
 
         $entityManager = $this->getEntityManager($app);

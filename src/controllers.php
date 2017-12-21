@@ -36,11 +36,10 @@ $app->get('/signin', function(Request $request)use ($app) {
 //Routing for signup page
 $app->match('/signup', "Controller\UserController::userSignupAction")->bind('signup');
 
-/* $app->get('/signup', "Form\UserForm::buildForm")->bind('signup'); */
-
 //Routing for sales page which is not in use at the moment
 //$app->get('/report/sales', "Controller\SalesController::salesAction")->bind('sales');
-//
+
+
 //Routing for stock page
 $app->get('/report/stock', "Controller\StockController::stockAction")->bind('stock');
 
@@ -53,7 +52,7 @@ $app->get('/report/choosecategory', "Controller\CategoryController::categorychoo
 //Routing for orders page
 $app->get('/report/orders', "Controller\OrderController::orderAction")->bind('order');
 
-//Routing for orders by customer
+//Routing for button for orders by customer
 $app->get('/report/ordersbycustomer', "Controller\ordersByClientAction")->bind('ordersbycustomer');
 
 //Routing for customer page
