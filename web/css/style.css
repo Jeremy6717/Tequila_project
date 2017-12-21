@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico|Prata');
+﻿@import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico|Prata');
 
 /*********************************General*********************************/
 /**********************
@@ -194,7 +194,7 @@ ul{
     }
 
     .intro p, .intro, #advantage {
-        margin: 100px 100px;
+        margin: 40px 80px;
 
     }
     .intro h3, .intro h4 {
@@ -329,7 +329,7 @@ ul{
     margin-bottom: 3rem;
 }
 
-#contact{
+.contact{
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
@@ -491,6 +491,9 @@ h3{
     margin-right: auto;
     margin-top: 8rem;
 
+}
+h5{
+    margin-top: 7%;
 }
 
 .titleSelect{
