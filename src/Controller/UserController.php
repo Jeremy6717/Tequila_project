@@ -8,7 +8,8 @@ use Silex\Application;
 use Models\UserModel;
 use Models\Role;
 use Form\UserForm;
-use Silex\Provider\FormServiceProvider;
+//Encryption password 
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Description of UserController
@@ -30,7 +31,7 @@ class UserController {
             $entityManager = $app['orm.em'];
             
             $role = $request->request->get('usr_role');
-            $roleRepository = $entityManager->getRepository(\Models\Role::class);
+            $roleRepository = $entityManager->getRepository(Role::class);
             $userRole = $roleRepository->findOneByLabel('ROLE_ADMIN');
             
             if (!$role) { 
@@ -38,13 +39,17 @@ class UserController {
             }else{
                 $user->addRole($userRole);
                 
+                //Encryption password
+                $encoder = $app['security.encoder_factory']->getEncoder(UserInterface::class);
+                $password = $encoder->encodePassword($user->getPassword(), null);
+                $user->setPassword($password);
+                
                 $entityManager = $app['orm.em'];
                 $entityManager->persist($user);
                 $entityManager->flush();
                 
                 return $app['twig']->render('signin.html.twig'); 
             }    
-
         }
         
         return $app['twig']->render(
