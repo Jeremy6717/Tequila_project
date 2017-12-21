@@ -7,8 +7,8 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "team.html.twig", 1);
+        // line 3
+        $this->parent = $this->loadTemplate("layout.html.twig", "team.html.twig", 3);
         $this->blocks = array(
             'header' => array($this, 'block_header'),
             'content' => array($this, 'block_content'),
@@ -26,43 +26,45 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 5
     public function block_header($context, array $blocks = array())
     {
-        // line 4
+        // line 6
         echo "    ";
-        $this->loadTemplate("headerReport.html.twig", "team.html.twig", 4)->display($context);
+        $this->loadTemplate("headerReport.html.twig", "team.html.twig", 6)->display($context);
     }
 
-    // line 7
+    // line 9
     public function block_content($context, array $blocks = array())
     {
-        // line 8
+        // line 10
+        echo "    ";
+        // line 11
         echo "    <div class=\"grid-container\">
         <div id=\"teamContent\">
             <h1>The team</h1>
             <div id=\"teamMemberPicture\">
                 <div class=\"grid-x grid-padding-x\">
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <img src=\"../img/tamarra.jpg\" alt=\"Tamara Esclante\">
                             <p>Tamara <a href=\"https://www.linkedin.com/in/tamara-escalante-b677b31/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
                     </div>
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <div class=\"pictureMemberTeam\"><img src=\"../img/jeremy.jpg\" alt=\"Jeremy Deumer\"></div>
                             <p>Jeremy <a href=\"https://www.linkedin.com/in/jeremy-deumer-20672098/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
                     </div>
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <div class=\"pictureMemberTeam\"><img src=\"../img/catherine.jpg\" alt=\"Catherine Tritz\"></div>
                             <p>Catherine <a href=\"https://www.linkedin.com/in/catherine-tritz-35465232/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
                     </div>
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <div class=\"pictureMemberTeam\"><img src=\"../img/michel.jpg\" alt=\"Michel Magnier\"></div>
                             <p>Michel <a href=\"https://www.linkedin.com/in/michelmagnier/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
@@ -70,7 +72,10 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
                 </div>
             </div>
         </div>
-        <div id=\"mapArea\">
+        
+        ";
+        // line 45
+        echo "        <div id=\"mapArea\">
             <h2>Find us</h2>
             <div id=\"map\"></div>
             <script>
@@ -90,7 +95,10 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
                     src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCdI3YslSOblOzl8QAnvef75Vgz9M4dh-E&callback=initMap\">
             </script>
         </div>
-        <div id=\"contact\">
+        
+        ";
+        // line 67
+        echo "        <div class=\"contact\">
             <h2>Contact us</h2>
             <form method=\"post\">
                 <p>Your name</p><input type=\"text\" name=\"name\">
@@ -104,17 +112,15 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
             </form>
         </div>
     </div>
-
-
 ";
     }
 
-    // line 78
+    // line 83
     public function block_footer($context, array $blocks = array())
     {
-        // line 79
+        // line 84
         echo "    ";
-        $this->loadTemplate("footer.html.twig", "team.html.twig", 79)->display($context);
+        $this->loadTemplate("footer.html.twig", "team.html.twig", 84)->display($context);
         echo "      
 ";
     }
@@ -131,43 +137,46 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
 
     public function getDebugInfo()
     {
-        return array (  116 => 79,  113 => 78,  41 => 8,  38 => 7,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  122 => 84,  119 => 83,  101 => 67,  78 => 45,  43 => 11,  41 => 10,  38 => 9,  33 => 6,  30 => 5,  11 => 3,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends \"layout.html.twig\" %}
+        return new Twig_Source("{# Page : Team #}
+
+{% extends \"layout.html.twig\" %}
 
 {% block header %}
     {% include 'headerReport.html.twig' %}
 {% endblock %}
         
 {% block content %}
+    {# Team section with picture #}
     <div class=\"grid-container\">
         <div id=\"teamContent\">
             <h1>The team</h1>
             <div id=\"teamMemberPicture\">
                 <div class=\"grid-x grid-padding-x\">
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <img src=\"../img/tamarra.jpg\" alt=\"Tamara Esclante\">
                             <p>Tamara <a href=\"https://www.linkedin.com/in/tamara-escalante-b677b31/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
                     </div>
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <div class=\"pictureMemberTeam\"><img src=\"../img/jeremy.jpg\" alt=\"Jeremy Deumer\"></div>
                             <p>Jeremy <a href=\"https://www.linkedin.com/in/jeremy-deumer-20672098/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
                     </div>
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <div class=\"pictureMemberTeam\"><img src=\"../img/catherine.jpg\" alt=\"Catherine Tritz\"></div>
                             <p>Catherine <a href=\"https://www.linkedin.com/in/catherine-tritz-35465232/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
                     </div>
                     <div class=\"large-3 medium-3 small-8 cell\">
-                        <article id=\"picture\">
+                        <article class=\"picture\">
                             <div class=\"pictureMemberTeam\"><img src=\"../img/michel.jpg\" alt=\"Michel Magnier\"></div>
                             <p>Michel <a href=\"https://www.linkedin.com/in/michelmagnier/\"><i class=\"fab fa-linkedin\"></i></a></p>
                         </article>
@@ -175,6 +184,8 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
                 </div>
             </div>
         </div>
+        
+        {# Map API #}
         <div id=\"mapArea\">
             <h2>Find us</h2>
             <div id=\"map\"></div>
@@ -195,7 +206,9 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
                     src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCdI3YslSOblOzl8QAnvef75Vgz9M4dh-E&callback=initMap\">
             </script>
         </div>
-        <div id=\"contact\">
+        
+        {# Contact Form #}
+        <div class=\"contact\">
             <h2>Contact us</h2>
             <form method=\"post\">
                 <p>Your name</p><input type=\"text\" name=\"name\">
@@ -209,8 +222,6 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
             </form>
         </div>
     </div>
-
-
 {% endblock %}
 
 {% block footer %}

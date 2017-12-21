@@ -1,3 +1,5 @@
+{# Page : Stock #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
@@ -6,13 +8,16 @@
 
 {% block content %}
     {{ parent() }}
-        
+
     <h3>Out of Stock and Low Stock Report</h3>
     
+    {# CSV Section #}
     <div class="orderBtn">
         <a href="{{ path ("stockcsv") }}">Export to CSV</a>
     </div>
 
+    {# Table No Stock #}
+    <h3> No Stock </h3>
 
     <table border="1">
         <thead>
@@ -24,12 +29,6 @@
         </tr>
         </thead>
         <tbody>
-
-        <div id="responsiveChartStock">
-            <div id="chart_OutOfStock"></div>
-        </div>
-
-        <h3> No Stock </h3>
         {% for product in products %}
             {% if product.stock == 0 %}
                 <tr>
@@ -43,6 +42,7 @@
         </tbody>
     </table>
 
+    {# Table Low Stock #}
     <h3> Low Stock </h3>
 
     <table border="1">
@@ -64,7 +64,7 @@
                     <td>{{ product.getCatid().getName() }}</td>
                     <td>{{ product.getId() }}</td>
                     <td>{{ product.getName() }}</td>
-                    <td>{{ product.getStock() }}</td>                
+                    <td>{{ product.getStock() }}</td>
                 </tr>
             {% endif %}
         {% else %}

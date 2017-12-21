@@ -1,3 +1,5 @@
+{# Layout #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
@@ -5,6 +7,9 @@
 {% endblock %}
 
 {% block content %}
+    
+{# Intro section #}
+    
 <div class="intro">
     <h3>Report made easy</h3>
     <p>Create reports with interactive data visualizations.
@@ -16,16 +21,14 @@
 <div class="btn">
 
 <a class="button large" href="{{ path ("signin") }}">Sign In</a>
-
 <a class="button large" href="{{ path ("signup") }}">Sign Up</a>
 
 </div>
 
-
+{# Advantage section #}
 <div class="intro" >
-    
     <h3>Advantages </h3>
-    <p> 
+    
         <ul id="advantage">
             <li>Search through large amounts of data lightning fast.</li>
             <li>Import measured data in all popular formats.</li>
@@ -33,7 +36,6 @@
             <li>Take advantage of the latest analysis procedures for the precise analysis of your measured data.</li>
             <li>Share your analysis templates with colleagues over your network.</li>
         </ul>
-    </p>
 </div>
 
 {% endblock %}

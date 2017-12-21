@@ -22,7 +22,7 @@ class DBUserProvider implements UserProviderInterface {
     public function loadUserByUsername($username) {
 
         $user =$this->repository->findOneByUsername ($username);
-    
+
         if(!$user){
             throw new UsernameNotFoundException;
         }

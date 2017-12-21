@@ -1,9 +1,10 @@
+{# Page : Signup #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
-    {% include 'headerSign.html.twig' %}
+    {% include 'headerHome.html.twig' %}
 {% endblock %}
-
 
 {% block content %}
     
@@ -25,21 +26,19 @@
                         <div class="g-recaptcha" data-sitekey="6LcisTwUAAAAAClgE-1c8OteBGKiGZb3xpV1hAwR"  id="recapcha"></div>
                         <!-- Fin Recapcha code -->
                         <div>{{ form_row(form.submit) }}</div>
+                        {# this function is to be use after- this label is hidden for this moment #}
                         <div id="role">
                             <label for="usr_role">Role :</label>
                             <select name="usr_role">
-                                <selected><option value="ROLE_ADMIN">ROLE_ADMIN</option></selected>
+                               <option value="ROLE_ADMIN">ROLE_ADMIN</option>
                             </select>
                         </div>
+                    </div>
             </fieldset>
         </div>
     {{ form_end(form) }}
 
 {% endblock %}
-
-
-
-
 
 {% block footer %}
     {% include 'footer.html.twig' %}

@@ -1,3 +1,5 @@
+{# Page : Customer Orders #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
@@ -6,43 +8,47 @@
 
 {% block content %}
     {{ parent() }}
-    
+
     <h3>Orders In a Given Period For One Customer</h3>
 
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x footer">
+    <form action="{{ path ("ordersbycustomer") }}" method="GET">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x footer">
 
-            <div class="large-4 medium-4 small-12 cell">
-                <article id="contact">
-                    <h5>Select the date of the start</h5>
-                    <input type="date" class="span2" value="02-12-2017" id="dp1">
-                </article>
-            </div>
+                    <div class="large-4 medium-4 small-12 cell">
+                    <article id="contact">
+                        <h5>Select the date of the start</h5>
+                        <input type="date" class="span2" value="" id="dp1">
+                    </article>
+                    </div>
 
-            <div class="large-4 medium-4 small-12 cell">
-                <article id="contact">
-                    <h5>Select the date of the end</h5>
-                    <input type="date" class="span2" value="31-12-2017" id="dp1">
-                </article>
-            </div>
+                    <div class="large-4 medium-4 small-12 cell">
+                        <article id="contact">
+                            <h5>Select the date of the end</h5>
+                            <input type="date" class="span2" value="" id="dp1">
+                        </article>
+                    </div>
 
-            <div class="large-4 medium-4 small-12 cell">
-                <article id="contact">
+                    <div class="large-4 medium-4 small-12 cell">
+                        <article id="contact">
 
-                    <h5>Select Last Name of Client</h5>
-                    <select>
-                        {% for order in orders %}
-                            <option value="LastName">{{ order.getCustid().getLastname() }}</option>
-                        {% endfor %}
-                    </select>
-                </article>
+                            <h5>Select Last Name of Client</h5>
+                            <select name="custId">
+                                {% for customer in customers %}
+                                    <option value="{{ customer.getId() }}">{{ customer.getLastname() }} , {{customer.getFirstname() }}</option>
+                                {% endfor %}
+                            </select>
+                        </article>
+                    </div>
+
+
             </div>
         </div>
-    </div>
 
-    <div class="selectSubmit">
-            <button class="orderBtn"type="submit">Submit</button>
-    </div>
+        <div class="selectSubmit">
+                <button class="orderBtn" type="submit">Submit</button>
+        </div>
+    </form>
 
     <div class="orderBtn">
         <a href="{{ path ("ordercsv") }}">Export to CSV</a>

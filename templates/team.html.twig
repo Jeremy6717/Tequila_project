@@ -1,3 +1,5 @@
+{# Page : Team #}
+
 {% extends "layout.html.twig" %}
 
 {% block header %}
@@ -5,31 +7,32 @@
 {% endblock %}
         
 {% block content %}
+    {# Team section with picture #}
     <div class="grid-container">
         <div id="teamContent">
             <h1>The team</h1>
             <div id="teamMemberPicture">
                 <div class="grid-x grid-padding-x">
                     <div class="large-3 medium-3 small-8 cell">
-                        <article id="picture">
+                        <article class="picture">
                             <img src="../img/tamarra.jpg" alt="Tamara Esclante">
                             <p>Tamara <a href="https://www.linkedin.com/in/tamara-escalante-b677b31/"><i class="fab fa-linkedin"></i></a></p>
                         </article>
                     </div>
                     <div class="large-3 medium-3 small-8 cell">
-                        <article id="picture">
+                        <article class="picture">
                             <div class="pictureMemberTeam"><img src="../img/jeremy.jpg" alt="Jeremy Deumer"></div>
                             <p>Jeremy <a href="https://www.linkedin.com/in/jeremy-deumer-20672098/"><i class="fab fa-linkedin"></i></a></p>
                         </article>
                     </div>
                     <div class="large-3 medium-3 small-8 cell">
-                        <article id="picture">
+                        <article class="picture">
                             <div class="pictureMemberTeam"><img src="../img/catherine.jpg" alt="Catherine Tritz"></div>
                             <p>Catherine <a href="https://www.linkedin.com/in/catherine-tritz-35465232/"><i class="fab fa-linkedin"></i></a></p>
                         </article>
                     </div>
                     <div class="large-3 medium-3 small-8 cell">
-                        <article id="picture">
+                        <article class="picture">
                             <div class="pictureMemberTeam"><img src="../img/michel.jpg" alt="Michel Magnier"></div>
                             <p>Michel <a href="https://www.linkedin.com/in/michelmagnier/"><i class="fab fa-linkedin"></i></a></p>
                         </article>
@@ -37,6 +40,8 @@
                 </div>
             </div>
         </div>
+        
+        {# Map API #}
         <div id="mapArea">
             <h2>Find us</h2>
             <div id="map"></div>
@@ -57,7 +62,9 @@
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdI3YslSOblOzl8QAnvef75Vgz9M4dh-E&callback=initMap">
             </script>
         </div>
-        <div id="contact">
+        
+        {# Contact Form #}
+        <div class="contact">
             <h2>Contact us</h2>
             <form method="post">
                 <p>Your name</p><input type="text" name="name">
@@ -71,8 +78,6 @@
             </form>
         </div>
     </div>
-
-
 {% endblock %}
 
 {% block footer %}

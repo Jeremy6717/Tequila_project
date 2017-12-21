@@ -1,5 +1,6 @@
- <header>
+{# Header Homepage #}
 
+<header>
     <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
         <button class="menu-icon" type="button" data-toggle="example-menu"></button>
         <div class="title-bar-title">Menu</div>
@@ -7,13 +8,14 @@
 
     <div class="top-bar" id="example-menu">
         <div class="top-bar-left">
+            <ul>
                 <li class="menu-text"><a href="{{ path ("home") }}">Tequila</a></li>
+            </ul>
         </div>
         <div class="top-bar-right">
             <ul class="dropdown menu" data-dropdown-menu>
                 <li><a href="{{ path ("signin") }}">Sign In</a></li>
                 <li><a href="{{ path ("signup") }}">Sign Up</a></li>
-            </ul>
             </ul>
         </div>
     </div>

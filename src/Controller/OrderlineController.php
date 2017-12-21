@@ -113,8 +113,6 @@ class OrderlineController {
     }
 
 
-}// end of public function orderlineAction
-
-//end of class
+}// end of Class OrderlineController
 
  
