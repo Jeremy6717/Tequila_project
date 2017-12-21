@@ -5,8 +5,8 @@
 	"type" : "project",
 	"require" : {
 		"php" : ">=5.5.9",
-		"silex/silex" : "~2.0",
-		"silex/web-profiler" : "~2.0",
+		"silex/silex" : "dev-master",
+		"silex/web-profiler" : "dev-master",
 		"symfony/asset" : "~2.8|^3.0",
 		"symfony/browser-kit" : "~2.8|^3.0",
 		"symfony/class-loader" : "~2.8|^3.0",
@@ -44,5 +44,11 @@
 			"echo 'Started web server on http://localhost:8888'",
 			"php -S localhost:8888 -t web"
 		]
-	}
+	},
+	"repositories":[
+		{
+		  "type": "vcs",
+		  "url": "https://github.com/leClaude/Silex"
+		}
+	]
 }

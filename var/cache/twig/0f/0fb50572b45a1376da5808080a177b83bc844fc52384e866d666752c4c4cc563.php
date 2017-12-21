@@ -34,10 +34,10 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
         $this->loadTemplate("headerReport.html.twig", "team.html.twig", 4)->display($context);
     }
 
-    // line 8
+    // line 7
     public function block_content($context, array $blocks = array())
     {
-        // line 9
+        // line 8
         echo "    <div class=\"grid-container\">
         <div id=\"teamContent\">
             <h1>The team</h1>
@@ -106,12 +106,12 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
 ";
     }
 
-    // line 78
+    // line 75
     public function block_footer($context, array $blocks = array())
     {
-        // line 79
+        // line 76
         echo "    ";
-        $this->loadTemplate("footer.html.twig", "team.html.twig", 79)->display($context);
+        $this->loadTemplate("footer.html.twig", "team.html.twig", 76)->display($context);
         echo "      
 ";
     }
@@ -128,7 +128,7 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
 
     public function getDebugInfo()
     {
-        return array (  113 => 79,  110 => 78,  41 => 9,  38 => 8,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  113 => 76,  110 => 75,  41 => 8,  38 => 7,  33 => 4,  30 => 3,  11 => 1,);
     }
 
     public function getSourceContext()
@@ -139,7 +139,6 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
     {% include 'headerReport.html.twig' %}
 {% endblock %}
         
-
 {% block content %}
     <div class=\"grid-container\">
         <div id=\"teamContent\">
@@ -208,8 +207,6 @@ class __TwigTemplate_251477719c5e1b23fb2f690150758861e47693df852c3bb077fdf2382b3
 
 {% endblock %}
 
-
-    
 {% block footer %}
     {% include 'footer.html.twig' %}      
 {% endblock %}  ", "team.html.twig", "C:\\xampp\\htdocs\\Tequila_project\\templates\\team.html.twig");

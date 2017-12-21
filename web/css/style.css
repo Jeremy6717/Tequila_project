@@ -143,7 +143,7 @@ ul{
 
 #identification a{
     color: #f2c811;
-  
+
 }
 
 .titleMenu{
@@ -334,6 +334,10 @@ ul{
     margin-bottom: 4rem;
 }
 
+[type='email']{
+    width: 100%;
+}
+
 textarea{
     height: 20rem;
 }
@@ -341,6 +345,11 @@ textarea{
 #contactSubmit{
     width: 20%;
     margin-left: auto;
+
+}
+
+#envelope{
+    width: 2em;
 }
 
 /****** TEAM MOBILE  *********/
@@ -370,11 +379,11 @@ textarea{
     img{
         border-radius: 100%;
     }
-}
 
-#mapArea{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    [type='text'], [type='email']{
+        width: 100%;
+    }
+
 }
 
 /************************************SIGN IN***********************************/
@@ -463,6 +472,12 @@ input[type=password]:focus{
         font-size: 6rem;
     }
 
+    #chart_category{
+        width: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 /************************************REPORTS PAGES***********************************/
@@ -530,6 +545,10 @@ footer{
     color: white;
     width: 100%;
     height: 100%;
+}
+
+#contactFooter p{
+    margin-left: -2rem;
 }
 
 .social {
